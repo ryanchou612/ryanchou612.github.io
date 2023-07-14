@@ -6,7 +6,7 @@
   <link href="https://ryanchou612.github.io/atom.xml" rel="self"/>
   
   <link href="https://ryanchou612.github.io/"/>
-  <updated>2023-07-14T13:27:07.616Z</updated>
+  <updated>2023-07-14T13:29:11.235Z</updated>
   <id>https://ryanchou612.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://ryanchou612.github.io/posts/d67aa9df.html"/>
     <id>https://ryanchou612.github.io/posts/d67aa9df.html</id>
     <published>2023-07-14T08:04:13.417Z</published>
-    <updated>2023-07-14T13:27:07.616Z</updated>
+    <updated>2023-07-14T13:29:11.235Z</updated>
     
-    <content type="html"><![CDATA[<!DOCTYPE html><html><head><mete charset="utf-8"><title>主页面</title></head><body><a href="page/Page_1.html">跳转到Page_1页面</a>    <button>跳转到Page_1A页面</button><br><a href="page/Page_2.html">跳转到Page_2页面</a>    <button>跳转到Page_1A页面</button></body></html>]]></content>
+    <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>主页面</title></head><body><a href="page/Page_1.html">跳转到Page_1页面</a>    <button>跳转到Page_1A页面</button><br><a href="page/Page_2.html">跳转到Page_2页面</a>    <button>跳转到Page_1A页面</button></body></html>]]></content>
     
     
       
@@ -31,7 +31,7 @@
     <summary type="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;mete charset=&quot;utf-8&quot;&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;title&gt;主页面&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -49,7 +49,7 @@
     <link href="https://ryanchou612.github.io/posts/40721c3.html"/>
     <id>https://ryanchou612.github.io/posts/40721c3.html</id>
     <published>2023-07-14T08:03:23.761Z</published>
-    <updated>2023-07-14T13:27:24.806Z</updated>
+    <updated>2023-07-14T13:27:29.470Z</updated>
     
     <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>Page_2页面</title></head><body>    <p>这是Page_2页面。</p>    <a href="../Main_Page.html">跳转回主页面</a></body></html>]]></content>
     
@@ -77,7 +77,7 @@
     <link href="https://ryanchou612.github.io/posts/9d0e7079.html"/>
     <id>https://ryanchou612.github.io/posts/9d0e7079.html</id>
     <published>2023-07-14T08:02:58.565Z</published>
-    <updated>2023-07-14T13:27:20.753Z</updated>
+    <updated>2023-07-14T13:27:29.469Z</updated>
     
     <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>Page_1页面</title></head><body>    <p>这是Page_1页面。</p>        <a href="../Main_Page.html">跳转回主页面</a></body></html>]]></content>
     
@@ -127,7 +127,7 @@
     <link href="https://ryanchou612.github.io/posts/4a17b156.html"/>
     <id>https://ryanchou612.github.io/posts/4a17b156.html</id>
     <published>2023-07-09T09:53:44.060Z</published>
-    <updated>2023-07-14T13:26:37.687Z</updated>
+    <updated>2023-07-14T13:27:29.471Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
