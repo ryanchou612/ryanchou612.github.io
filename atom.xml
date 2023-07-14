@@ -23,7 +23,7 @@
     <published>2023-07-14T08:04:13.417Z</published>
     <updated>2023-07-14T08:09:46.259Z</updated>
     
-    <content type="html"><![CDATA[<!DOCTYPE html><html><head><mete charset="utf-8"><title>主页面</title></head><body><a href="page/Page_1.html">跳转到Page_1页面</a><button>跳转到Page_1A页面</button><br><a href="page/Page_2.html">跳转到Page_2页面</a><button>跳转到Page_1A页面</button></body></html>]]></content>
+    <content type="html"><![CDATA[<!DOCTYPE html><html><head><mete charset="utf-8"><title>主页面</title></head><body><a href="page/Page_1.html">跳转到Page_1页面</a>    <button>跳转到Page_1A页面</button><br><a href="page/Page_2.html">跳转到Page_2页面</a>    <button>跳转到Page_1A页面</button></body></html>]]></content>
     
     
       
@@ -36,7 +36,7 @@
 &lt;/head&gt;
 &lt;body&gt;
 &lt;a href=&quot;page/Page_1.html&quot;&gt;跳转到Page_1页面&lt;/a&gt;
-	&lt;button&gt;跳</summary>
+    &lt;butto</summary>
       
     
     
