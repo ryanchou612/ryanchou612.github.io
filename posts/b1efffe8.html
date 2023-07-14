@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golang标准库 | RyanChouBlog</title>
+<noscript>开启Javascript是必要的</noscript>
+<link rel="icon" type="image/x-icon" href="/img/avatar.webp">
+<link rel="apple-touch-icon" href="/img/avatar.webp">
+<meta name="apple-mobile-web-app-title" content="RyanChouBlog">
+<link rel="bookmark" href="/img/avatar.webp">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/avatar.webp">
+<meta name="description" content="一个记录学习与生活的博客">
+<meta name="theme-color" content="#1C1C1F">
+<link rel="stylesheet" href="/css/var.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+
+<link rel="stylesheet" href="/lib/snackbar.min.css">
+
+
+<script src="/lib/qrcode.min.js"></script>
+
+
+
+
+
+<script>var GLOBALCONFIG = {"root":"/","runtime":"2023-03-01 00:00:00","lazyload":{"enable":false,"error":"/img/acrylic.png"},"hightlight":{"enable":false,"limit":200},"lightbox":true,"randomlinks":false,"lang":{"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"recent":"最近","yesterday":"昨天","berforeyesterday":"前天","daybefore":"天前","runtime":"天"},"sayhello":{"morning":"早上好","noon":"中午好","afternoon":"下午好","night":"晚上好","goodnight":"晚安","iam":"!  我是"},"search":{"empty":"搜索结果为空","hit":"已为您找到 ${query} 条结果","placeholder":"输入关键词快速查找"}},"covercolor":false,"comment":{"enable":false,"twikooUrl":null}};</script><script id="site-config">var PAGECONFIG = {"is_home":false,"is_post":true,"is_page":false,"page":false,"toc":true,"comment":false};</script>
+    <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="RyanChouBlog" type="application/atom+xml">
+</head>
+    <body id="body">
+        
+        <div id="console" style="zoom: 1;" class="">
+    <div class="close-btn" onclick="acrylic.hideConsole()" href="javascript:void(0);">
+        <i class="fas fa-circle-xmark"></i>
+    </div>
+    
+        <div class="console-card-group">
+            <div class="console-card-group-left">
+                <div class="console-card" id="card-newest-comments" onclick="acrylic.hideConsole()">
+                    <div class="card-content">
+                        <div class="author-content-item-tips">互动</div>
+                        <div class="author-content-item-title">最新评论</div>
+                    </div>
+                    <div class="aside-list"></div>
+                </div>
+    
+            </div>
+            <div class="console-card-group-right">
+                <div class="console-card tags" onclick="acrylic.hideConsole()">
+                    <div class="card-content">
+                        <div class="author-content-item-tips">标签</div>
+                        <div class="author-content-item-title">寻找感兴趣的领域</div>
+                    </div>
+                    <div class="card-tag-cloud">
+                        
+                            <a href="/tags/Golang/" style="font-size: 0.8rem; color: #d3d3d3">Golang<sup>3</sup></a>
+                        
+                    </div>
+                </div>
+                <div class="console-card history" onclick="acrylic.hideConsole()">
+                    <ul class="card-archive-list">
+    
+     
+        <li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2023-07/')" data-pjax-state=""><span
+            class="card-archive-list-date">2023-07</span>
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span
+                    class="card-archive-list-count-unit">篇</span></div>
+            </a>
+        </li>
+     
+        <li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2023-05/')" data-pjax-state=""><span
+            class="card-archive-list-date">2023-05</span>
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span
+                    class="card-archive-list-count-unit">篇</span></div>
+            </a>
+        </li>
+        
+</ul>
+
+                </div>
+            </div>
+        </div>
+    
+    
+    <div class="button-group">
+        <div class="console-btn-item"> <a class="darkmode_switchbutton" onclick="acrylic.switchDarkMode()" title="显示模式切换"
+                href="javascript:void(0);" rel="external nofollow" data-pjax-state=""><i class="fas fa-moon"
+                    style="font-size: 1rem;"></i></a></div>
+        
+    </div>
+    <div class="console-mask" onclick="acrylic.hideConsole()" href="javascript:void(0);" rel="external nofollow"></div>
+</div>
+        <div id="sidebar" style="zoom: 1;">
+    <div id="menu-mask" style="display: none;"></div>
+    <div id="sidebar-menus" class>
+        <span class="sidebar-menu-item-title">功能</span>
+        <div class="sidebar-menu-item">
+            <a class="darkmode_switchbutton menu-child" onclick="acrylic.switchDarkMode()" title="显示模式切换"
+                href="javascript:void(0);" rel="external nofollow">
+                <i class="fas fa-moon" style="font-size: 1rem;"></i>
+                <span>显示模式</span>
+            </a>
+        </div>
+        
+            <div class="back-menu-list-groups">
+    
+  </div>
+  
+        
+        <div class="menus_items">
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 文库</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/archives/">
+                                <i class="fas fa-box-archive"></i>
+                                <span> 文章列表</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/categories/">
+                                <i class="fas fa-cube"></i>
+                                <span> 全部分类</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/tags/">
+                                <i class="fas fa-tags"></i>
+                                <span> 全部标签</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+</div>
+        <span class="sidebar-menu-item-title">标签</span>
+        <div class="card-widget card-tags card-archives card-webinfo card-allinfo">
+            <div class="item-headline">
+                <i class="fas fa-tags"></i>
+                <span>标签</span>
+            </div>
+            <div class="card-tag-cloud">
+                
+                    <a href="/tags/Golang/" style="font-size: 1em; color: #d3d3d3">Golang
+                        <sup>3</sup>
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</div>    
+        
+            <div class="post" id="body-wrap">
+                <header class="post-bg" id="page-header">
+    <nav id="nav" class="show">
+    <div id="nav-group">
+        <div id="blog_name">
+            
+                <div class="back-home-button" tabindex="-1">
+                    <i class="back-home-button-icon fas fa-grip-vertical"></i>
+                    <div class="back-menu-list-groups">
+    
+  </div>
+  
+                </div>
+            
+            <a id="site-name" href="/" title="返回博客主页">
+                    
+                        <span class="heoicon">Ryan</span>
+                    
+            </a>
+        </div>
+        <div id="page-name-mask">
+            <div id="page-name">
+                <a id="page-name-text" onclick="acrylic.toTop()">Golang标准库</a>
+            </div>
+        </div>
+        <div id="menus">
+            <div class="menus_items">
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 文库</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/archives/">
+                                <i class="fas fa-box-archive"></i>
+                                <span> 文章列表</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/categories/">
+                                <i class="fas fa-cube"></i>
+                                <span> 全部分类</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/tags/">
+                                <i class="fas fa-tags"></i>
+                                <span> 全部标签</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+</div>
+        </div>
+        <!-- <div id="nav-left">
+            <div id="fps-group">
+                <div id="fps">145</div><span class="fpsText">FPS</span>
+            </div>
+        </div> -->
+        <div id="nav-right">
+            
+    <div class="nav-button only-home" id="travellings_button">
+        <a class="site-page"  target="_blank" rel="noopener external nofollow" href="https://www.travellings.cn/go.html" title="开往-友链接力"  width="120">
+            <i class="fa-solid fa-train-subway" style="font-size: 1rem;"></i>
+        </a>
+    </div>
+
+
+    <div class="nav-button" id="randomPost_button">
+        <a class="site-page" onclick="toRandomPost()"
+            title="随机前往一个文章">
+            <i class="fas fa-shuffle" style="font-size: 1rem;"></i>
+        </a>
+    </div>
+
+
+
+    <div class="nav-button" id="nav-console">
+        <a class="console_switchbutton" onclick="acrylic.showConsole()"
+        title="显示中控台" href="javascript:void(0);" rel="external nofollow">
+        <i class="fas fa-bars-progress" style="font-size: 1rem;"></i>
+        </a>
+    </div>
+
+<div class="nav-button" id="nav-totop" onclick="acrylic.toTop()">
+    <a class="totopbtn">
+        <i class="fas fa-arrow-up"></i>
+        <span id="percent">0</span>
+    </a>
+</div>
+<div id="toggle-menu">
+    <a class="site-page">
+        <i class="fas fa-bars fa-fw" style="font-size: 1rem;"></i>
+    </a>
+</div>
+        </div>
+    </div>
+</nav>
+    
+        <div class="coverdiv" id="coverdiv">
+    <img id="post-cover" class="nolazyload" src="/img/hello.jpg" alt="cover">
+</div>
+<div id="post-info">
+    <div id="post-firstinfo">
+        <div class="meta-firstline">
+            <a class="post-meta-original" title="该文章为原创文章，注意版权协议">
+                原创
+            </a>
+            
+            <div class="tag_share">
+                <div class="post-meta__tag-list">
+                    
+                        <a class="post-meta__tags" href="/tags/Golang/">
+                            <span class="tags-punctuation">#</span>
+                            <span class="tags-name">Golang</span>
+                        </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="post-title">Golang标准库</h1>
+    <div id="post-meta">
+        <div class="meta-secondline">
+            <span class="post-meta-date" title="发布于">
+                <i class="post-meta-icon fa-fw fas fa-calendar"></i>
+                <time datetime="2023-05-15T11:09:01+08:00"></time>
+            </span>
+            
+            
+                <span class="post-meta-position" title="作者IP归属地为江苏">
+                    <i class="fas fa-location-dot post-meta-icon"></i>
+                    <span>江苏</span>
+                </span>
+            
+            
+            
+                
+        </div>
+    </div>
+</div>
+<section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg"
+    xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+        <path id="gentle-wave"
+            d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path>
+    </defs>
+    <g class="parallax">
+        <use href="#gentle-wave" x="48" y="0"></use>
+        <use href="#gentle-wave" x="48" y="3"></use>
+        <use href="#gentle-wave" x="48" y="5"></use>
+        <use href="#gentle-wave" x="48" y="7"></use>
+    </g>
+</svg>
+</section>
+
+        
+</header>
+                <main class="layout" id="content-inner">
+    <div id="post">
+        <article class="post-content" id="article-container">
+            <h1 id="golang标准库os模块-文件目录相关"><a href="#golang标准库os模块-文件目录相关" class="headerlink" title="golang标准库os模块-文件目录相关"></a>golang标准库os模块-文件目录相关</h1><p>os标准库实现了平台（操作系统）无关的编程接口。</p>
+<p><a target="_blank" rel="noopener" href="https://pkg.go.dev/std">https://pkg.go.dev/std</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;os&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">createFile</span><span class="params">()</span></span> &#123;</span><br><span class="line">    f, err := os.Create(<span class="string">&quot;test.txt&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;err: %v\n&quot;</span>, err)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;f: %v\n&quot;</span>, f)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建目录</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">createDir</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 创建单个目录</span></span><br><span class="line">    <span class="comment">/* err := os.Mkdir(&quot;test&quot;, os.ModePerm)</span></span><br><span class="line"><span class="comment">    if err != nil &#123;</span></span><br><span class="line"><span class="comment">        fmt.Printf(&quot;err: %v\n&quot;, err)</span></span><br><span class="line"><span class="comment">    &#125; */</span></span><br><span class="line">    err := os.MkdirAll(<span class="string">&quot;test/a/b&quot;</span>, os.ModePerm)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;err: %v\n&quot;</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除目录</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">removeDir</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">/* err := os.Remove(&quot;test.txt&quot;)</span></span><br><span class="line"><span class="comment">    if err != nil &#123;</span></span><br><span class="line"><span class="comment">        fmt.Printf(&quot;err: %v\n&quot;, err)</span></span><br><span class="line"><span class="comment">    &#125; */</span></span><br><span class="line"></span><br><span class="line">    err := os.RemoveAll(<span class="string">&quot;test&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;err: %v\n&quot;</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获得工作目录</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getWd</span><span class="params">()</span></span> &#123;</span><br><span class="line">    dir, err := os.Getwd()</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;err: %v\n&quot;</span>, err)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;dir: %v\n&quot;</span>, dir)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改工作目录</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">chWd</span><span class="params">()</span></span> &#123;</span><br><span class="line">    err := os.Chdir(<span class="string">&quot;d:/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;err: %v\n&quot;</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(os.Getwd())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获得临时目录</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getTemp</span><span class="params">()</span></span> &#123;</span><br><span class="line">    s := os.TempDir()</span><br><span class="line">    fmt.Printf(<span class="string">&quot;s: %v\n&quot;</span>, s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重命名文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">renameFile</span><span class="params">()</span></span> &#123;</span><br><span class="line">    err := os.Rename(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;test2.txt&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;err: %v\n&quot;</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 读文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">readFile</span><span class="params">()</span></span> &#123;</span><br><span class="line">    b, err := os.ReadFile(<span class="string">&quot;test2.txt&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;err: %v\n&quot;</span>, err)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;b: %v\n&quot;</span>, <span class="type">string</span>(b[:]))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">writeFile</span><span class="params">()</span></span> &#123;</span><br><span class="line">    s := <span class="string">&quot;hello world&quot;</span></span><br><span class="line">    os.WriteFile(<span class="string">&quot;test2.txt&quot;</span>, []<span class="type">byte</span>(s), os.ModePerm)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// createFile()</span></span><br><span class="line">    <span class="comment">// createDir()</span></span><br><span class="line">    <span class="comment">// removeDir()</span></span><br><span class="line">    <span class="comment">// removeDir()</span></span><br><span class="line">    <span class="comment">// getWd()</span></span><br><span class="line">    <span class="comment">// chWd()</span></span><br><span class="line">    <span class="comment">// renameFile()</span></span><br><span class="line">    <span class="comment">// readFile()</span></span><br><span class="line">    <span class="comment">// writeFile()</span></span><br><span class="line">    <span class="comment">// getTemp()</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="golang标准库os模块-File文件读操作"><a href="#golang标准库os模块-File文件读操作" class="headerlink" title="golang标准库os模块-File文件读操作"></a>golang标准库os模块-File文件读操作</h1><p>这里结束和<code>File</code>结构体相关的文件读操作</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;os&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打开关闭文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">openCloseFile</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 只能读</span></span><br><span class="line">    f, _ := os.Open(<span class="string">&quot;a.txt&quot;</span>)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;f.Name(): %v\n&quot;</span>, f.Name())</span><br><span class="line">    <span class="comment">// 根据第二个参数 可以读写或者创建</span></span><br><span class="line">    f2, _ := os.OpenFile(<span class="string">&quot;a1.txt&quot;</span>, os.O_RDWR|os.O_CREATE, <span class="number">0755</span>)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;f2.Name(): %v\n&quot;</span>, f2.Name())</span><br><span class="line"></span><br><span class="line">    err := f.Close()</span><br><span class="line">    fmt.Printf(<span class="string">&quot;err: %v\n&quot;</span>, err)</span><br><span class="line">    err2 := f2.Close()</span><br><span class="line">    fmt.Printf(<span class="string">&quot;err2: %v\n&quot;</span>, err2)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">createFile</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 等价于：OpenFile(name, O_RDWR|O_CREATE|O_TRUNC, 0666)</span></span><br><span class="line">    f, _ := os.Create(<span class="string">&quot;a2.txt&quot;</span>)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;f.Name(): %v\n&quot;</span>, f.Name())</span><br><span class="line">    <span class="comment">// 第一个参数 目录默认：Temp 第二个参数 文件名前缀</span></span><br><span class="line">    f2, _ := os.CreateTemp(<span class="string">&quot;&quot;</span>, <span class="string">&quot;temp&quot;</span>)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;f2.Name(): %v\n&quot;</span>, f2.Name())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 读操作</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">readOps</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 循环读取</span></span><br><span class="line">    <span class="comment">/*  f, _ := os.Open(&quot;a.txt&quot;)</span></span><br><span class="line"><span class="comment">        for &#123;</span></span><br><span class="line"><span class="comment">            buf := make([]byte, 6)</span></span><br><span class="line"><span class="comment">            n, err := f.Read(buf)</span></span><br><span class="line"><span class="comment">            fmt.Println(string(buf))</span></span><br><span class="line"><span class="comment">            fmt.Printf(&quot;n: %v\n&quot;, n)</span></span><br><span class="line"><span class="comment">            if err == io.EOF &#123;</span></span><br><span class="line"><span class="comment">                break</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">        f.Close()</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="comment">/* buf := make([]byte, 10)</span></span><br><span class="line"><span class="comment">    f2, _ := os.Open(&quot;a.txt&quot;)</span></span><br><span class="line"><span class="comment">    // 从5开始读10个字节</span></span><br><span class="line"><span class="comment">    n, _ := f2.ReadAt(buf, 5)</span></span><br><span class="line"><span class="comment">    fmt.Printf(&quot;n: %v\n&quot;, n)</span></span><br><span class="line"><span class="comment">    fmt.Printf(&quot;string(buf): %v\n&quot;, string(buf))</span></span><br><span class="line"><span class="comment">    f2.Close() */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 测试 a目录下面有b和c目录</span></span><br><span class="line">    <span class="comment">/* f, _ := os.Open(&quot;a&quot;)</span></span><br><span class="line"><span class="comment">    de, _ := f.ReadDir(-1)</span></span><br><span class="line"><span class="comment">    for _, v := range de &#123;</span></span><br><span class="line"><span class="comment">        fmt.Printf(&quot;v.IsDir(): %v\n&quot;, v.IsDir())</span></span><br><span class="line"><span class="comment">        fmt.Printf(&quot;v.Name(): %v\n&quot;, v.Name())</span></span><br><span class="line"><span class="comment">    &#125; */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定位</span></span><br><span class="line">    f, _ := os.Open(<span class="string">&quot;a.txt&quot;</span>)</span><br><span class="line">    f.Seek(<span class="number">3</span>, <span class="number">0</span>)</span><br><span class="line">    buf := <span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">10</span>)</span><br><span class="line">    n, _ := f.Read(buf)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;n: %v\n&quot;</span>, n)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;string(buf): %v\n&quot;</span>, <span class="type">string</span>(buf))</span><br><span class="line">    f.Close()</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// openCloseFile()</span></span><br><span class="line">    <span class="comment">// createFile()</span></span><br><span class="line">    readOps()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="golang标准库os模块-File文件写操作"><a href="#golang标准库os模块-File文件写操作" class="headerlink" title="golang标准库os模块-File文件写操作"></a>golang标准库os模块-File文件写操作</h1><p>这里结束和<code>File</code>结构体相关的文件写操作</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* package main</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">import &quot;os&quot;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">func write() &#123;</span></span><br><span class="line"><span class="comment">    f, _ := os.OpenFile(&quot;a.txt&quot;, os.O_RDWR|os.O_TRUNC, 0755)</span></span><br><span class="line"><span class="comment">    f.Write([]byte(&quot; hello golang&quot;))</span></span><br><span class="line"><span class="comment">    f.Close()</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">func writeString() &#123;</span></span><br><span class="line"><span class="comment">    f, _ := os.OpenFile(&quot;a.txt&quot;, os.O_RDWR|os.O_APPEND, 0755)</span></span><br><span class="line"><span class="comment">    f.WriteString(&quot;hello java&quot;)</span></span><br><span class="line"><span class="comment">    f.Close()</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">func writeAt() &#123;</span></span><br><span class="line"><span class="comment">    f, _ := os.OpenFile(&quot;a.txt&quot;, os.O_RDWR, 0755)</span></span><br><span class="line"><span class="comment">    f.WriteAt([]byte(&quot;aaa&quot;), 3)</span></span><br><span class="line"><span class="comment">    f.Close()</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">func main() &#123;</span></span><br><span class="line"><span class="comment">    // write()</span></span><br><span class="line"><span class="comment">    // writeString()</span></span><br><span class="line"><span class="comment">    writeAt()</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="golang标准库os包进程相关操作"><a href="#golang标准库os包进程相关操作" class="headerlink" title="golang标准库os包进程相关操作"></a>golang标准库os包进程相关操作</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;os&quot;</span></span><br><span class="line">    <span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 获得当前正在运行的进程id</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;os.Getpid(): %v\n&quot;</span>, os.Getpid())</span><br><span class="line">    <span class="comment">// 父id</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;os.Getppid(): %v\n&quot;</span>, os.Getppid())</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置新进程的属性</span></span><br><span class="line">    attr := &amp;os.ProcAttr&#123;</span><br><span class="line">        <span class="comment">//files指定新进程继承的活动文件对象</span></span><br><span class="line">        <span class="comment">//前三个分别为，标准输入、标准输出、标准错误输出</span></span><br><span class="line">        Files: []*os.File&#123;os.Stdin, os.Stdout, os.Stderr&#125;,</span><br><span class="line">        <span class="comment">//新进程的环境变量</span></span><br><span class="line">        Env: os.Environ(),</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//开始一个新进程</span></span><br><span class="line">    p, err := os.StartProcess(<span class="string">&quot;C:\\Windows\\System32\\notepad.exe&quot;</span>, []<span class="type">string</span>&#123;<span class="string">&quot;C:\\Windows\\System32\\notepad.exe&quot;</span>, <span class="string">&quot;D:\\a.txt&quot;</span>&#125;, attr)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(err)</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(p)</span><br><span class="line">    fmt.Println(<span class="string">&quot;进程ID：&quot;</span>, p.Pid)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//通过进程ID查找进程</span></span><br><span class="line">    p2, _ := os.FindProcess(p.Pid)</span><br><span class="line">    fmt.Println(p2)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//等待10秒，执行函数</span></span><br><span class="line">    time.AfterFunc(time.Second*<span class="number">10</span>, <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="comment">//向p进程发送退出信号</span></span><br><span class="line">        p.Signal(os.Kill)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//等待进程p的退出，返回进程状态</span></span><br><span class="line">    ps, _ := p.Wait()</span><br><span class="line">    fmt.Println(ps.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="golang标准库os包和环境相关的方法"><a href="#golang标准库os包和环境相关的方法" class="headerlink" title="golang标准库os包和环境相关的方法"></a>golang标准库os包和环境相关的方法</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;os&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 获得所有环境变量</span></span><br><span class="line">    s := os.Environ()</span><br><span class="line">    fmt.Printf(<span class="string">&quot;s: %v\n&quot;</span>, s)</span><br><span class="line">    <span class="comment">// 获得某个环境变量</span></span><br><span class="line">    s2 := os.Getenv(<span class="string">&quot;GOPATH&quot;</span>)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;s2: %v\n&quot;</span>, s2)</span><br><span class="line">    <span class="comment">// 设置环境变量</span></span><br><span class="line">    os.Setenv(<span class="string">&quot;env1&quot;</span>, <span class="string">&quot;env1&quot;</span>)</span><br><span class="line">    s2 = os.Getenv(<span class="string">&quot;aaa&quot;</span>)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;s2: %v\n&quot;</span>, s2)</span><br><span class="line">    fmt.Println(<span class="string">&quot;-----------&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 查找</span></span><br><span class="line">    s3, b := os.LookupEnv(<span class="string">&quot;env1&quot;</span>)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;b: %v\n&quot;</span>, b)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;s3: %v\n&quot;</span>, s3)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 替换</span></span><br><span class="line">    os.Setenv(<span class="string">&quot;NAME&quot;</span>, <span class="string">&quot;gopher&quot;</span>)</span><br><span class="line">    os.Setenv(<span class="string">&quot;BURROW&quot;</span>, <span class="string">&quot;/usr/gopher&quot;</span>)</span><br><span class="line"></span><br><span class="line">    fmt.Println(os.ExpandEnv(<span class="string">&quot;$NAME lives in $&#123;BURROW&#125;.&quot;</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 清空环境变量</span></span><br><span class="line">    <span class="comment">// os.Clearenv()</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="golang标准库io包"><a href="#golang标准库io包" class="headerlink" title="golang标准库io包"></a>golang标准库io包</h1><p>Go 语言中，为了方便开发者使用，将 IO 操作封装在了如下几个包中：</p>
+<ul>
+<li>io 为 IO 原语（I&#x2F;O primitives）提供基本的接口 os File Reader Writer</li>
+<li>io&#x2F;ioutil 封装一些实用的 I&#x2F;O 函数</li>
+<li>fmt 实现格式化 I&#x2F;O，类似 C 语言中的 printf 和 scanf format fmt</li>
+<li>bufio 实现带缓冲I&#x2F;O</li>
+</ul>
+<h2 id="io-—-基本的-IO-接口"><a href="#io-—-基本的-IO-接口" class="headerlink" title="io — 基本的 IO 接口"></a>io — 基本的 IO 接口</h2><p>在 io 包中最重要的是两个接口：Reader 和 Writer 接口。本章所提到的各种 IO<br>包，都跟这两个接口有关，也就是说，只要实现了这两个接口，它就有了 IO<br>的功能</p>
+<h3 id="Reader-接口"><a href="#Reader-接口" class="headerlink" title="Reader 接口"></a>Reader 接口</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Reader <span class="keyword">interface</span> &#123;</span><br><span class="line">    Read(p []<span class="type">byte</span>) (n <span class="type">int</span>, err <span class="type">error</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Writer-接口"><a href="#Writer-接口" class="headerlink" title="Writer 接口"></a>Writer 接口</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Writer <span class="keyword">interface</span> &#123;</span><br><span class="line">    Write(p []<span class="type">byte</span>) (n <span class="type">int</span>, err <span class="type">error</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="那些类型实现了Reader和Writer接口"><a href="#那些类型实现了Reader和Writer接口" class="headerlink" title="那些类型实现了Reader和Writer接口"></a>那些类型实现了Reader和Writer接口</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">os.File 同时实现了 io.Reader 和 io.Writer</span><br><span class="line">strings.Reader 实现了 io.Reader</span><br><span class="line">bufio.Reader/Writer 分别实现了 io.Reader 和 io.Writer</span><br><span class="line">bytes.Buffer 同时实现了 io.Reader 和 io.Writer</span><br><span class="line">bytes.Reader 实现了 io.Reader</span><br><span class="line">compress/gzip.Reader/Writer 分别实现了 io.Reader 和 io.Writer</span><br><span class="line">crypto/cipher.StreamReader/StreamWriter 分别实现了 io.Reader 和 io.Writer</span><br><span class="line">crypto/tls.Conn 同时实现了 io.Reader 和 io.Writer</span><br><span class="line">encoding/csv.Reader/Writer 分别实现了 io.Reader 和 io.Writer</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="讲解官方实例演示"><a href="#讲解官方实例演示" class="headerlink" title="讲解官方实例演示"></a>讲解官方实例演示</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// strings</span></span><br><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;strings&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    r := strings.NewReader(<span class="string">&quot;Hello,world!&quot;</span>)</span><br><span class="line">    buf := <span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">10</span>) <span class="comment">//字节缓冲区</span></span><br><span class="line">    r.Read(buf)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;string(buf): %v\n&quot;</span>, <span class="type">string</span>(buf))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="golang标准库ioutil包"><a href="#golang标准库ioutil包" class="headerlink" title="golang标准库ioutil包"></a>golang标准库ioutil包</h1><p>封装一些实用的 I&#x2F;O 函数</p>
+<hr>
+<p>  名称        作用</p>
+<hr>
+<p>  ReadAll     读取数据，返回读到的字节 slice</p>
+<p>  ReadDir     读取一个目录，返回目录入口数组 []os.FileInfo</p>
+<p>  ReadFile    读一个文件，返回文件内容（字节slice）</p>
+<p>  WriteFile   根据文件路径，写入字节slice</p>
+<p>  TempDir     在一个目录中创建指定前缀名的临时目录，返回新临时目录的路径</p>
+<h2 id="TempFile-在一个目录中创建指定前缀名的临时文件，返回-os-File"><a href="#TempFile-在一个目录中创建指定前缀名的临时文件，返回-os-File" class="headerlink" title="  TempFile    在一个目录中创建指定前缀名的临时文件，返回 os.File"></a>  TempFile    在一个目录中创建指定前缀名的临时文件，返回 os.File</h2><h2 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h2><p><strong>讲解官方实例演示</strong></p>
+<p>当然！我可以为你解释一下 <code>ioutil</code> 包中的几个常用函数。<code>ioutil</code><br>包是Go语言标准库中的一个实用工具包，提供了对文件和IO操作的简化方法。</p>
+<ol>
+<li><p><code>ReadAll</code> 函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReadAll</span><span class="params">(r io.Reader)</span></span> ([]<span class="type">byte</span>, <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>ReadAll</code> 函数用于从一个 <code>io.Reader</code><br>接口中读取数据，并将读取到的字节存储在一个字节切片（<code>[]byte</code>）中返回。函数返回读取到的字节切片和可能出现的错误。</p>
+</li>
+<li><p><code>ReadDir</code> 函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReadDir</span><span class="params">(dirname <span class="type">string</span>)</span></span> ([]os.FileInfo, <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>ReadDir</code> 函数用于读取指定目录下的所有文件和子目录，并返回一个<br><code>[]os.FileInfo</code><br>类型的切片，切片中包含了每个文件和目录的信息。函数返回切片和可能出现的错误。</p>
+</li>
+<li><p><code>ReadFile</code> 函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReadFile</span><span class="params">(filename <span class="type">string</span>)</span></span> ([]<span class="type">byte</span>, <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>ReadFile</code><br>函数用于读取指定文件的内容，并将内容存储在一个字节切片中返回。函数返回读取到的字节切片和可能出现的错误。</p>
+</li>
+<li><p><code>WriteFile</code> 函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">WriteFile</span><span class="params">(filename <span class="type">string</span>, data []<span class="type">byte</span>, perm os.FileMode)</span></span> <span class="type">error</span></span><br></pre></td></tr></table></figure>
+
+<p><code>WriteFile</code><br>函数用于根据指定的文件路径将字节切片写入文件中。它接受文件路径、要写入的数据（字节切片）和文件权限作为参数，并返回可能出现的错误。</p>
+</li>
+<li><p><code>TempDir</code> 函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TempDir</span><span class="params">(dir, prefix <span class="type">string</span>)</span></span> (<span class="type">string</span>, <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>TempDir</code><br>函数用于在指定目录中创建一个以指定前缀名为名称的临时目录，并返回新临时目录的路径。函数返回新目录的路径和可能出现的错误。</p>
+</li>
+<li><p><code>TempFile</code> 函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TempFile</span><span class="params">(dir, prefix <span class="type">string</span>)</span></span> (f *os.File, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>TempFile</code><br>函数用于在指定目录中创建一个以指定前缀名为名称的临时文件，并返回一个<br><code>*os.File</code> 类型的指针和可能出现的错误。</p>
+</li>
+</ol>
+<p>以上是 <code>ioutil</code><br>包中几个常用函数的简要说明。你可以根据需要在代码中使用它们来处理文件和IO操作。如果你有任何进一步的问题，我会很乐意帮助你！</p>
+<h1 id="golang标准库fmt包"><a href="#golang标准库fmt包" class="headerlink" title="golang标准库fmt包"></a>golang标准库fmt包</h1><p>fmt包实现了格式化的I&#x2F;O函数，这点类似Ｃ语言中的printf和scanf，但是更加简单．<br>format</p>
+<h3 id="Scanning"><a href="#Scanning" class="headerlink" title="Scanning"></a>Scanning</h3><p>一组类似的函数通过扫描已格式化的文本来产生值。</p>
+<ol>
+<li>Scan、Scanf 和 Scanln 从os.Stdin 中读取；</li>
+<li>Fscan、Fscanf 和 Fscanln 从指定的 io.Reader 中读取；</li>
+<li>Sscan、Sscanf 和 Sscanln 从实参字符串中读取。</li>
+<li>Scanln、Fscanln 和<br>Sscanln在换行符处停止扫描，且需要条目紧随换行符之后；</li>
+<li>Scanf、Fscanf 和<br>Sscanf需要输入换行符来匹配格式中的换行符；其它函数则将换行符视为空格。</li>
+<li>Scanf、Fscanf 和 Sscanf 根据格式字符串解析实参，类似于<br>Printf。例如，%x会将一个整数扫描为十六进制数，而 %v<br>则会扫描该值的默认表现格式。</li>
+</ol>
+<blockquote>
+<p><code>Scan</code>、<code>Fscan</code> 和 <code>Sscan</code> 是由以下单词缩写而来：</p>
+<ul>
+<li><code>Scan</code>: “Scan” 表示从输入中扫描数据。</li>
+<li><code>Fscan</code>: “F” 代表 “Formatted”，表示使用格式化的输入来扫描数据。</li>
+<li><code>Sscan</code>: “S” 代表 “String”，表示从字符串中扫描数据。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>在 <code>Scan</code>、<code>Scanf</code> 和 <code>Scanln</code> 中，后缀 <code>f</code> 和 <code>ln</code> 有以下含义：</p>
+<ol>
+<li>后缀 <code>f</code>：<code>f</code> 表示<br>“formatted”，即格式化输入。这意味着你可以使用指定的格式来读取输入数据，而不仅仅是按照空格或换行符进行分隔。使用<br><code>Scanf</code> 可以指定输入的格式，以确保正确地解析输入数据。</li>
+<li>后缀 <code>ln</code>：<code>ln</code> 表示 “line”，即按行读取输入。与 <code>Scan</code><br>不同，<code>Scanln</code><br>在读取输入时以换行符为结束标志，因此可以读取一整行输入。这使得<br><code>Scanln</code><br>在读取多个值时更加方便，而无需手动输入空格或换行符来分隔输入。</li>
+</ol>
+<p>综合起来，<code>Scan</code> 是以空格为分隔符的基本扫描函数，<code>Scanf</code><br>是格式化输入函数，而 <code>Scanln</code><br>是以换行符为结束标志的按行扫描函数。根据输入的特点和需求，你可以选择适合的函数来读取输入数据。记住后缀的含义有助于理解这些函数的用途。</p>
+</blockquote>
+<blockquote>
+<p>当涉及到标准输入和读取的时候，Go语言提供了一系列函数，包括<br><code>Scan</code>、<code>Scanf</code>、<code>Scanln</code>、<code>Fscan</code>、<code>Fscanf</code>、<code>Fscanln</code>、<code>Sscan</code>、<code>Sscanf</code><br>和 <code>Sscanln</code>。这些函数有不同的特点和用途，下面我会对它们进行解释。</p>
+<ol>
+<li><code>Scan</code>、<code>Scanf</code> 和 <code>Scanln</code>：<ul>
+<li>这些函数从标准输入流 <code>os.Stdin</code> 中读取输入。</li>
+<li><code>Scan</code><br>以空格为分隔符，读取多个输入值时需要手动输入空格或换行符。</li>
+<li><code>Scanf</code> 允许你指定输入格式，以特定的格式从标准输入中读取数据。</li>
+<li><code>Scanln</code> 以换行符为输入结束标志，可以读取一行输入。</li>
+<li>这些函数将输入数据存储在传入的参数中，并返回读取的项目数量和可能的错误。</li>
+</ul>
+</li>
+<li><code>Fscan</code>、<code>Fscanf</code> 和 <code>Fscanln</code>：<ul>
+<li>这些函数从指定的 <code>io.Reader</code> 接口中读取输入。</li>
+<li><code>Fscan</code><br>以空格为分隔符，读取多个输入值时需要手动输入空格或换行符。</li>
+<li><code>Fscanf</code> 允许你指定输入格式，以特定的格式从输入中读取数据。</li>
+<li><code>Fscanln</code> 以换行符为输入结束标志，可以读取一行输入。</li>
+<li>这些函数将输入数据存储在传入的参数中，并返回读取的项目数量和可能的错误。</li>
+</ul>
+</li>
+<li><code>Sscan</code>、<code>Sscanf</code> 和 <code>Sscanln</code>：<ul>
+<li>这些函数从指定的字符串中读取输入。</li>
+<li><code>Sscan</code><br>以空格为分隔符，读取多个输入值时需要手动输入空格或换行符。</li>
+<li><code>Sscanf</code> 允许你指定输入格式，以特定的格式从字符串中读取数据。</li>
+<li><code>Sscanln</code> 以换行符为输入结束标志，可以读取一行输入。</li>
+<li>这些函数将输入数据存储在传入的参数中，并返回读取的项目数量和可能的错误。</li>
+</ul>
+</li>
+</ol>
+<p>总结起来，<code>Scan</code> 系列函数用于从标准输入中读取，<code>Fscan</code><br>系列函数用于从指定的 <code>io.Reader</code> 中读取，而 <code>Sscan</code><br>系列函数用于从字符串中读取。它们的区别在于读取的数据源不同，但都提供了类似的功能和参数用法。你可以根据实际的输入来源选择适合的函数来读取数据。</p>
+</blockquote>
+<p><strong>实例</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// scan</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test1</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> age <span class="type">int</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;请输入年龄：&quot;</span>)</span><br><span class="line">    fmt.Scan(&amp;age)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;age: %v\n&quot;</span>, age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Scanf</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test2</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;请输入姓名：&quot;</span>)</span><br><span class="line">    fmt.Scanf(<span class="string">&quot;%s&quot;</span>, &amp;name)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;name: %v\n&quot;</span>, name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Scanln</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test3</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> age <span class="type">int</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;请输入年龄：&quot;</span>)</span><br><span class="line">    fmt.Scanln(&amp;age)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;age: %v\n&quot;</span>, age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// test2()</span></span><br><span class="line">    test3()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其他实例参考官网</p>
+</blockquote>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Errorf</span><span class="params">(format <span class="type">string</span>, a ...<span class="keyword">interface</span>&#123;&#125;)</span></span> <span class="type">error</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Errorf</code> 根据于格式说明符进行格式化，并将字符串作为满足 error<br>的值返回，其返回类型是error．</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Fprint</span><span class="params">(w io.Writer, a ...<span class="keyword">interface</span>&#123;&#125;)</span></span> (n <span class="type">int</span>, err <span class="type">error</span>)　</span><br></pre></td></tr></table></figure>
+
+<p><code>Fprint</code> 使用其操作数的默认格式进行格式化并写入到<br>w。当两个连续的操作数均不为字符串时，它们之间就会添加空格。它返回写入的字节数以及任何遇到的错误。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Fprintf</span><span class="params">(w io.Writer, format <span class="type">string</span>, a ...<span class="keyword">interface</span>&#123;&#125;)</span></span> (n <span class="type">int</span>, err <span class="type">error</span>) <span class="comment">//</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Fprintf</code> 根据于格式说明符进行格式化并写入到<br>w。它返回写入的字节数以及任何遇到的写入错误。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Fprintln</span><span class="params">(w io.Writer, a ...<span class="keyword">interface</span>&#123;&#125;)</span></span> (n <span class="type">int</span>, err <span class="type">error</span>) </span><br></pre></td></tr></table></figure>
+
+<p><code>Fprintln</code> 使用其操作数的默认格式进行格式化并写入到<br>w。其操作数之间总是添加空格，且总在最后追加一个换行符。它返回写入的字节数以及任何遇到的错误。</p>
+<p><strong>实例</strong></p>
+<p>参考官网</p>
+<h1 id="golang标准库bufio"><a href="#golang标准库bufio" class="headerlink" title="golang标准库bufio"></a>golang标准库bufio</h1><h3 id="bufio-（buffer缓冲区-io）"><a href="#bufio-（buffer缓冲区-io）" class="headerlink" title="bufio （buffer缓冲区 io）"></a>bufio （buffer缓冲区 io）</h3><blockquote>
+<p>bufio包实现了有缓冲的I&#x2F;O。它包装一个io.Reader或io.Writer接口对象，创建另一个也实现了该接口，且同时还提供了缓冲和一些文本I&#x2F;O的帮助函数的对象。</p>
+</blockquote>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    defaultBufSize = <span class="number">4096</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    ErrInvalidUnreadByte = errors.New(<span class="string">&quot;bufio: invalid use of UnreadByte&quot;</span>)</span><br><span class="line">    ErrInvalidUnreadRune = errors.New(<span class="string">&quot;bufio: invalid use of UnreadRune&quot;</span>)</span><br><span class="line">    ErrBufferFull        = errors.New(<span class="string">&quot;bufio: buffer full&quot;</span>)</span><br><span class="line">    ErrNegativeCount     = errors.New(<span class="string">&quot;bufio: negative count&quot;</span>)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    ErrTooLong         = errors.New(<span class="string">&quot;bufio.Scanner: token too long&quot;</span>)</span><br><span class="line">    ErrNegativeAdvance = errors.New(<span class="string">&quot;bufio.Scanner: SplitFunc returns negative advance count&quot;</span>)</span><br><span class="line">    ErrAdvanceTooFar   = errors.New(<span class="string">&quot;bufio.Scanner: SplitFunc returns advance count beyond input&quot;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>会被Scanner类型返回的错误。</p>
+</blockquote>
+<h4 id="type-Reader"><a href="#type-Reader" class="headerlink" title="type Reader"></a>type Reader</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Reader <span class="keyword">struct</span> &#123;</span><br><span class="line">    buf          []<span class="type">byte</span></span><br><span class="line">    rd           io.Reader <span class="comment">// reader provided by the client</span></span><br><span class="line">    r, w         <span class="type">int</span>       <span class="comment">// buf read and write positions</span></span><br><span class="line">    err          <span class="type">error</span></span><br><span class="line">    lastByte     <span class="type">int</span> <span class="comment">// last byte read for UnreadByte; -1 means invalid</span></span><br><span class="line">    lastRuneSize <span class="type">int</span> <span class="comment">// size of last rune read for UnreadRune; -1 means invalid</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Reader实现了给一个io.Reader接口对象附加缓冲。</p>
+</blockquote>
+<h4 id="func-NewReader"><a href="#func-NewReader" class="headerlink" title="func NewReader"></a>func NewReader</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewReader</span><span class="params">(rd io.Reader)</span></span> *Reader</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>NewReader创建一个具有默认大小缓冲、从r读取的*Reader。NewReader 相当于<br>NewReaderSize(rd, 4096)</p>
+</blockquote>
+<h4 id="func-NewReaderSize"><a href="#func-NewReaderSize" class="headerlink" title="func NewReaderSize"></a>func NewReaderSize</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewReaderSize</span><span class="params">(rd io.Reader, size <span class="type">int</span>)</span></span> *Reader</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>NewReaderSize创建一个具有最少有size尺寸的缓冲、从r读取的<em>Reader。如果参数r已经是一个具有足够大缓冲的</em><br>Reader类型值，会返回r。</p>
+</blockquote>
+<h4 id="func-Reader-Reset-r-io-Reader"><a href="#func-Reader-Reset-r-io-Reader" class="headerlink" title="func (*Reader)Reset(r io.Reader)"></a>func (*Reader)Reset(r io.Reader)</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> Reset(r io.Reader)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Reset丢弃缓冲中的数据，清除任何错误，将b重设为其下层从r读取数据。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   s := strings.NewReader(<span class="string">&quot;ABCEFG&quot;</span>)</span><br><span class="line">   str := strings.NewReader(<span class="string">&quot;123455&quot;</span>)</span><br><span class="line">   br := bufio.NewReader(s)</span><br><span class="line">   b, _ := br.ReadString(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">   fmt.Println(b)    </span><br><span class="line">   br.Reset(str)</span><br><span class="line">   b, _ = br.ReadString(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">   fmt.Println(b)     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Reader-Read"><a href="#func-Reader-Read" class="headerlink" title="func (*Reader)Read"></a>func (*Reader)Read</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> Read(p []<span class="type">byte</span>) (n <span class="type">int</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Read读取数据写入p。本方法返回写入p的字节数。本方法一次调用最多会调用下层Reader接口一次Read方法，因此返回值n可能小于len(p)。读取到达结尾时，返回值n将为0而err将为io.EOF。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    s := strings.NewReader(<span class="string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&quot;</span>)</span><br><span class="line">    br := bufio.NewReader(s)</span><br><span class="line">    p := <span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        n, err := br.Read(p)</span><br><span class="line">        <span class="keyword">if</span> err == io.EOF &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            fmt.Printf(<span class="string">&quot;string(p): %v\n&quot;</span>, <span class="type">string</span>(p[<span class="number">0</span>:n]))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Reader-ReadByte"><a href="#func-Reader-ReadByte" class="headerlink" title="func (*Reader)ReadByte"></a>func (*Reader)ReadByte</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> ReadByte() (c <span class="type">byte</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ReadByte读取并返回一个字节。如果没有可用的数据，会返回错误。</p>
+</blockquote>
+<h4 id="func-Reader-UnreadByte"><a href="#func-Reader-UnreadByte" class="headerlink" title="func (*Reader)UnreadByte"></a>func (*Reader)UnreadByte</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> UnreadByte() <span class="type">error</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>UnreadByte吐出最近一次读取操作读取的最后一个字节。（只能吐出最后一个，多次调用会出问题）</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   s := strings.NewReader(<span class="string">&quot;ABCDEFG&quot;</span>)</span><br><span class="line">   br := bufio.NewReader(s)</span><br><span class="line"></span><br><span class="line">   c, _ := br.ReadByte()</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%c\n&quot;</span>, c)</span><br><span class="line"></span><br><span class="line">   c, _ = br.ReadByte()</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%c\n&quot;</span>, c)</span><br><span class="line"></span><br><span class="line">   br.UnreadByte()</span><br><span class="line">   c, _ = br.ReadByte()</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%c\n&quot;</span>, c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Reader-ReadRune"><a href="#func-Reader-ReadRune" class="headerlink" title="func (*Reader)ReadRune"></a>func (*Reader)ReadRune</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> ReadRune() (r <span class="type">rune</span>, size <span class="type">int</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ReadRune读取一个utf-8编码的unicode码值，返回该码值、其编码长度和可能的错误。如果utf-8编码非法，读取位置只移动1字节，返回U+FFFD，返回值size为1而err为nil。如果没有可用的数据，会返回错误。</p>
+</blockquote>
+<h4 id="func-Reader-UnreadRune"><a href="#func-Reader-UnreadRune" class="headerlink" title="func (*Reader)UnreadRune"></a>func (*Reader)UnreadRune</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> UnreadRune() <span class="type">error</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>UnreadRune吐出最近一次ReadRune调用读取的unicode码值。如果最近一次读取不是调用的ReadRune，会返回错误。（从这点看，UnreadRune比UnreadByte严格很多）</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">func <span class="selector-tag">main</span>() &#123;</span><br><span class="line">   s := strings.<span class="built_in">NewReader</span>(<span class="string">&quot;你好，世界！&quot;</span>)</span><br><span class="line">   br := bufio.<span class="built_in">NewReader</span>(s)</span><br><span class="line"></span><br><span class="line">   c, size, _ := br.<span class="built_in">ReadRune</span>()</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%c %v\n&quot;</span>, c, size)</span><br><span class="line"></span><br><span class="line">   c, size, _ = br.<span class="built_in">ReadRune</span>()</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%c %v\n&quot;</span>, c, size)</span><br><span class="line"></span><br><span class="line">   br.<span class="built_in">UnreadRune</span>()</span><br><span class="line">   c, size, _ = br.<span class="built_in">ReadRune</span>()</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%c %v\n&quot;</span>, c, size)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Reader-ReadLine"><a href="#func-Reader-ReadLine" class="headerlink" title="func (*Reader)ReadLine"></a>func (*Reader)ReadLine</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> ReadLine() (line []<span class="type">byte</span>, isPrefix <span class="type">bool</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ReadLine是一个低水平的行数据读取原语。大多数调用者应使用ReadBytes(‘<code>\n</code>{&#x3D;tex}’)或ReadString(‘<code>\n</code>{&#x3D;tex}’)代替，或者使用Scanner。</p>
+<p>ReadLine尝试返回一行数据，不包括行尾标志的字节。如果行太长超过了缓冲，返回值isPrefix会被设为true，并返回行的前面一部分。该行剩下的部分将在之后的调用中返回。返回值isPrefix会在返回该行最后一个片段时才设为false。返回切片是缓冲的子切片，只在下一次读取操作之前有效。ReadLine要么返回一个非nil的line，要么返回一个非nil的err，两个返回值至少一个非nil。</p>
+<p>返回的文本不包含行尾的标志字节（”<code>\r\n</code>{&#x3D;tex}”或”<code>\n</code>{&#x3D;tex}”）。如果输入流结束时没有行尾标志字节，方法不会出错，也不会指出这一情况。在调用ReadLine之后调用UnreadByte会总是吐出最后一个读取的字节（很可能是该行的行尾标志字节），即使该字节不是ReadLine返回值的一部分。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">func <span class="selector-tag">main</span>() &#123;</span><br><span class="line">   s := strings.<span class="built_in">NewReader</span>(<span class="string">&quot;ABC\nDEF\r\nGHI\r\nGHI&quot;</span>)</span><br><span class="line">   br := bufio.<span class="built_in">NewReader</span>(s)</span><br><span class="line"></span><br><span class="line">   w, isPrefix, _ := br.<span class="built_in">ReadLine</span>()</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%q %v\n&quot;</span>, w, isPrefix)</span><br><span class="line"></span><br><span class="line">   w, isPrefix, _ = br.<span class="built_in">ReadLine</span>()</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%q %v\n&quot;</span>, w, isPrefix)</span><br><span class="line"></span><br><span class="line">   w, isPrefix, _ = br.<span class="built_in">ReadLine</span>()</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%q %v\n&quot;</span>, w, isPrefix)</span><br><span class="line"></span><br><span class="line">   w, isPrefix, _ = br.<span class="built_in">ReadLine</span>()</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%q %v\n&quot;</span>, w, isPrefix)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Reader-ReadSlice"><a href="#func-Reader-ReadSlice" class="headerlink" title="func (*Reader)ReadSlice"></a>func (*Reader)ReadSlice</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> ReadSlice(delim <span class="type">byte</span>) (line []<span class="type">byte</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ReadSlice读取直到第一次遇到delim字节，返回缓冲里的包含已读取的数据和delim字节的切片。该返回值只在下一次读取操作之前合法。如果ReadSlice放在在读取到delim之前遇到了错误，它会返回在错误之前读取的数据在缓冲中的切片以及该错误（一般是io.EOF）。如果在读取到delim之前缓冲就被写满了，ReadSlice失败并返回ErrBufferFull。因为ReadSlice的返回值会被下一次I&#x2F;O操作重写，调用者应尽量使用ReadBytes或ReadString替代本法功法。当且仅当ReadBytes方法返回的切片不以delim结尾时，会返回一个非nil的错误。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">func <span class="selector-tag">main</span>() &#123;</span><br><span class="line">   s := strings.<span class="built_in">NewReader</span>(<span class="string">&quot;ABC,DEF,GHI,JKL&quot;</span>)</span><br><span class="line">   br := bufio.<span class="built_in">NewReader</span>(s)</span><br><span class="line"></span><br><span class="line">   w, _ := br.<span class="built_in">ReadSlice</span>(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%q\n&quot;</span>, w)</span><br><span class="line"></span><br><span class="line">   w, _ = br.<span class="built_in">ReadSlice</span>(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%q\n&quot;</span>, w)</span><br><span class="line"></span><br><span class="line">   w, _ = br.<span class="built_in">ReadSlice</span>(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">   fmt.<span class="built_in">Printf</span>(<span class="string">&quot;%q\n&quot;</span>, w)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Reader-ReadBytes"><a href="#func-Reader-ReadBytes" class="headerlink" title="func (*Reader)ReadBytes"></a>func (*Reader)ReadBytes</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> ReadBytes(delim <span class="type">byte</span>) (line []<span class="type">byte</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ReadBytes读取直到第一次遇到delim字节，返回一个包含已读取的数据和delim字节的切片。如果ReadBytes方法在读取到delim之前遇到了错误，它会返回在错误之前读取的数据以及该错误（一般是io.EOF）。当且仅当ReadBytes方法返回的切片不以delim结尾时，会返回一个非nil的错误。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   s := strings.NewReader(<span class="string">&quot;ABC DEF GHI JKL&quot;</span>)</span><br><span class="line">   br := bufio.NewReader(s)</span><br><span class="line"></span><br><span class="line">   w, _ := br.ReadBytes(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%q\n&quot;</span>, w)</span><br><span class="line"></span><br><span class="line">   w, _ = br.ReadBytes(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%q\n&quot;</span>, w)</span><br><span class="line"></span><br><span class="line">   w, _ = br.ReadBytes(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%q\n&quot;</span>, w)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Reader-ReadString"><a href="#func-Reader-ReadString" class="headerlink" title="func (*Reader)ReadString"></a>func (*Reader)ReadString</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> ReadString(delim <span class="type">byte</span>) (line <span class="type">string</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ReadString读取直到第一次遇到delim字节，返回一个包含已读取的数据和delim字节的字符串。如果ReadString方法在读取到delim之前遇到了错误，它会返回在错误之前读取的数据以及该错误（一般是io.EOF）。当且仅当ReadString方法返回的切片不以delim结尾时，会返回一个非nil的错误。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   s := strings.NewReader(<span class="string">&quot;ABC DEF GHI JKL&quot;</span>)</span><br><span class="line">   br := bufio.NewReader(s)</span><br><span class="line"></span><br><span class="line">   w, _ := br.ReadString(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%q\n&quot;</span>, w)</span><br><span class="line"></span><br><span class="line">   w, _ = br.ReadString(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%q\n&quot;</span>, w)</span><br><span class="line"></span><br><span class="line">   w, _ = br.ReadString(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%q\n&quot;</span>, w)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Reader-WriteTo"><a href="#func-Reader-WriteTo" class="headerlink" title="func (*Reader)WriteTo"></a>func (*Reader)WriteTo</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Reader)</span></span> WriteTo(w io.Writer) (n <span class="type">int64</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>WriteTo方法实现了io.WriterTo接口。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   s := strings.NewReader(<span class="string">&quot;ABCEFGHIJKLMN&quot;</span>)</span><br><span class="line">   br := bufio.NewReader(s)</span><br><span class="line">   b := bytes.NewBuffer(<span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">   br.WriteTo(b)</span><br><span class="line">   fmt.Printf(<span class="string">&quot;%s\n&quot;</span>, b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="type-Writer"><a href="#type-Writer" class="headerlink" title="type Writer"></a>type Writer</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Writer <span class="keyword">struct</span> &#123;</span><br><span class="line">    err <span class="type">error</span></span><br><span class="line">    buf []<span class="type">byte</span></span><br><span class="line">    n   <span class="type">int</span></span><br><span class="line">    wr  io.Writer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Writer实现了为io.Writer接口对象提供缓冲。如果在向一个Writer类型值写入时遇到了错误，该对象将不再接受任何数据，且所有写操作都会返回该错误。在说有数据都写入后，调用者有义务调用Flush方法以保证所有的数据都交给了下层的io.Writer。</p>
+</blockquote>
+<h4 id="func-NewWriter"><a href="#func-NewWriter" class="headerlink" title="func NewWriter"></a>func NewWriter</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewWriter</span><span class="params">(w io.Writer)</span></span> *Writer</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>NewWriter创建一个具有默认大小缓冲、写入w的*Writer。NewWriter 相当于<br>NewWriterSize(wr, 4096)</p>
+</blockquote>
+<h4 id="func-NewWriterSize"><a href="#func-NewWriterSize" class="headerlink" title="func NewWriterSize"></a>func NewWriterSize</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewWriterSize</span><span class="params">(w io.Writer, size <span class="type">int</span>)</span></span> *Writer</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>NewWriterSize创建一个具有最少有size尺寸的缓冲、写入w的<em>Writer。如果参数w已经是一个具有足够大缓冲的</em>Writer类型值，会返回w。</p>
+</blockquote>
+<h4 id="func-Writer-Reset"><a href="#func-Writer-Reset" class="headerlink" title="func (*Writer)Reset"></a>func (*Writer)Reset</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Writer)</span></span> Reset(w io.Writer)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Reset丢弃缓冲中的数据，清除任何错误，将b重设为将其输出写入w。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   b := bytes.NewBuffer(<span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">0</span>))</span><br><span class="line">   bw := bufio.NewWriter(b)</span><br><span class="line">   bw.WriteString(<span class="string">&quot;123456789&quot;</span>)</span><br><span class="line">   c := bytes.NewBuffer(<span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">0</span>))</span><br><span class="line">   bw.Reset(c)</span><br><span class="line">   bw.WriteString(<span class="string">&quot;456&quot;</span>)</span><br><span class="line">   bw.Flush()</span><br><span class="line">   fmt.Println(b)       </span><br><span class="line">   fmt.Println(c) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Writer-Bufferd"><a href="#func-Writer-Bufferd" class="headerlink" title="func (*Writer)Bufferd"></a>func (*Writer)Bufferd</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Writer)</span></span> Buffered() <span class="type">int</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Buffered返回缓冲中已使用的字节数。</p>
+</blockquote>
+<h4 id="func-Writer-Available"><a href="#func-Writer-Available" class="headerlink" title="func (*Writer)Available"></a>func (*Writer)Available</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Writer)</span></span> Available() <span class="type">int</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Available返回缓冲中还有多少字节未使用。</p>
+</blockquote>
+<h4 id="func-Writer-Write"><a href="#func-Writer-Write" class="headerlink" title="func (*Writer) Write"></a>func (*Writer) Write</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Writer)</span></span> Write(p []<span class="type">byte</span>) (nn <span class="type">int</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Write将p的内容写入缓冲。返回写入的字节数。如果返回值nn &lt;<br>len(p)，还会返回一个错误说明原因。</p>
+</blockquote>
+<h4 id="func-Writer-WriteString"><a href="#func-Writer-WriteString" class="headerlink" title="func (*Writer) WriteString"></a>func (*Writer) WriteString</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Writer)</span></span> WriteString(s <span class="type">string</span>) (<span class="type">int</span>, <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>WriteString写入一个字符串。返回写入的字节数。如果返回值nn &lt;<br>len(s)，还会返回一个错误说明原因。</p>
+</blockquote>
+<h4 id="func-Writer-WriteByte"><a href="#func-Writer-WriteByte" class="headerlink" title="func (*Writer) WriteByte"></a>func (*Writer) WriteByte</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Writer)</span></span> WriteByte(c <span class="type">byte</span>) <span class="type">error</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>WriteByte写入单个字节。</p>
+</blockquote>
+<h4 id="func-Writer-WriteRune"><a href="#func-Writer-WriteRune" class="headerlink" title="func (*Writer) WriteRune"></a>func (*Writer) WriteRune</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Writer)</span></span> WriteRune(r <span class="type">rune</span>) (size <span class="type">int</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>WriteRune写入一个unicode码值（的utf-8编码），返回写入的字节数和可能的错误。</p>
+</blockquote>
+<h4 id="func-Writer-Flush"><a href="#func-Writer-Flush" class="headerlink" title="func (*Writer) Flush"></a>func (*Writer) Flush</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Writer)</span></span> Flush() <span class="type">error</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Flush方法将缓冲中的数据写入下层的io.Writer接口。</p>
+</blockquote>
+<h4 id="func-Writer-ReadFrom"><a href="#func-Writer-ReadFrom" class="headerlink" title="func (*Writer) ReadFrom"></a>func (*Writer) ReadFrom</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Writer)</span></span> ReadFrom(r io.Reader) (n <span class="type">int64</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ReadFrom实现了io.ReaderFrom接口。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   b := bytes.NewBuffer(<span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">0</span>))</span><br><span class="line">   bw := bufio.NewWriter(b)</span><br><span class="line">   fmt.Println(bw.Available()) <span class="comment">// 4096</span></span><br><span class="line">   fmt.Println(bw.Buffered())  <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line">   bw.WriteString(<span class="string">&quot;ABCDEFGHIJKLMN&quot;</span>)</span><br><span class="line">   fmt.Println(bw.Available()) </span><br><span class="line">   fmt.Println(bw.Buffered())  </span><br><span class="line">   fmt.Printf(<span class="string">&quot;%q\n&quot;</span>, b)      </span><br><span class="line"></span><br><span class="line">   bw.Flush()</span><br><span class="line">   fmt.Println(bw.Available())</span><br><span class="line">   fmt.Println(bw.Buffered())  </span><br><span class="line">   fmt.Printf(<span class="string">&quot;%q\n&quot;</span>, b)     </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   b := bytes.NewBuffer(<span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">0</span>))</span><br><span class="line">   bw := bufio.NewWriter(b)</span><br><span class="line">   <span class="comment">// 写入缓存</span></span><br><span class="line">   <span class="comment">// byte等同于 int8</span></span><br><span class="line">   bw.WriteByte(<span class="string">&#x27;H&#x27;</span>)</span><br><span class="line">   bw.WriteByte(<span class="string">&#x27;e&#x27;</span>)</span><br><span class="line">   bw.WriteByte(<span class="string">&#x27;l&#x27;</span>)</span><br><span class="line">   bw.WriteByte(<span class="string">&#x27;l&#x27;</span>)</span><br><span class="line">   bw.WriteByte(<span class="string">&#x27;o&#x27;</span>)</span><br><span class="line">   bw.WriteByte(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">   <span class="comment">// rune等同于int32</span></span><br><span class="line">   bw.WriteRune(<span class="string">&#x27;世&#x27;</span>)</span><br><span class="line">   bw.WriteRune(<span class="string">&#x27;界&#x27;</span>)</span><br><span class="line">   bw.WriteRune(<span class="string">&#x27;！&#x27;</span>)</span><br><span class="line">   <span class="comment">// 写入b</span></span><br><span class="line">   bw.Flush()</span><br><span class="line">   fmt.Println(b)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   b := bytes.NewBuffer(<span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">0</span>))</span><br><span class="line">   s := strings.NewReader(<span class="string">&quot;Hello 世界！&quot;</span>)</span><br><span class="line">   bw := bufio.NewWriter(b)</span><br><span class="line">   bw.ReadFrom(s)</span><br><span class="line">   <span class="comment">//bw.Flush()            //ReadFrom无需使用Flush，其自己已经写入．</span></span><br><span class="line">   fmt.Println(b) <span class="comment">// Hello 世界！</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="type-ReadWriter"><a href="#type-ReadWriter" class="headerlink" title="type ReadWriter"></a>type ReadWriter</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">ReadWriter</span> <span class="keyword">struct</span> &#123;</span><br><span class="line">    *Reader</span><br><span class="line">    *Writer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ReadWriter类型保管了指向Reader和Writer类型的指针，（因此）实现了io.ReadWriter接口。</p>
+</blockquote>
+<h4 id="func-NewReadWriter"><a href="#func-NewReadWriter" class="headerlink" title="func NewReadWriter"></a>func NewReadWriter</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewReadWriter</span><span class="params">(r *Reader, w *Writer)</span></span> *ReadWriter</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>NewReadWriter申请创建一个新的、将读写操作分派给r和w 的ReadWriter。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   b := bytes.NewBuffer(<span class="built_in">make</span>([]<span class="type">byte</span>, <span class="number">0</span>))</span><br><span class="line">   bw := bufio.NewWriter(b)</span><br><span class="line">   s := strings.NewReader(<span class="string">&quot;123&quot;</span>)</span><br><span class="line">   br := bufio.NewReader(s)</span><br><span class="line">   rw := bufio.NewReadWriter(br, bw)</span><br><span class="line">   p, _ := rw.ReadString(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">   fmt.Println(<span class="type">string</span>(p))              <span class="comment">//123</span></span><br><span class="line">   rw.WriteString(<span class="string">&quot;asdf&quot;</span>)</span><br><span class="line">   rw.Flush()</span><br><span class="line">   fmt.Println(b)                          <span class="comment">//asdf</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="type-SplitFunc"><a href="#type-SplitFunc" class="headerlink" title="type SplitFunc"></a>type SplitFunc</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> SplitFunc <span class="function"><span class="keyword">func</span><span class="params">(data []<span class="type">byte</span>, atEOF <span class="type">bool</span>)</span></span> (advance <span class="type">int</span>, token []<span class="type">byte</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>SplitFunc类型代表用于对输出作词法分析的分割函数。</p>
+<p>参数data是尚未处理的数据的一个开始部分的切片，参数atEOF表示是否Reader接口不能提供更多的数据。返回值是解析位置前进的字节数，将要返回给调用者的token切片，以及可能遇到的错误。如果数据不足以（保证）生成一个完整的token，例如需要一整行数据但data里没有换行符，SplitFunc可以返回(0,<br>nil,<br>nil)来告诉Scanner读取更多的数据写入切片然后用从同一位置起始、长度更长的切片再试一次（调用SplitFunc类型函数）。</p>
+<p>如果返回值err非nil，扫描将终止并将该错误返回给Scanner的调用者。</p>
+<p>除非atEOF为真，永远不会使用空切片data调用SplitFunc类型函数。然而，如果atEOF为真，data却可能是非空的、且包含着未处理的文本。</p>
+<p>SplitFunc 的作用很简单，从 data<br>中找出你感兴趣的数据，然后返回并告诉调用者，data<br>中有多少数据你已经处理过了</p>
+</blockquote>
+<h3 id="func-ScanBytes"><a href="#func-ScanBytes" class="headerlink" title="func ScanBytes"></a>func ScanBytes</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ScanBytes</span><span class="params">(data []<span class="type">byte</span>, atEOF <span class="type">bool</span>)</span></span> (advance <span class="type">int</span>, token []<span class="type">byte</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ScanBytes是用于Scanner类型的分割函数（符合SplitFunc），本函数会将每个字节作为一个token返回。</p>
+</blockquote>
+<h3 id="func-ScanRunes"><a href="#func-ScanRunes" class="headerlink" title="func ScanRunes"></a>func ScanRunes</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ScanRunes</span><span class="params">(data []<span class="type">byte</span>, atEOF <span class="type">bool</span>)</span></span> (advance <span class="type">int</span>, token []<span class="type">byte</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h1 id="ScanRunes是用于Scanner类型的分割函数（符合SplitFunc），本函数会将每个utf-8编码的unicode码值作为一个token返回。本函数返回的rune序列和range一个字符串的输出rune序列相同。错误的utf-8编码会翻译为U-FFFD"><a href="#ScanRunes是用于Scanner类型的分割函数（符合SplitFunc），本函数会将每个utf-8编码的unicode码值作为一个token返回。本函数返回的rune序列和range一个字符串的输出rune序列相同。错误的utf-8编码会翻译为U-FFFD" class="headerlink" title="ScanRunes是用于Scanner类型的分割函数（符合SplitFunc），本函数会将每个utf-8编码的unicode码值作为一个token返回。本函数返回的rune序列和range一个字符串的输出rune序列相同。错误的utf-8编码会翻译为U+FFFD"></a>ScanRunes是用于Scanner类型的分割函数（符合SplitFunc），本函数会将每个utf-8编码的unicode码值作为一个token返回。本函数返回的rune序列和range一个字符串的输出rune序列相同。错误的utf-8编码会翻译为U+FFFD</h1><p>“<code>\xef</code>{&#x3D;tex}<code>\xbf</code>{&#x3D;tex}<code>\xbd</code>{&#x3D;tex}”，但只会消耗一个字节。调用者无法区分正确编码的rune和错误编码的rune。</p>
+</blockquote>
+<h3 id="func-ScanWords"><a href="#func-ScanWords" class="headerlink" title="func ScanWords"></a>func ScanWords</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ScanWords</span><span class="params">(data []<span class="type">byte</span>, atEOF <span class="type">bool</span>)</span></span> (advance <span class="type">int</span>, token []<span class="type">byte</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ScanRunes是用于Scanner类型的分割函数（符合SplitFunc），本函数会将空白（参见unicode.IsSpace）分隔的片段（去掉前后空白后）作为一个token返回。本函数永远不会返回空字符串。用来找出<br>data 中的单行数据并返回（包括空行）</p>
+</blockquote>
+<h3 id="func-ScanLines"><a href="#func-ScanLines" class="headerlink" title="func ScanLines"></a>func ScanLines</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ScanLines</span><span class="params">(data []<span class="type">byte</span>, atEOF <span class="type">bool</span>)</span></span> (advance <span class="type">int</span>, token []<span class="type">byte</span>, err <span class="type">error</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ScanLines是用于Scanner类型的分割函数（符合SplitFunc），本函数会将每一行文本去掉末尾的换行标记作为一个token返回。返回的行可以是空字符串。换行标记为一个可选的回车后跟一个必选的换行符。最后一行即使没有换行符也会作为一个token返回。</p>
+</blockquote>
+<h3 id="type-Scanner"><a href="#type-Scanner" class="headerlink" title="type Scanner"></a>type Scanner</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Scanner <span class="keyword">struct</span> &#123;</span><br><span class="line">    r            io.Reader <span class="comment">// The reader provided by the client.</span></span><br><span class="line">    split        SplitFunc <span class="comment">// The function to split the tokens.</span></span><br><span class="line">    maxTokenSize <span class="type">int</span>       <span class="comment">// Maximum size of a token; modified by tests.</span></span><br><span class="line">    token        []<span class="type">byte</span>    <span class="comment">// Last token returned by split.</span></span><br><span class="line">    buf          []<span class="type">byte</span>    <span class="comment">// Buffer used as argument to split.</span></span><br><span class="line">    start        <span class="type">int</span>       <span class="comment">// First non-processed byte in buf.</span></span><br><span class="line">    end          <span class="type">int</span>       <span class="comment">// End of data in buf.</span></span><br><span class="line">    err          <span class="type">error</span>     <span class="comment">// Sticky error.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Scanner类型提供了方便的读取数据的接口，如从换行符分隔的文本里读取每一行。成功调用的Scan方法会逐步提供文件的token，跳过token之间的字节。token由SplitFunc类型的分割函数指定；默认的分割函数会将输入分割为多个行，并去掉行尾的换行标志。本包预定义的分割函数可以将文件分割为行、字节、unicode码值、空白分隔的word。调用者可以定制自己的分割函数。扫描会在抵达输入流结尾、遇到的第一个I&#x2F;O错误、token过大不能保存进缓冲时，不可恢复的停止。当扫描停止后，当前读取位置可能会远在最后一个获得的token后面。需要更多对错误管理的控制或token很大，或必须从reader连续扫描的程序，应使用bufio.Reader代替。</p>
+</blockquote>
+<h4 id="func-NewScanner"><a href="#func-NewScanner" class="headerlink" title="func NewScanner"></a>func NewScanner</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewScanner</span><span class="params">(r io.Reader)</span></span> *Scanner</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>NewScanner创建并返回一个从r读取数据的Scanner，默认的分割函数是ScanLines。</p>
+</blockquote>
+<h4 id="func-Scanner-Split"><a href="#func-Scanner-Split" class="headerlink" title="func (*Scanner) Split"></a>func (*Scanner) Split</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Scanner)</span></span> Split(split SplitFunc)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Split设置该Scanner的分割函数。本方法必须在Scan之前调用。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   s := strings.NewReader(<span class="string">&quot;ABC DEF GHI JKL&quot;</span>)</span><br><span class="line">   bs := bufio.NewScanner(s)</span><br><span class="line">   bs.Split(bufio.ScanWords)</span><br><span class="line">   <span class="keyword">for</span> bs.Scan() &#123;</span><br><span class="line">      fmt.Println(bs.Text())</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Scanner-Scan"><a href="#func-Scanner-Scan" class="headerlink" title="func (*Scanner) Scan"></a>func (*Scanner) Scan</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Scanner)</span></span> Scan() <span class="type">bool</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Scan方法获取当前位置的token（该token可以通过Bytes或Text方法获得），并让Scanner的扫描位置移动到下一个token。当扫描因为抵达输入流结尾或者遇到错误而停止时，本方法会返回false。在Scan方法返回false后，Err方法将返回扫描时遇到的任何错误；除非是io.EOF，此时Err会返回nil。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    s := strings.NewReader(<span class="string">&quot;Hello 世界！&quot;</span>)</span><br><span class="line">    bs := bufio.NewScanner(s)</span><br><span class="line">    bs.Split(bufio.ScanBytes)</span><br><span class="line">    <span class="keyword">for</span> bs.Scan() &#123;</span><br><span class="line">        fmt.Printf(<span class="string">&quot;%s &quot;</span>, bs.Text())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Scanner-Bytes"><a href="#func-Scanner-Bytes" class="headerlink" title="func (*Scanner) Bytes"></a>func (*Scanner) Bytes</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Scanner)</span></span> Bytes() []<span class="type">byte</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Bytes方法返回最近一次Scan调用生成的token。底层数组指向的数据可能会被下一次Scan的调用重写。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   s := strings.NewReader(<span class="string">&quot;Hello 世界！&quot;</span>)</span><br><span class="line">   bs := bufio.NewScanner(s)</span><br><span class="line">   bs.Split(bufio.ScanRunes)</span><br><span class="line">   <span class="keyword">for</span> bs.Scan() &#123;</span><br><span class="line">      fmt.Printf(<span class="string">&quot;%s &quot;</span>, bs.Text())</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="func-Scanner-Text"><a href="#func-Scanner-Text" class="headerlink" title="func (*Scanner) Text"></a>func (*Scanner) Text</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Scanner)</span></span> Text() <span class="type">string</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Bytes方法返回最近一次Scan调用生成的token，会申请创建一个字符串保存token并返回该字符串。</p>
+</blockquote>
+<h4 id="func-Scanner-Err"><a href="#func-Scanner-Err" class="headerlink" title="func (*Scanner) Err"></a>func (*Scanner) Err</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Scanner)</span></span> Err() <span class="type">error</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Err返回Scanner遇到的第一个非EOF的错误。</p>
+</blockquote>
+<h1 id="golang标准库log"><a href="#golang标准库log" class="headerlink" title="golang标准库log"></a>golang标准库log</h1><h2 id="log简介"><a href="#log简介" class="headerlink" title="log简介"></a>log简介</h2><p>golang内置了<code>log</code>包，实现简单的日志服务。通过调用<code>log</code>包的函数，可以实现简单的日志打印功能。</p>
+<h2 id="log使用"><a href="#log使用" class="headerlink" title="log使用"></a>log使用</h2><p><code>log</code>包中有3个系列的日志打印函数，分别<code>print</code>系列、<code>panic</code>系列、<code>fatal</code>系列。</p>
+<p>  函数系列   作用</p>
+<hr>
+<p>  print      单纯打印日志<br>  panic      打印日志，抛出panic异常<br>  fatal      打印日志，强制结束程序(os.Exit(1))，<code>defer</code>函数不会执行</p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;log&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> fmt.Println(<span class="string">&quot;发生了 panic错误！&quot;</span>)</span><br><span class="line">    log.Print(<span class="string">&quot;my log&quot;</span>)</span><br><span class="line">    log.Printf(<span class="string">&quot;my log %d&quot;</span>, <span class="number">100</span>)</span><br><span class="line">    name := <span class="string">&quot;tom&quot;</span></span><br><span class="line">    age := <span class="number">20</span></span><br><span class="line">    log.Println(name, <span class="string">&quot;,&quot;</span>, age)</span><br><span class="line">    log.Panic(<span class="string">&quot;致命错误！&quot;</span>)</span><br><span class="line">    <span class="comment">// log.Fatal(&quot;致命错误！&quot;)</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;end...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果示例（实际结果不是这样的哦，因为panic,fatal会影响程序的执行）：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2021</span>/<span class="number">11</span>/<span class="number">29</span> <span class="number">16</span>:<span class="number">45</span>:<span class="number">59</span> my log</span><br><span class="line"><span class="number">2021</span>/<span class="number">11</span>/<span class="number">29</span> <span class="number">16</span>:<span class="number">45</span>:<span class="number">59</span> my log <span class="number">100</span></span><br><span class="line"><span class="number">2021</span>/<span class="number">11</span>/<span class="number">29</span> <span class="number">16</span>:<span class="number">45</span>:<span class="number">59</span> tom , <span class="number">20</span></span><br><span class="line"><span class="number">2021</span>/<span class="number">11</span>/<span class="number">29</span> <span class="number">16</span>:<span class="number">45</span>:<span class="number">59</span> 致命错误！</span><br><span class="line">发生了 <span class="built_in">panic</span>错误！</span><br><span class="line"><span class="built_in">panic</span>: 致命错误！</span><br><span class="line"></span><br><span class="line">goroutine <span class="number">1</span> [running]:</span><br><span class="line">log.Panic(&#123;<span class="number">0xc000107f00</span>, <span class="number">0x3</span>, <span class="number">0xc000107f00</span>&#125;)</span><br><span class="line">    C:/Program Files/Go/src/log/log.<span class="keyword">go</span>:<span class="number">354</span> +<span class="number">0x65</span></span><br><span class="line">main.main()</span><br><span class="line">    c:/Users/<span class="number">52406</span>/Desktop/golangprojects/ryanchou612.github.io/pro01/demo.<span class="keyword">go</span>:<span class="number">15</span> +<span class="number">0x19e</span></span><br><span class="line">exit status <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="log配置"><a href="#log配置" class="headerlink" title="log配置"></a>log配置</h1><h3 id="标准log配置"><a href="#标准log配置" class="headerlink" title="标准log配置"></a>标准log配置</h3><p>默认情况下log只会打印出时间，但是实际情况下我们可能还需要获取文件名，行号等信息，<code>log</code>包提供给我们定制的接口。<br><code>log</code>包提供两个标准log配置的相关方法：</p>
+<pre><code>func Flags() int  // 返回标准log输出配置
+func SetFlags(flag int)  // 设置标准log输出配置
+</code></pre>
+<h4 id="flag参数"><a href="#flag参数" class="headerlink" title="flag参数"></a>flag参数</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    // 控制输出日志信息的细节，不能控制输出的顺序和格式。</span><br><span class="line">    // 输出的日志在每一项后会有一个冒号分隔：例如2009/01/23 01:23:23.123123 /a/b/c/d.go:23: message</span><br><span class="line">    Ldate         = 1 &lt;&lt; iota     // 日期：2009/01/23</span><br><span class="line">    Ltime                         // 时间：01:23:23</span><br><span class="line">    Lmicroseconds                 // 微秒级别的时间：01:23:23.123123（用于增强Ltime位）</span><br><span class="line">    Llongfile                     // 文件全路径名+行号： /a/b/c/d.go:23</span><br><span class="line">    Lshortfile                    // 文件名+行号：d.go:23（会覆盖掉Llongfile）</span><br><span class="line">    LUTC                          // 使用UTC时间</span><br><span class="line">    LstdFlags     = Ldate | Ltime // 标准logger的初始值</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h4 id="标准日志配置示例"><a href="#标准日志配置示例" class="headerlink" title="标准日志配置示例"></a>标准日志配置示例</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;log&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    i := log.Flags()</span><br><span class="line">    fmt.Printf(<span class="string">&quot;i: %v\n&quot;</span>, i)</span><br><span class="line">    log.SetFlags(log.Ldate | log.Ltime | log.Llongfile)</span><br><span class="line">    log.Print(<span class="string">&quot;my log&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果：</strong></p>
+<pre><code>i: 3
+2021/11/29 16:49:53 c:/Users/52406/Desktop/golangprojects/ryanchou612.github.io/pro01/demo.go:12: my log
+</code></pre>
+<h3 id="日志前缀配置"><a href="#日志前缀配置" class="headerlink" title="日志前缀配置"></a>日志前缀配置</h3><p><code>log</code>包提供两个日志前缀配置的相关函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Prefix</span><span class="params">()</span></span> <span class="type">string</span>  <span class="comment">// 返回日志的前缀配置</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">SetPrefix</span><span class="params">(prefix <span class="type">string</span>)</span></span>  <span class="comment">// 设置日志前缀</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="日志前缀配置实例"><a href="#日志前缀配置实例" class="headerlink" title="日志前缀配置实例"></a>日志前缀配置实例</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;log&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    s := log.Prefix()</span><br><span class="line">    fmt.Printf(<span class="string">&quot;s: %v\n&quot;</span>, s)</span><br><span class="line">    log.SetPrefix(<span class="string">&quot;MyLog: &quot;</span>)</span><br><span class="line">    s = log.Prefix()</span><br><span class="line">    fmt.Printf(<span class="string">&quot;s: %v\n&quot;</span>, s)</span><br><span class="line">    log.Print(<span class="string">&quot;my log...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果：</strong></p>
+<pre><code>s: 
+s: MyLog: 
+MyLog: 2021/11/29 16:51:55 my log...
+</code></pre>
+<h3 id="日志输出位置配置"><a href="#日志输出位置配置" class="headerlink" title="日志输出位置配置"></a>日志输出位置配置</h3><p>前面介绍的都是将日志输出到控制台上，golang的<code>log</code>包还支持将日志输出到文件中。<code>log</code>包提供了<code>func SetOutput(w io.Writer)</code>函数，将日志输出到文件中。</p>
+<h4 id="日志输出位置配置-1"><a href="#日志输出位置配置-1" class="headerlink" title="日志输出位置配置"></a>日志输出位置配置</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;log&quot;</span></span><br><span class="line">    <span class="string">&quot;os&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    f, err := os.OpenFile(<span class="string">&quot;a.log&quot;</span>, os.O_CREATE|os.O_WRONLY|os.O_APPEND, <span class="number">0644</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Panic(<span class="string">&quot;打开日志文件异常&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    log.SetOutput(f)</span><br><span class="line">    log.Print(<span class="string">&quot;my log...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong>日志输出到当前目录下a.log文件中</p>
+<pre><code>2021/11/29 16:57:13 my log...
+</code></pre>
+<h3 id="自定义logger"><a href="#自定义logger" class="headerlink" title="自定义logger"></a>自定义logger</h3><p><code>log</code>包为我们提供了内置函数，让我们能自定义logger。从效果上来看，就是将标题3中的标准日志配置、日志前缀配置、日志输出位置配置整合到一个函数中，使日志配置不在那么繁琐。<br><code>log</code>包中提供了<code>func New(out io.Writer, prefix string, flag int) *Logger</code>函数来实现自定义logger。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> logger *log.Logger</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span>  &#123;</span><br><span class="line">    logFile, err := os.OpenFile(<span class="string">&quot;a.log&quot;</span>, os.O_CREATE|os.O_WRONLY|os.O_APPEND, <span class="number">0644</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Panic(<span class="string">&quot;打开日志文件异常&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    logger = log.New(logFile, <span class="string">&quot;success&quot;</span>, log.Ldate | log.Ltime | log.Lshortfile)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    logger.Println(<span class="string">&quot;自定义logger&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="golang标准库builtin"><a href="#golang标准库builtin" class="headerlink" title="golang标准库builtin"></a>golang标准库builtin</h1><p>这个包提供了一些类型声明、变量和常量声明，还有一些便利函数，这个包不需要导入，这些变量和函数就可以直接使用。</p>
+<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><h3 id="append"><a href="#append" class="headerlink" title="append"></a>append</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">append</span><span class="params">(slice []Type, elems ...Type)</span></span> []Type</span><br><span class="line"></span><br><span class="line">slice = <span class="built_in">append</span>(slice, elem1, elem2)　　<span class="comment">//直接在slice后面添加单个元素，添加元素类型可以和slice相同，也可以不同</span></span><br><span class="line">slice = <span class="built_in">append</span>(slice, anotherSlice...)　　<span class="comment">//直接将另外一个slice添加到slice后面，但其本质还是将anotherSlice中的元素一个一个添加到slice中，和第一种方式类似．</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    s1 := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">    i := <span class="built_in">append</span>(s1, <span class="number">4</span>)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;i: %v\n&quot;</span>, i)</span><br><span class="line"></span><br><span class="line">    s2 := []<span class="type">int</span>&#123;<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line">    i2 := <span class="built_in">append</span>(s1, s2...)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;i2: %v\n&quot;</span>, i2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="len"><a href="#len" class="headerlink" title="len"></a>len</h2><p>返回，数组、切片、字符串、通道的长度</p>
+<h3 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    s1 := <span class="string">&quot;hello world&quot;</span></span><br><span class="line">    i := <span class="built_in">len</span>(s1)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;i: %v\n&quot;</span>, i)</span><br><span class="line"></span><br><span class="line">    s2 := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">    fmt.Printf(<span class="string">&quot;len(s2): %v\n&quot;</span>, <span class="built_in">len</span>(s2))</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="print、println"><a href="#print、println" class="headerlink" title="print、println"></a>print、println</h2><p>打印输出到控制台。</p>
+<h3 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    name := <span class="string">&quot;tom&quot;</span></span><br><span class="line">    age := <span class="number">20</span></span><br><span class="line">    <span class="built_in">print</span>(name, <span class="string">&quot; &quot;</span>, age, <span class="string">&quot;\n&quot;</span>)</span><br><span class="line">    fmt.Println(<span class="string">&quot;----------&quot;</span>)</span><br><span class="line">    <span class="built_in">println</span>(name, <span class="string">&quot; &quot;</span>, age)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="panic"><a href="#panic" class="headerlink" title="panic"></a>panic</h3><p>抛出一个panic异常</p>
+<h3 id="实例-5"><a href="#实例-5" class="headerlink" title="实例"></a>实例</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> fmt.Println(<span class="string">&quot;panic 异常后执行...&quot;</span>)</span><br><span class="line">    <span class="built_in">panic</span>(<span class="string">&quot;panic 错误...&quot;</span>)</span><br><span class="line">    fmt.Println(<span class="string">&quot;end...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="new和make"><a href="#new和make" class="headerlink" title="new和make"></a>new和make</h3><p><code>new</code>和<code>make</code>区别：</p>
+<ol>
+<li><code>make</code>只能用来分配及<strong>初始化</strong>类型为<code>slice</code>，<code>map</code>，<code>chan</code>的数据；<code>new</code>可以分配任意类型的数据</li>
+<li><code>new</code>分配返回的是指针，即类型<code>*T</code>；<code>make</code>返回引用，即<code>T</code>；</li>
+<li><code>new</code>分配的空间被清零，<code>make</code>分配后，会进行<strong>初始化</strong>。</li>
+</ol>
+<h3 id="实例-6"><a href="#实例-6" class="headerlink" title="实例"></a>实例</h3><p><strong>new</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">testNew</span><span class="params">()</span></span> &#123;</span><br><span class="line">    b := <span class="built_in">new</span>(<span class="type">bool</span>)</span><br><span class="line">    fmt.Println(*b)</span><br><span class="line">    i := <span class="built_in">new</span>(<span class="type">int</span>)</span><br><span class="line">    fmt.Println(*i)</span><br><span class="line">    s := <span class="built_in">new</span>(<span class="type">string</span>)</span><br><span class="line">    fmt.Println(*s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    testNew()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">运行结果：</span><br><span class="line"><span class="literal">false</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>make</strong></p>
+<blockquote>
+<p>内建函数make(T,<br>args)与new(T)的用途不一样。它只用来创建slice，map和channel，并且返回一个初始化的(而不是置零)，类型为T的值（而不是*T）。之所以有所不同，是因为这三个类型的背后引用了使用前必须初始化的数据结构。例如，slice是一个三元描述符，包含一个指向数据（在数组中）的指针，长度，以及容量，在这些项被初始化之前，slice都是nil的。对于slice，map和channel，make初始化这些内部数据结构，并准备好可用的值。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">10</span>, <span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<p>分配一个有100个int的数组，然后创建一个长度为10，容量为100的slice结构，该slice引用包含前10个元素的数组。对应的，new([]int)返回一个指向新分配的，被置零的slice结构体的指针，即指向值为nil的slice的指针。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p *[]<span class="type">int</span> = <span class="built_in">new</span>([]<span class="type">int</span>)       <span class="comment">// allocates slice structure; *p == nil; rarely useful</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> v  []<span class="type">int</span> = <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">100</span>) <span class="comment">// the slice v now refers to a new array of 100 ints</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// Unnecessarily complex:这种做法实在是很蛋疼</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> p *[]<span class="type">int</span> = <span class="built_in">new</span>([]<span class="type">int</span>)</span><br><span class="line">*p = <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">100</span>, <span class="number">100</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Idiomatic:习惯的做法</span></span><br><span class="line">v := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">运行结果：</span><br><span class="line">p: &amp;[]</span><br><span class="line">v: [<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+        </article>
+        <div class="post-tools" id="post-tools">
+            <div class="post-tools-left">
+                
+                <div class="share-link mobile">
+    <div class="share-qrcode">
+        <div class="share-button" title="使用手机访问这篇文章">
+            <i class="fas fa-qrcode"></i>
+        </div>
+        <div class="share-main">
+            <div class="share-main-all">
+                <div id="qrcode" title="https://ryanchou612.github.io/posts/b1efffe8.html">
+                </div>
+                <div class="reward-dec">使用手机访问这篇文章</div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            new QRCode(document.getElementById("qrcode"), "https://ryanchou612.github.io/posts/b1efffe8.html");
+        </script>
+    </div>
+</div>
+                <div class="share-link weibo"><a class="share-button" target="_blank"
+    href="https://service.weibo.com/share/share.php?title=Golang标准库&amp;url=https://ryanchou612.github.io/posts/b1efffe8.html&amp;pic=/img/hello.jpg"
+    title="分享到微博" rel="noopener external nofollow noreferrer noopener">
+    <i class="fab fa-weibo" style="font-size:22px"></i>
+</a>
+</div>
+<div class="share-link copyurl">
+<div class="share-button" id="post-share-url" title="复制链接" onclick="acrylic.copyPageUrl()">
+    <i class="fas fa-link"></i>
+</div>
+</div>
+            </div>
+            <div class="post-tools-right">
+                <div class="tag_share">
+                    <div class="post-meta__tag-list">
+                        
+                            <a href="/tags/Golang/" class="post-meta__tags">
+                                <span class="tags-punctuation">#</span>
+                                Golang
+                                <span class="tagsPageCount">3</span>
+                            </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post-copyright">
+    <div class="post-copyright__author">
+        <a class="post-copyright__original" title="该文章为原创文章，注意版权协议">原创</a>
+        <a class="post-copyright-title" href="#">
+            <span>Golang标准库</span>
+        </a>
+    </div>
+    <div class="post-copyright__type">
+        <span class="post-copyright-info" id="post-copyright-url">
+            <a href="/posts/b1efffe8.html">https://ryanchou612.github.io/posts/b1efffe8.html</a>
+        </span>
+        <button class="post-copyright-copybtn" onclick="acrylic.copyPageUrl()">
+            <i class="fas fa-paste copy-btn"></i>
+        </button>
+    </div>
+    <div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用 <a
+                href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a> 协议，完整转载请注明来自 <a
+                href="/">RyanChouBlog</a>
+            </span>
+        </div>
+</div>
+        <nav class="pagination-post" id="pagination">
+    
+        <div class="prev-post pull-left">
+            <a href="/posts/4a17b156.html">
+                <div class="pagination-info">
+                    <div class="label">上一篇</div>
+                    <div class="prev_info">Hello World</div>
+                </div>
+            </a>
+        </div>
+        <div class="next-post pull-right">
+            <a href="/posts/eae62c98.html">
+                <div class="pagination-info">
+                    <div class="label">下一篇</div>
+                    <div class="next_info">Golang并发编程</div>
+                </div>
+            </a>
+        </div>
+    
+</nav>
+            
+    </div>
+    <div class="aside-content" id="aside-content">
+    
+    
+        
+        <div class="card-widget card-info">
+    <div class="card-content">
+        <div class="card-info-avatar is-center">
+            <div class="author-info__sayhi" id="author-info__sayhi">
+            </div>
+            <div class="author-info__name">
+                RyanChou
+            </div>
+            <div class="author-info__description">这里记录关于<b>开发</b>、<b>技术</b>、<b>学习</b>相关的问题。<br/><br/><b>道阻且长 行则将至</b></div>
+        </div>
+    </div>
+    <div class="banner-button-group">
+        <a class="banner-button" href="/">
+            <i class="fas fa-circle-chevron-right"></i>
+            <span class="banner-button-text">个人主页</span>
+        </a>
+    </div>
+    <div class="card-info-social-icons is-center">
+        
+    </div>
+</div>
+     
+    
+    <div class="sticky_layout">
+        
+            <div class="card-widget" id="card-toc">
+    <div class="item-headline">
+        <i class="fas fa-bars"></i>
+        <span>文章目录</span>
+    </div>
+    <div class="toc-content" id="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93os%E6%A8%A1%E5%9D%97-%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%9B%B8%E5%85%B3"><span class="toc-text">golang标准库os模块-文件目录相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93os%E6%A8%A1%E5%9D%97-File%E6%96%87%E4%BB%B6%E8%AF%BB%E6%93%8D%E4%BD%9C"><span class="toc-text">golang标准库os模块-File文件读操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93os%E6%A8%A1%E5%9D%97-File%E6%96%87%E4%BB%B6%E5%86%99%E6%93%8D%E4%BD%9C"><span class="toc-text">golang标准库os模块-File文件写操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93os%E5%8C%85%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-text">golang标准库os包进程相关操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93os%E5%8C%85%E5%92%8C%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">golang标准库os包和环境相关的方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93io%E5%8C%85"><span class="toc-text">golang标准库io包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#io-%E2%80%94-%E5%9F%BA%E6%9C%AC%E7%9A%84-IO-%E6%8E%A5%E5%8F%A3"><span class="toc-text">io — 基本的 IO 接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Reader-%E6%8E%A5%E5%8F%A3"><span class="toc-text">Reader 接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Writer-%E6%8E%A5%E5%8F%A3"><span class="toc-text">Writer 接口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%82%A3%E4%BA%9B%E7%B1%BB%E5%9E%8B%E5%AE%9E%E7%8E%B0%E4%BA%86Reader%E5%92%8CWriter%E6%8E%A5%E5%8F%A3"><span class="toc-text">那些类型实现了Reader和Writer接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3%E5%AE%98%E6%96%B9%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA"><span class="toc-text">讲解官方实例演示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93ioutil%E5%8C%85"><span class="toc-text">golang标准库ioutil包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TempFile-%E5%9C%A8%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95%E4%B8%AD%E5%88%9B%E5%BB%BA%E6%8C%87%E5%AE%9A%E5%89%8D%E7%BC%80%E5%90%8D%E7%9A%84%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%EF%BC%8C%E8%BF%94%E5%9B%9E-os-File"><span class="toc-text">  TempFile    在一个目录中创建指定前缀名的临时文件，返回 os.File</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93fmt%E5%8C%85"><span class="toc-text">golang标准库fmt包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scanning"><span class="toc-text">Scanning</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-text">函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93bufio"><span class="toc-text">golang标准库bufio</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bufio-%EF%BC%88buffer%E7%BC%93%E5%86%B2%E5%8C%BA-io%EF%BC%89"><span class="toc-text">bufio （buffer缓冲区 io）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#type-Reader"><span class="toc-text">type Reader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-NewReader"><span class="toc-text">func NewReader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-NewReaderSize"><span class="toc-text">func NewReaderSize</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-Reset-r-io-Reader"><span class="toc-text">func (*Reader)Reset(r io.Reader)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-Read"><span class="toc-text">func (*Reader)Read</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-ReadByte"><span class="toc-text">func (*Reader)ReadByte</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-UnreadByte"><span class="toc-text">func (*Reader)UnreadByte</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-ReadRune"><span class="toc-text">func (*Reader)ReadRune</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-UnreadRune"><span class="toc-text">func (*Reader)UnreadRune</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-ReadLine"><span class="toc-text">func (*Reader)ReadLine</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-ReadSlice"><span class="toc-text">func (*Reader)ReadSlice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-ReadBytes"><span class="toc-text">func (*Reader)ReadBytes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-ReadString"><span class="toc-text">func (*Reader)ReadString</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Reader-WriteTo"><span class="toc-text">func (*Reader)WriteTo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#type-Writer"><span class="toc-text">type Writer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-NewWriter"><span class="toc-text">func NewWriter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-NewWriterSize"><span class="toc-text">func NewWriterSize</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Writer-Reset"><span class="toc-text">func (*Writer)Reset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Writer-Bufferd"><span class="toc-text">func (*Writer)Bufferd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Writer-Available"><span class="toc-text">func (*Writer)Available</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Writer-Write"><span class="toc-text">func (*Writer) Write</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Writer-WriteString"><span class="toc-text">func (*Writer) WriteString</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Writer-WriteByte"><span class="toc-text">func (*Writer) WriteByte</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Writer-WriteRune"><span class="toc-text">func (*Writer) WriteRune</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Writer-Flush"><span class="toc-text">func (*Writer) Flush</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Writer-ReadFrom"><span class="toc-text">func (*Writer) ReadFrom</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#type-ReadWriter"><span class="toc-text">type ReadWriter</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#func-NewReadWriter"><span class="toc-text">func NewReadWriter</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#type-SplitFunc"><span class="toc-text">type SplitFunc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#func-ScanBytes"><span class="toc-text">func ScanBytes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#func-ScanRunes"><span class="toc-text">func ScanRunes</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ScanRunes%E6%98%AF%E7%94%A8%E4%BA%8EScanner%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%86%E5%89%B2%E5%87%BD%E6%95%B0%EF%BC%88%E7%AC%A6%E5%90%88SplitFunc%EF%BC%89%EF%BC%8C%E6%9C%AC%E5%87%BD%E6%95%B0%E4%BC%9A%E5%B0%86%E6%AF%8F%E4%B8%AAutf-8%E7%BC%96%E7%A0%81%E7%9A%84unicode%E7%A0%81%E5%80%BC%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AAtoken%E8%BF%94%E5%9B%9E%E3%80%82%E6%9C%AC%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E7%9A%84rune%E5%BA%8F%E5%88%97%E5%92%8Crange%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BE%93%E5%87%BArune%E5%BA%8F%E5%88%97%E7%9B%B8%E5%90%8C%E3%80%82%E9%94%99%E8%AF%AF%E7%9A%84utf-8%E7%BC%96%E7%A0%81%E4%BC%9A%E7%BF%BB%E8%AF%91%E4%B8%BAU-FFFD"><span class="toc-text">ScanRunes是用于Scanner类型的分割函数（符合SplitFunc），本函数会将每个utf-8编码的unicode码值作为一个token返回。本函数返回的rune序列和range一个字符串的输出rune序列相同。错误的utf-8编码会翻译为U+FFFD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#func-ScanWords"><span class="toc-text">func ScanWords</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#func-ScanLines"><span class="toc-text">func ScanLines</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#type-Scanner"><span class="toc-text">type Scanner</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#func-NewScanner"><span class="toc-text">func NewScanner</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Scanner-Split"><span class="toc-text">func (*Scanner) Split</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Scanner-Scan"><span class="toc-text">func (*Scanner) Scan</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Scanner-Bytes"><span class="toc-text">func (*Scanner) Bytes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Scanner-Text"><span class="toc-text">func (*Scanner) Text</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#func-Scanner-Err"><span class="toc-text">func (*Scanner) Err</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93log"><span class="toc-text">golang标准库log</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#log%E7%AE%80%E4%BB%8B"><span class="toc-text">log简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#log%E4%BD%BF%E7%94%A8"><span class="toc-text">log使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#log%E9%85%8D%E7%BD%AE"><span class="toc-text">log配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%87%86log%E9%85%8D%E7%BD%AE"><span class="toc-text">标准log配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#flag%E5%8F%82%E6%95%B0"><span class="toc-text">flag参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B"><span class="toc-text">标准日志配置示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E5%89%8D%E7%BC%80%E9%85%8D%E7%BD%AE"><span class="toc-text">日志前缀配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E5%89%8D%E7%BC%80%E9%85%8D%E7%BD%AE%E5%AE%9E%E4%BE%8B"><span class="toc-text">日志前缀配置实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA%E4%BD%8D%E7%BD%AE%E9%85%8D%E7%BD%AE"><span class="toc-text">日志输出位置配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA%E4%BD%8D%E7%BD%AE%E9%85%8D%E7%BD%AE-1"><span class="toc-text">日志输出位置配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89logger"><span class="toc-text">自定义logger</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#golang%E6%A0%87%E5%87%86%E5%BA%93builtin"><span class="toc-text">golang标准库builtin</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#append"><span class="toc-text">append</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#len"><span class="toc-text">len</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-3"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#print%E3%80%81println"><span class="toc-text">print、println</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-4"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#panic"><span class="toc-text">panic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-5"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new%E5%92%8Cmake"><span class="toc-text">new和make</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-6"><span class="toc-text">实例</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+            
+        
+            
+        <div class="card-widget card-recent-post">
+    <div class="item-headline">
+        <i class="fas fa-list-ol"></i>
+        <span>最近发布</span>
+    </div>
+    <div class="aside-list">
+        
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/posts/b24dd347.html" title="我的第一篇博客文章">
+                    <img
+                        alt="我的第一篇博客文章"
+                        src="/img/hello.jpg">
+                </a>
+                <div class="content">
+                    
+                    <a class="title" href="/posts/b24dd347.html" title="我的第一篇博客文章">
+                        我的第一篇博客文章
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/posts/4a17b156.html" title="Hello World">
+                    <img
+                        alt="Hello World"
+                        src="/img/hello.jpg">
+                </a>
+                <div class="content">
+                    
+                    <a class="title" href="/posts/4a17b156.html" title="Hello World">
+                        Hello World
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/posts/b1efffe8.html" title="Golang标准库">
+                    <img
+                        alt="Golang标准库"
+                        src="/img/hello.jpg">
+                </a>
+                <div class="content">
+                    
+                    <a class="title" href="/posts/b1efffe8.html" title="Golang标准库">
+                        Golang标准库
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/posts/eae62c98.html" title="Golang并发编程">
+                    <img
+                        alt="Golang并发编程"
+                        src="/img/hello.jpg">
+                </a>
+                <div class="content">
+                    
+                    <a class="title" href="/posts/eae62c98.html" title="Golang并发编程">
+                        Golang并发编程
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/posts/3e97faf3.html" title="Golang基础语法">
+                    <img
+                        alt="Golang基础语法"
+                        src="/img/hello.jpg">
+                </a>
+                <div class="content">
+                    
+                    <a class="title" href="/posts/3e97faf3.html" title="Golang基础语法">
+                        Golang基础语法
+                    </a>
+                </div>
+            </div>
+            
+    </div>
+</div>
+     
+        
+    </div>
+</div> 
+</main>
+                <footer id="footer">
+                    <div id="footer_deal">
+    
+        <a class="deal_link" target="_blank" href="https://github.com/ryanchou612/ryanchou612.github.io" rel="external nofollow noopener" title="Github">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    
+    <img class="footer_mini_logo" src="/img/avatar.webp"
+        title="返回顶部" onclick="acrylic.toTop()">
+    
+</div>    
+<div id="heo-footer">
+    
+    
+</div>
+<div id="footer-section">
+    <div class="footer-section-links">
+        <div class="footer-section-left">
+            <div id="footer-section-tips">
+                <div class="copyright">©2023 - 2023 By 
+                    <a class="footer-section-link" href="/" rel="external nofollow">RyanChou</a>
+                    <a class="footer-section-link" href="https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next" rel="external nofollow" target="_blank"> Theme By Acrylic-Next</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-section-right">
+            <a class="footer-section-link" href="/rss/">订阅</a>
+            
+            <a class="footer-section-link cc" target="_blank" href="https://creativecommons.org/licenses/by/4.0/" title="cc协议">
+                <i class="fa-solid fa-closed-captioning"></i>
+            </a>
+        </div>
+    </div>
+</div>
+                </footer>
+            </div>
+         
+        <div>
+    <script type="text/javascript" src="/js/utils.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    
+
+<script src="/lib/pjax.min.js"></script>
+
+
+
+<script src="/lib/snackbar.min.js"></script>
+
+
+    
+<script src="/lib/view-image.min.js"></script>
+
+
+
+<div id="js-pjax">
+    
+     
+</div>
+
+
+    
+<script src="/js/extend/covercolor/web.js"></script>
+
+        
+
+
+    <script>
+  let pjaxSelectors = [
+    'title',
+    '#body-wrap',
+    '#site-config',
+    'meta[name="description"]',
+    '#js-pjax'
+  ]
+  
+  const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+  })
+
+  document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+</script>
+    
+</div>
+        
+     
+        <div class="needEndHide" id="nav-music" onclick="acrylic.musicToggle()">
+    <div id="nav-music-hoverTips">音乐已暂停</div>
+    <meting-js id="1708664797" server="tencent" type="playlist" mutex="true"
+        preload="none" data-lrctype="0" order="random" theme="var(--heo-main)"></meting-js>
+</div>
+    
+    </body>
+</html>
+<script>const posts=["posts/b24dd347.html","posts/4a17b156.html","posts/b1efffe8.html","posts/eae62c98.html","posts/3e97faf3.html"];function toRandomPost(){ window.pjax ? pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]) : window.open('/'+posts[Math.floor(Math.random()*posts.length)], "_self"); };</script>
