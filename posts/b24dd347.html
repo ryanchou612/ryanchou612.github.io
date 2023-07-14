@@ -68,7 +68,7 @@
      
         <li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2023-07/')" data-pjax-state=""><span
             class="card-archive-list-date">2023-07</span>
-            <div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span
                     class="card-archive-list-count-unit">篇</span></div>
             </a>
         </li>
@@ -387,22 +387,17 @@
 </div>
         <nav class="pagination-post" id="pagination">
     
-        <div class="prev-post pull-left">
-            <a href="/posts/9d0e7079.html">
-                <div class="pagination-info">
-                    <div class="label">上一篇</div>
-                    <div class="prev_info">Page_1</div>
-                </div>
-            </a>
-        </div>
-        <div class="next-post pull-right">
-            <a href="/posts/4a17b156.html">
-                <div class="pagination-info">
-                    <div class="label">下一篇</div>
-                    <div class="next_info">Hello World</div>
-                </div>
-            </a>
-        </div>
+        
+            <div class="next-post pull-full">
+                <a href="/posts/4a17b156.html">
+                    <div class="pagination-info">
+                        <div class="label">下一篇</div>
+                        <div class="next_info">Hello World</div>
+                    </div>
+                </a>
+            </div>
+                
+        
     
 </nav>
             
@@ -457,51 +452,6 @@
         
         
             <div class="aside-list-item">
-                <a class="thumbnail" href="/posts/d67aa9df.html" title="Main_Page">
-                    <img
-                        alt="Main_Page"
-                        src="/img/hello.jpg">
-                </a>
-                <div class="content">
-                    
-                    <a class="title" href="/posts/d67aa9df.html" title="Main_Page">
-                        Main_Page
-                    </a>
-                </div>
-            </div>
-                
-        
-            <div class="aside-list-item">
-                <a class="thumbnail" href="/posts/40721c3.html" title="Page_2">
-                    <img
-                        alt="Page_2"
-                        src="/img/hello.jpg">
-                </a>
-                <div class="content">
-                    
-                    <a class="title" href="/posts/40721c3.html" title="Page_2">
-                        Page_2
-                    </a>
-                </div>
-            </div>
-                
-        
-            <div class="aside-list-item">
-                <a class="thumbnail" href="/posts/9d0e7079.html" title="Page_1">
-                    <img
-                        alt="Page_1"
-                        src="/img/hello.jpg">
-                </a>
-                <div class="content">
-                    
-                    <a class="title" href="/posts/9d0e7079.html" title="Page_1">
-                        Page_1
-                    </a>
-                </div>
-            </div>
-                
-        
-            <div class="aside-list-item">
                 <a class="thumbnail" href="/posts/b24dd347.html" title="我的第一篇博客文章">
                     <img
                         alt="我的第一篇博客文章"
@@ -529,7 +479,8 @@
                     </a>
                 </div>
             </div>
-            
+                
+        
     </div>
 </div>
      
@@ -646,4 +597,4 @@
     
     </body>
 </html>
-<script>const posts=["posts/d67aa9df.html","posts/40721c3.html","posts/9d0e7079.html","posts/b24dd347.html","posts/4a17b156.html"];function toRandomPost(){ window.pjax ? pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]) : window.open('/'+posts[Math.floor(Math.random()*posts.length)], "_self"); };</script>
+<script>const posts=["posts/b24dd347.html","posts/4a17b156.html"];function toRandomPost(){ window.pjax ? pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]) : window.open('/'+posts[Math.floor(Math.random()*posts.length)], "_self"); };</script>

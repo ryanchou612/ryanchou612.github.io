@@ -6,7 +6,7 @@
   <link href="https://ryanchou612.github.io/atom.xml" rel="self"/>
   
   <link href="https://ryanchou612.github.io/"/>
-  <updated>2023-07-14T13:29:11.235Z</updated>
+  <updated>2023-07-13T16:22:28.205Z</updated>
   <id>https://ryanchou612.github.io/</id>
   
   <author>
@@ -15,90 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Main_Page</title>
-    <link href="https://ryanchou612.github.io/posts/d67aa9df.html"/>
-    <id>https://ryanchou612.github.io/posts/d67aa9df.html</id>
-    <published>2023-07-14T08:04:13.417Z</published>
-    <updated>2023-07-14T13:29:11.235Z</updated>
-    
-    <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>主页面</title></head><body><a href="page/Page_1.html">跳转到Page_1页面</a>    <button>跳转到Page_1A页面</button><br><a href="page/Page_2.html">跳转到Page_2页面</a>    <button>跳转到Page_1A页面</button></body></html>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;title&gt;主页面&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;a href=&quot;page/Page_1.html&quot;&gt;跳转到Page_1页面&lt;/a&gt;
-    &lt;butto</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Page_2</title>
-    <link href="https://ryanchou612.github.io/posts/40721c3.html"/>
-    <id>https://ryanchou612.github.io/posts/40721c3.html</id>
-    <published>2023-07-14T08:03:23.761Z</published>
-    <updated>2023-07-14T13:27:29.470Z</updated>
-    
-    <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>Page_2页面</title></head><body>    <p>这是Page_2页面。</p>    <a href="../Main_Page.html">跳转回主页面</a></body></html>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;title&gt;Page_2页面&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;这是Page_2页面。&lt;/p&gt;
-    &lt;a href=&quot;../Main_Page</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Page_1</title>
-    <link href="https://ryanchou612.github.io/posts/9d0e7079.html"/>
-    <id>https://ryanchou612.github.io/posts/9d0e7079.html</id>
-    <published>2023-07-14T08:02:58.565Z</published>
-    <updated>2023-07-14T13:27:29.469Z</updated>
-    
-    <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>Page_1页面</title></head><body>    <p>这是Page_1页面。</p>        <a href="../Main_Page.html">跳转回主页面</a></body></html>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;title&gt;Page_1页面&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;这是Page_1页面。&lt;/p&gt;    
-    &lt;a href=&quot;../Main_</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>我的第一篇博客文章</title>
