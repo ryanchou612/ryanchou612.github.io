@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ryanchou612.github.io/posts/0.html</loc>
+    <loc>https://ryanchou612.github.io/posts/106f7f46.html</loc>
+    
+    <lastmod>2023-07-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ryanchou612.github.io/posts/b7d9b0d0.html</loc>
     
     <lastmod>2023-07-15</lastmod>
     
@@ -74,24 +83,6 @@
   </url>
   
   <url>
-    <loc>https://ryanchou612.github.io/posts/b24dd347.html</loc>
-    
-    <lastmod>2023-07-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ryanchou612.github.io/posts/4a17b156.html</loc>
-    
-    <lastmod>2023-07-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ryanchou612.github.io/about/index.html</loc>
     
     <lastmod>2023-07-14</lastmod>
@@ -110,6 +101,13 @@
 
   
   <url>
+    <loc>https://ryanchou612.github.io/tags/Docker/</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ryanchou612.github.io/tags/Git/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -118,6 +116,13 @@
   
   <url>
     <loc>https://ryanchou612.github.io/tags/Golang/</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ryanchou612.github.io/tags/Gin/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
