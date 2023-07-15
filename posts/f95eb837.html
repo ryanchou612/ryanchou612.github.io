@@ -60,17 +60,17 @@
                     </div>
                     <div class="card-tag-cloud">
                         
-                            <a href="/tags/Gin/" style="font-size: 0.8rem; color: #d3d3d3">Gin<sup>1</sup></a>
-                        
-                            <a href="/tags/Golang/" style="font-size: 0.8rem; color: #d3d3d3">Golang<sup>3</sup></a>
+                            <a href="/tags/Docker/" style="font-size: 0.8rem; color: #d3d3d3">Docker<sup>1</sup></a>
                         
                             <a href="/tags/Git/" style="font-size: 0.8rem; color: #d3d3d3">Git<sup>1</sup></a>
                         
-                            <a href="/tags/Docker/" style="font-size: 0.8rem; color: #d3d3d3">Docker<sup>1</sup></a>
+                            <a href="/tags/Golang/" style="font-size: 0.8rem; color: #d3d3d3">Golang<sup>3</sup></a>
                         
-                            <a href="/tags/Gorm/" style="font-size: 0.8rem; color: #d3d3d3">Gorm<sup>1</sup></a>
+                            <a href="/tags/Gin/" style="font-size: 0.8rem; color: #d3d3d3">Gin<sup>1</sup></a>
                         
                             <a href="/tags/Linux/" style="font-size: 0.8rem; color: #d3d3d3">Linux<sup>1</sup></a>
+                        
+                            <a href="/tags/Gorm/" style="font-size: 0.8rem; color: #d3d3d3">Gorm<sup>1</sup></a>
                         
                             <a href="/tags/MySQL/" style="font-size: 0.8rem; color: #d3d3d3">MySQL<sup>1</sup></a>
                         
@@ -169,7 +169,11 @@
             </div>
             <div class="card-tag-cloud">
                 
-                    <a href="/tags/Gin/" style="font-size: 1em; color: #d3d3d3">Gin
+                    <a href="/tags/Docker/" style="font-size: 1em; color: #d3d3d3">Docker
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/Git/" style="font-size: 1em; color: #d3d3d3">Git
                         <sup>1</sup>
                     </a>
                 
@@ -177,19 +181,15 @@
                         <sup>3</sup>
                     </a>
                 
-                    <a href="/tags/Git/" style="font-size: 1em; color: #d3d3d3">Git
-                        <sup>1</sup>
-                    </a>
-                
-                    <a href="/tags/Docker/" style="font-size: 1em; color: #d3d3d3">Docker
-                        <sup>1</sup>
-                    </a>
-                
-                    <a href="/tags/Gorm/" style="font-size: 1em; color: #d3d3d3">Gorm
+                    <a href="/tags/Gin/" style="font-size: 1em; color: #d3d3d3">Gin
                         <sup>1</sup>
                     </a>
                 
                     <a href="/tags/Linux/" style="font-size: 1em; color: #d3d3d3">Linux
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/Gorm/" style="font-size: 1em; color: #d3d3d3">Gorm
                         <sup>1</sup>
                     </a>
                 
@@ -310,7 +310,7 @@
 </nav>
     
         <div class="coverdiv" id="coverdiv">
-    <img id="post-cover" class="nolazyload" src="/img/golang2.jpg" alt="cover">
+    <img id="post-cover" class="nolazyload" src="/img/golang3.jpg" alt="cover">
 </div>
 <div id="post-info">
     <div id="post-firstinfo">
@@ -372,9 +372,8 @@
     <div id="post">
         <article class="post-content" id="article-container">
             <h1 id="Gorm概述"><a href="#Gorm概述" class="headerlink" title="Gorm概述"></a>Gorm概述</h1><h2 id="ORM简介"><a href="#ORM简介" class="headerlink" title="ORM简介"></a>ORM简介</h2><p>对象关系映射（Object Relational<br>Mapping，简称ORM）模式是一种为了解决面向对象与关系数据库（如mysql数据库）存在的互不匹配的现象的技术。简单的说，ORM是通过使用描述对象和数据库之间映射的元数据，将程序中的对象自动持久化到关系数据库中。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>go get -u gorm.io/gorm
-go get -u gorm.io/driver/mysql
-</code></pre>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go get -u gorm.io/gorm</span><br><span class="line">go get -u gorm.io/driver/mysql</span><br></pre></td></tr></table></figure>
+
 <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;gorm.io/driver/mysql&quot;</span></span><br><span class="line">    <span class="string">&quot;gorm.io/gorm&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模型 model</span></span><br><span class="line"><span class="keyword">type</span> Product <span class="keyword">struct</span> &#123;</span><br><span class="line">    gorm.Model  <span class="comment">//继承</span></span><br><span class="line">    Code  <span class="type">string</span></span><br><span class="line">    Price <span class="type">uint</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建表 （迁移 schema）</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">create</span><span class="params">(db *gorm.DB)</span></span> &#123;</span><br><span class="line">    db.AutoMigrate(&amp;Product&#123;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入数据</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">insert</span><span class="params">(db *gorm.DB)</span></span> &#123;</span><br><span class="line">    p := Product&#123;</span><br><span class="line">        Code:  <span class="string">&quot;1001&quot;</span>,</span><br><span class="line">        Price: <span class="number">100</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    db.Create(&amp;p)</span><br><span class="line">    <span class="comment">// 或者</span></span><br><span class="line">    db.Create(&amp;Product&#123;Code: <span class="string">&quot;D42&quot;</span>, Price: <span class="number">100</span>&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">find</span><span class="params">(db *gorm.DB)</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> p Product</span><br><span class="line">    db.First(&amp;p, <span class="number">1</span>) <span class="comment">//根据整形主键查询</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;p: %v\n&quot;</span>, p)</span><br><span class="line">    db.First(&amp;p, <span class="string">&quot;code = ?&quot;</span>, <span class="string">&quot;1001&quot;</span>) <span class="comment">//查找code字段值为1001的记录</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;p: %v\n&quot;</span>, p)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">update</span><span class="params">(db *gorm.DB)</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> p Product</span><br><span class="line">    db.First(&amp;p, <span class="number">1</span>)</span><br><span class="line">    db.Model(&amp;p).Update(<span class="string">&quot;Price&quot;</span>, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//db.Model(&amp;p).Update(Product&#123;Price: 1001, Code: &quot;1001&quot;&#125;) //仅更新非零值字段</span></span><br><span class="line">    <span class="comment">//db.Model(&amp;p).Update(map[string]interface&#123;&#125;&#123;&quot;Price&quot;: 1003, &quot;Code&quot;: &quot;1003&quot;&#125;)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">delete</span><span class="params">(db *gorm.DB)</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> p Product</span><br><span class="line">    db.First(&amp;p, <span class="number">1</span>)</span><br><span class="line">    db.Delete(&amp;p, <span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    dsn := <span class="string">&quot;root:mima1234@tcp(127.0.0.1:3306)/golang_db?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;</span></span><br><span class="line">    db, err := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;&#125;)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="built_in">panic</span>(<span class="string">&quot;failed to connect database&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//create(db)</span></span><br><span class="line">    <span class="comment">//insert(db)</span></span><br><span class="line">    <span class="comment">//find(db)</span></span><br><span class="line">    <span class="comment">//update(db)</span></span><br><span class="line">    <span class="comment">//delete(db)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="gorm声明模型"><a href="#gorm声明模型" class="headerlink" title="gorm声明模型"></a>gorm声明模型</h1><h2 id="模型定义"><a href="#模型定义" class="headerlink" title="模型定义"></a>模型定义</h2><p>模型是标准的 struct，由 Go 的基本数据类型、实现了 Scanner 和 Valuer<br>接口的自定义类型及其指针或别名组成</p>
@@ -1225,7 +1224,7 @@ created_at：订单创建时间，类型为时间戳，默认值为当前
     </div>
 </div>
                 <div class="share-link weibo"><a class="share-button" target="_blank"
-    href="https://service.weibo.com/share/share.php?title=学习笔记｜Gorm框架&amp;url=https://ryanchou612.github.io/posts/f95eb837.html&amp;pic=/img/golang2.jpg"
+    href="https://service.weibo.com/share/share.php?title=学习笔记｜Gorm框架&amp;url=https://ryanchou612.github.io/posts/f95eb837.html&amp;pic=/img/golang3.jpg"
     title="分享到微博" rel="noopener external nofollow noreferrer noopener">
     <i class="fab fa-weibo" style="font-size:22px"></i>
 </a>
@@ -1406,7 +1405,7 @@ created_at：订单创建时间，类型为时间戳，默认值为当前
                 <a class="thumbnail" href="/posts/f95eb837.html" title="学习笔记｜Gorm框架">
                     <img
                         alt="学习笔记｜Gorm框架"
-                        src="/img/golang2.jpg">
+                        src="/img/golang3.jpg">
                 </a>
                 <div class="content">
                     
