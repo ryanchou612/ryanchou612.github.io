@@ -64,6 +64,8 @@
                         
                             <a href="/tags/Golang/" style="font-size: 0.8rem; color: #d3d3d3">Golang<sup>3</sup></a>
                         
+                            <a href="/tags/Gorm/" style="font-size: 0.8rem; color: #d3d3d3">Gorm<sup>1</sup></a>
+                        
                             <a href="/tags/Linux/" style="font-size: 0.8rem; color: #d3d3d3">Linux<sup>1</sup></a>
                         
                             <a href="/tags/MySQL/" style="font-size: 0.8rem; color: #d3d3d3">MySQL<sup>1</sup></a>
@@ -76,7 +78,7 @@
      
         <li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2023-07/')" data-pjax-state=""><span
             class="card-archive-list-date">2023-07</span>
-            <div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span
                     class="card-archive-list-count-unit">篇</span></div>
             </a>
         </li>
@@ -90,7 +92,7 @@
      
         <li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2023-05/')" data-pjax-state=""><span
             class="card-archive-list-date">2023-05</span>
-            <div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span
                     class="card-archive-list-count-unit">篇</span></div>
             </a>
         </li>
@@ -176,6 +178,10 @@
                 
                     <a href="/tags/Golang/" style="font-size: 1em; color: #d3d3d3">Golang
                         <sup>3</sup>
+                    </a>
+                
+                    <a href="/tags/Gorm/" style="font-size: 1em; color: #d3d3d3">Gorm
+                        <sup>1</sup>
                     </a>
                 
                     <a href="/tags/Linux/" style="font-size: 1em; color: #d3d3d3">Linux
@@ -364,7 +370,7 @@
 <li>Linux是一个操作系统(os)，就像Windows<br>或者MacOS一样，主要应用在企业服务器领域。</li>
 <li>Linux (lɪnəks)内核，最初只是由芬兰人 李纳斯·托瓦兹（Linus<br>Torvalds），在赫尔辛基大学上学时，出于个人爱好而编写的。</li>
 </ul>
-<p><img src="https://duoke360.com/storage/thumbnails/_signature/NLTM3DMSI4PHJ439POQC449PF.png" alt="Linus
+<p><img src="https://ryanchou612.github.io/storage/thumbnails/_signature/NLTM3DMSI4PHJ439POQC449PF.png" alt="Linus
 Torvalds"></p>
 <ul>
 <li>Linux是一套<strong>免费</strong>使用和自由传播的类Unix操作系统，是一个基于POSIX，可移植操作系统接口（英语：Portable<br>Operating System<br>Interface，缩写为POSIX）和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。</li>
@@ -388,31 +394,31 @@ Torvalds"></p>
 <li>安全病毒少</li>
 <li>性能稳定</li>
 </ol>
-<h1 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h1><p>当我们使用 <code>ls /</code>查看linux根目录时，结构如下图所示：</p>
-<p><img src="https://duoke360.com/storage/thumbnails/_signature/F4MBAOVP28KN54LBTAMKUI7LP.png" alt="Linux-Directory-Structure"></p>
+<h2 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h2><p>当我们使用 <code>ls /</code>查看linux根目录时，结构如下图所示：</p>
+<p><img src="https://ryanchou612.github.io/storage/thumbnails/_signature/F4MBAOVP28KN54LBTAMKUI7LP.png" alt="Linux-Directory-Structure"></p>
 <p>这些目录有一定的含义，分别存放了不同的程序，下面分别介绍这些目录</p>
-<h2 id="根目录"><a href="#根目录" class="headerlink" title="根目录"></a>根目录</h2><p>根目录，一般根目录下只存放目录，不要存放文件，&#x2F;etc、&#x2F;bin、&#x2F;dev、&#x2F;lib、&#x2F;sbin应该和根目录放置在一个分区中</p>
-<h2 id="bin-usr-bin"><a href="#bin-usr-bin" class="headerlink" title="/bin:/usr/bin"></a><code>/bin:/usr/bin</code></h2><p>可执行二进制文件的目录，如常用的命令ls、tar、mv、cat等</p>
-<h2 id="boot"><a href="#boot" class="headerlink" title="/boot"></a><code>/boot</code></h2><p>放置linux系统启动时用到的一些文件。<code>/boot/vmlinuz</code>为linux的内核文件，以及<code>/boot/gurb</code></p>
-<h2 id="dev"><a href="#dev" class="headerlink" title="/dev"></a><code>/dev</code></h2><p>存放linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备。</p>
-<h2 id="etc"><a href="#etc" class="headerlink" title="/etc"></a><code>/etc</code></h2><p>系统配置文件存放的目录，不建议在此目录下存放可执行文件，重要的配置文件有<code>/etc/inittab</code>、<code>/etc/fstab</code>、<code>/etc/init.d</code>、<code>/etc/X11</code>、<code>/etc/sysconfig</code>、<code>/etc/xinetd.d</code>修改配置文件之前记得备份。</p>
-<h2 id="home"><a href="#home" class="headerlink" title="/home"></a><code>/home</code></h2><p>系统默认的用户home家目录，新增用户账号时，用户的家目录都存放在此目录下，<code>~</code>表示当前用户的家目录，<code>~test</code>表示用户test的家目录。</p>
-<h2 id="lib-usr-lib-usr-local-lib："><a href="#lib-usr-lib-usr-local-lib：" class="headerlink" title="/lib: /usr/lib: /usr/local/lib："></a><code>/lib:</code> <code>/usr/lib:</code> <code>/usr/local/lib：</code></h2><p>系统使用的函数库的目录，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助，比较重要的目录为<code>/lib/modules</code>。</p>
-<h2 id="lost-fount"><a href="#lost-fount" class="headerlink" title="/lost+fount"></a><code>/lost+fount</code></h2><p>系统异常产生错误时，会将一些遗失的片段放置于此目录下，通常这个目录会自动出现在装置目录下。如加载硬盘于&#x2F;disk<br>中，此目录下就会自动产生目录&#x2F;disk&#x2F;lost+found</p>
-<h2 id="mnt-media："><a href="#mnt-media：" class="headerlink" title="/mnt:/media："></a><code>/mnt:/media：</code></h2><p>光盘默认挂载点，通常光盘挂载于&#x2F;mnt&#x2F;cdrom下，也不一定，可以选择任意位置进行挂载。</p>
-<h2 id="opt："><a href="#opt：" class="headerlink" title="/opt："></a><code>/opt：</code></h2><p>给主机额外安装软件所摆放的目录。如：FC4使用的Fedora<br>社群开发软件，如果想要自行安装新的KDE<br>桌面软件，可以将该软件安装在该目录下。以前的 Linux 系统中，习惯放置在<br><code>/usr/local</code> 目录下</p>
-<h2 id="proc："><a href="#proc：" class="headerlink" title="/proc："></a><code>/proc：</code></h2><p>此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放于内存中，所以不占用磁盘空间，比较重要的目录有<code>/proc/cpuinfo</code>、<code>/proc/interrupts</code>、<code>/proc/dma</code>、<code>/proc/ioports</code>、<code>/proc/net/</code>等</p>
-<h2 id="root："><a href="#root：" class="headerlink" title="/root："></a><code>/root：</code></h2><p>系统管理员root的家目录，系统第一个启动的分区为&#x2F;，所以最好将&#x2F;root和&#x2F;放置在一个分区下。</p>
-<h2 id="sbin-usr-sbin-usr-local-sbin："><a href="#sbin-usr-sbin-usr-local-sbin：" class="headerlink" title="/sbin: /usr/sbin: /usr/local/sbin："></a><code>/sbin:</code> <code>/usr/sbin:</code> <code>/usr/local/sbin：</code></h2><p>放置系统管理员使用的可执行命令，如<code>fdisk</code>、<code>shutdown</code>、<code>mount</code>等。与<code>/bin</code>不同的是，这几个目录是给系统管理员<code>root</code>使用的命令，一般用户只能<strong>查看</strong>而不能设置和使用。</p>
-<h2 id="tmp："><a href="#tmp：" class="headerlink" title="/tmp："></a><code>/tmp：</code></h2><p>一般用户或正在执行的程序临时存放文件的目录,任何人都可以访问,重要数据不可放置在此目录下</p>
-<h2 id="srv："><a href="#srv：" class="headerlink" title="/srv："></a><code>/srv：</code></h2><p>服务启动之后需要访问的数据目录，如www服务需要访问的网页数据存放在<code>/srv/www</code>内</p>
-<h2 id="usr："><a href="#usr：" class="headerlink" title="/usr："></a><code>/usr：</code></h2><p>应用程序存放目录 <code>/usr/bin</code> 存放应用程序 <code>/usr/share</code>存放共享数据，<br><code>/usr/lib</code> 存放不能直接运行的，却是许多程序运行所必需的一些函数库文件。<br><code>/usr/local:</code> 存放软件升级包。 <code>/usr/share/doc:</code> 系统说明文件存放目录。<br><code>/usr/share/man:</code> 程序说明文件存放目录。</p>
-<h2 id="var："><a href="#var：" class="headerlink" title="/var："></a><code>/var：</code></h2><p>放置系统执行过程中经常变化的文件 如随时更改的日志文件<code>/var/log</code><br><code>/var/log/message</code>：所有的登录文件存放目录，<br><code>/var/spool/mail</code>：邮件存放的目录， <code>/var/run</code>:<br>程序或服务启动后，其PID存放在该目录下。</p>
+<h3 id="根目录"><a href="#根目录" class="headerlink" title="根目录"></a>根目录</h3><p>根目录，一般根目录下只存放目录，不要存放文件，&#x2F;etc、&#x2F;bin、&#x2F;dev、&#x2F;lib、&#x2F;sbin应该和根目录放置在一个分区中</p>
+<h3 id="bin-usr-bin"><a href="#bin-usr-bin" class="headerlink" title="/bin:/usr/bin"></a><code>/bin:/usr/bin</code></h3><p>可执行二进制文件的目录，如常用的命令ls、tar、mv、cat等</p>
+<h3 id="boot"><a href="#boot" class="headerlink" title="/boot"></a><code>/boot</code></h3><p>放置linux系统启动时用到的一些文件。<code>/boot/vmlinuz</code>为linux的内核文件，以及<code>/boot/gurb</code></p>
+<h3 id="dev"><a href="#dev" class="headerlink" title="/dev"></a><code>/dev</code></h3><p>存放linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备。</p>
+<h3 id="etc"><a href="#etc" class="headerlink" title="/etc"></a><code>/etc</code></h3><p>系统配置文件存放的目录，不建议在此目录下存放可执行文件，重要的配置文件有<code>/etc/inittab</code>、<code>/etc/fstab</code>、<code>/etc/init.d</code>、<code>/etc/X11</code>、<code>/etc/sysconfig</code>、<code>/etc/xinetd.d</code>修改配置文件之前记得备份。</p>
+<h3 id="home"><a href="#home" class="headerlink" title="/home"></a><code>/home</code></h3><p>系统默认的用户home家目录，新增用户账号时，用户的家目录都存放在此目录下，<code>~</code>表示当前用户的家目录，<code>~test</code>表示用户test的家目录。</p>
+<h3 id="lib-usr-lib-usr-local-lib："><a href="#lib-usr-lib-usr-local-lib：" class="headerlink" title="/lib: /usr/lib: /usr/local/lib："></a><code>/lib:</code> <code>/usr/lib:</code> <code>/usr/local/lib：</code></h3><p>系统使用的函数库的目录，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助，比较重要的目录为<code>/lib/modules</code>。</p>
+<h3 id="lost-fount"><a href="#lost-fount" class="headerlink" title="/lost+fount"></a><code>/lost+fount</code></h3><p>系统异常产生错误时，会将一些遗失的片段放置于此目录下，通常这个目录会自动出现在装置目录下。如加载硬盘于&#x2F;disk<br>中，此目录下就会自动产生目录&#x2F;disk&#x2F;lost+found</p>
+<h3 id="mnt-media："><a href="#mnt-media：" class="headerlink" title="/mnt:/media："></a><code>/mnt:/media：</code></h3><p>光盘默认挂载点，通常光盘挂载于&#x2F;mnt&#x2F;cdrom下，也不一定，可以选择任意位置进行挂载。</p>
+<h3 id="opt："><a href="#opt：" class="headerlink" title="/opt："></a><code>/opt：</code></h3><p>给主机额外安装软件所摆放的目录。如：FC4使用的Fedora<br>社群开发软件，如果想要自行安装新的KDE<br>桌面软件，可以将该软件安装在该目录下。以前的 Linux 系统中，习惯放置在<br><code>/usr/local</code> 目录下</p>
+<h3 id="proc："><a href="#proc：" class="headerlink" title="/proc："></a><code>/proc：</code></h3><p>此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放于内存中，所以不占用磁盘空间，比较重要的目录有<code>/proc/cpuinfo</code>、<code>/proc/interrupts</code>、<code>/proc/dma</code>、<code>/proc/ioports</code>、<code>/proc/net/</code>等</p>
+<h3 id="root："><a href="#root：" class="headerlink" title="/root："></a><code>/root：</code></h3><p>系统管理员root的家目录，系统第一个启动的分区为&#x2F;，所以最好将&#x2F;root和&#x2F;放置在一个分区下。</p>
+<h3 id="sbin-usr-sbin-usr-local-sbin："><a href="#sbin-usr-sbin-usr-local-sbin：" class="headerlink" title="/sbin: /usr/sbin: /usr/local/sbin："></a><code>/sbin:</code> <code>/usr/sbin:</code> <code>/usr/local/sbin：</code></h3><p>放置系统管理员使用的可执行命令，如<code>fdisk</code>、<code>shutdown</code>、<code>mount</code>等。与<code>/bin</code>不同的是，这几个目录是给系统管理员<code>root</code>使用的命令，一般用户只能<strong>查看</strong>而不能设置和使用。</p>
+<h3 id="tmp："><a href="#tmp：" class="headerlink" title="/tmp："></a><code>/tmp：</code></h3><p>一般用户或正在执行的程序临时存放文件的目录,任何人都可以访问,重要数据不可放置在此目录下</p>
+<h3 id="srv："><a href="#srv：" class="headerlink" title="/srv："></a><code>/srv：</code></h3><p>服务启动之后需要访问的数据目录，如www服务需要访问的网页数据存放在<code>/srv/www</code>内</p>
+<h3 id="usr："><a href="#usr：" class="headerlink" title="/usr："></a><code>/usr：</code></h3><p>应用程序存放目录 <code>/usr/bin</code> 存放应用程序 <code>/usr/share</code>存放共享数据，<br><code>/usr/lib</code> 存放不能直接运行的，却是许多程序运行所必需的一些函数库文件。<br><code>/usr/local:</code> 存放软件升级包。 <code>/usr/share/doc:</code> 系统说明文件存放目录。<br><code>/usr/share/man:</code> 程序说明文件存放目录。</p>
+<h3 id="var："><a href="#var：" class="headerlink" title="/var："></a><code>/var：</code></h3><p>放置系统执行过程中经常变化的文件 如随时更改的日志文件<code>/var/log</code><br><code>/var/log/message</code>：所有的登录文件存放目录，<br><code>/var/spool/mail</code>：邮件存放的目录， <code>/var/run</code>:<br>程序或服务启动后，其PID存放在该目录下。</p>
 <h2 id="FHS"><a href="#FHS" class="headerlink" title="FHS"></a>FHS</h2><p>由于linux是开放源代码，各大公司和团体根据linux的核心代码做各自的操作，编程。这样就造成在根下的目录的不同。这样就造成个人不能使用他人的linux系统的PC。因为你根本不知道一些基本的配置，文件在哪里，这就造成了混乱。这就是FHS（Filesystem<br>Hierarchy Standard<br>）机构诞生的原因。该机构是linux爱好者自发的组成的一个团体，主要是是对linux做一些基本的要求（<strong>约定</strong>），不至于是操作者换一台主机就成了linux的<strong>文盲</strong>。</p>
 <p>根据FHS(<a target="_blank" rel="noopener" href="http://www.pathname.com/fhs/)%E7%9A%84%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6%E6%8C%87%E5%87%BA%EF%BC%8C">http://www.pathname.com/fhs/)的官方文件指出，</a><br>他们的主要目的是希望让使用者可以了解到已安装软件通常放置于那个目录下，<br>所以他们希望独立的软件开发商、操作系统制作者、以及想要维护系统的用户，都能够遵循FHS的标准。<br>也就是说，FHS的重点在于规范每个特定的目录下应该要放置什么样子的数据而已。<br>这样做好处非常多，因为Linux操作系统就能够在既有的面貌下(目录架构不变)发展出开发者想要的独特风格。</p>
 <p>事实上，FHS是根据过去的经验一直再持续的改版的，FHS依据文件系统使用的频繁与否与是否允许使用者随意更动，<br>而将目录定义成为四种交互作用的形态，用表格来说有点像底下这样：</p>
-<p><img src="https://duoke360.com/storage/thumbnails/_signature/3IG5A5R3GBG36CE0G4JBVK7DVQ.png" alt="fhs"></p>
-<h1 id="从Linux获得帮助"><a href="#从Linux获得帮助" class="headerlink" title="从Linux获得帮助"></a>从Linux获得帮助</h1><h2 id="内部命令与外部命令"><a href="#内部命令与外部命令" class="headerlink" title="内部命令与外部命令"></a>内部命令与外部命令</h2><ul>
+<p><img src="https://ryanchou612.github.io/storage/thumbnails/_signature/3IG5A5R3GBG36CE0G4JBVK7DVQ.png" alt="fhs"></p>
+<h2 id="从Linux获得帮助"><a href="#从Linux获得帮助" class="headerlink" title="从Linux获得帮助"></a>从Linux获得帮助</h2><h3 id="内部命令与外部命令"><a href="#内部命令与外部命令" class="headerlink" title="内部命令与外部命令"></a>内部命令与外部命令</h3><ul>
 <li>简单来说，在linux系统中有存储位置的命令为外部命令；</li>
 <li>没有存储位置的为内部命令，可以理解为内部命令嵌入在linux的shell中，所以看不到。</li>
 <li><code>type</code>来判断到底为内部命令还是内部命令</li>
@@ -420,13 +426,13 @@ Torvalds"></p>
 <p><strong>实例</strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@master ~]<span class="comment"># type help</span></span><br><span class="line"><span class="built_in">help</span> is a shell <span class="built_in">builtin</span></span><br><span class="line">[root@master ~]<span class="comment"># type cd</span></span><br><span class="line"><span class="built_in">cd</span> is a shell <span class="built_in">builtin</span></span><br><span class="line">[root@master ~]<span class="comment"># type useradd</span></span><br><span class="line">useradd is /usr/sbin/useradd</span><br><span class="line">[root@master ~]<span class="comment"># type passwd</span></span><br><span class="line">passwd is /usr/bin/passwd</span><br></pre></td></tr></table></figure>
 
-<h2 id="help命令"><a href="#help命令" class="headerlink" title="help命令"></a><code>help</code>命令</h2><p>内部命令的帮助文档 。使用help的格式为：</p>
+<h3 id="help命令"><a href="#help命令" class="headerlink" title="help命令"></a><code>help</code>命令</h3><p>内部命令的帮助文档 。使用help的格式为：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>  命令</span><br><span class="line"><span class="built_in">help</span> <span class="built_in">cd</span></span><br><span class="line"><span class="built_in">help</span> <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="help选项"><a href="#help选项" class="headerlink" title="--help选项"></a><code>--help</code>选项</h2><p>大多数外部命令都可以使用<code>--help</code>来获取帮助，格式为：</p>
+<h3 id="help选项"><a href="#help选项" class="headerlink" title="--help选项"></a><code>--help</code>选项</h3><p>大多数外部命令都可以使用<code>--help</code>来获取帮助，格式为：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">命令 --<span class="built_in">help</span></span><br><span class="line"><span class="built_in">ls</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a><code>man</code>命令</h2><p>以全屏显示在线帮助，按<code>q</code>退出，上下键移动，格式为：</p>
+<h3 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a><code>man</code>命令</h3><p>以全屏显示在线帮助，按<code>q</code>退出，上下键移动，格式为：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">man 命令</span><br><span class="line">man <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
 
 <ol>
@@ -440,9 +446,50 @@ Torvalds"></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">man <span class="built_in">ls</span></span><br><span class="line">/ -a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>man 手册分册（分区段）</p>
-<p>  section序号   section的含义</p>
-<hr>
-<p>  1             可执行文件或者<code>shell</code>命令<br>  2             系统调用（内核提供的函数）<br>  3             库函数<br>  4             特别的文件（通常在<code>/dev</code>）<br>  5             文件格式，如<code>/etc/passwd</code><br>  6             游戏<br>  7             杂项（包括宏包）<br>  8             系统管理员命令（通常给<code>root</code>用户使用）<br>  9             内核例程（非标准例程）</p>
+<table>
+<thead>
+<tr>
+<th align="left">section序号</th>
+<th align="left">section的含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">可执行文件或者<code>shell</code>命令</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">系统调用（内核提供的函数）</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">库函数</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">特别的文件（通常在<code>/dev</code>）</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">文件格式，如<code>/etc/passwd</code></td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">游戏</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">杂项（包括宏包）</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">系统管理员命令（通常给<code>root</code>用户使用）</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">内核例程（非标准例程）</td>
+</tr>
+</tbody></table>
 <p>使用下面命令可以查看，就是man自己：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">man man</span><br><span class="line">man 1 passwd</span><br><span class="line">man 5 passwd</span><br></pre></td></tr></table></figure>
 
@@ -450,25 +497,22 @@ Torvalds"></p>
 <p>如果没有指定man在哪个板块中寻找，将会按照默认的顺序查找这些板块中的命令，只返回含有该命令的第一个文档，如果指定板块，则只会在指定板块中寻找该命令，所以有时候直接man而不指定板块则可能不会找到自己想要的文档。</p>
 </blockquote>
 <p>可以通过<code>whatis</code>查看一下该命令在man帮助文档中的入口</p>
-<pre><code>whatis passwd
-</code></pre>
-</li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whatis passwd</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="info命令"><a href="#info命令" class="headerlink" title="info命令"></a>info命令</h2><p>另一种在线帮助，和<code>man</code>功能类似，更加详细，格式：</p>
-<pre><code>info ls
-info cd
-</code></pre>
+<h3 id="info命令"><a href="#info命令" class="headerlink" title="info命令"></a>info命令</h3><p>另一种在线帮助，和<code>man</code>功能类似，更加详细，格式：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">info <span class="built_in">ls</span></span><br><span class="line">info <span class="built_in">cd</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>一般用<code>help</code> ,<code>--help</code>足够，<code>man</code>来补充，<code>info</code>用的很少</p>
 </blockquote>
-<h1 id="ls-列出目标目录"><a href="#ls-列出目标目录" class="headerlink" title="ls 列出目标目录"></a><code>ls</code> 列出目标目录</h1><h2 id="ls简介"><a href="#ls简介" class="headerlink" title="ls简介"></a><code>ls</code>简介</h2><ul>
+<h1 id="Linux文件和目录管理"><a href="#Linux文件和目录管理" class="headerlink" title="Linux文件和目录管理"></a>Linux文件和目录管理</h1><h2 id="ls-列出目标目录"><a href="#ls-列出目标目录" class="headerlink" title="ls 列出目标目录"></a><code>ls</code> 列出目标目录</h2><h3 id="ls简介"><a href="#ls简介" class="headerlink" title="ls简介"></a><code>ls</code>简介</h3><ul>
 <li><code>ls</code>命令用来列出目标目录（<strong>缺省为当前目录</strong>）中所有的子目录和文件。指令英文原义：list</li>
 <li>指令所在路径：<code>/bin/ls</code></li>
 <li>执行权限：<code>All User</code></li>
 </ul>
-<h2 id="ls语法"><a href="#ls语法" class="headerlink" title="ls语法"></a><code>ls</code>语法</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> [OPTION]... [FILE]...</span><br><span class="line"><span class="built_in">ls</span> 选项[-alFR...]..... [目录]</span><br></pre></td></tr></table></figure>
+<h3 id="ls语法"><a href="#ls语法" class="headerlink" title="ls语法"></a><code>ls</code>语法</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> [OPTION]... [FILE]...</span><br><span class="line"><span class="built_in">ls</span> 选项[-alFR...]..... [目录]</span><br></pre></td></tr></table></figure>
 
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><ul>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><ul>
 <li><p>默认显示当前目录下内容</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -478,10 +522,10 @@ info cd
 <li><p>逆序输出</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -r</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="显示隐藏文件"><a href="#显示隐藏文件" class="headerlink" title="显示隐藏文件"></a>显示隐藏文件</h2><p>在 Linux 中以 <code>.</code> 号(dot)开头的目录和文件被理解为隐藏文件。<code>ls</code><br>命令默认不会列出这些文件，除非你指定了 -a 选项。<code>-a</code><br>选项其实是显示所有的文件，包含隐藏的文件和目录。</p>
+<h3 id="显示隐藏文件"><a href="#显示隐藏文件" class="headerlink" title="显示隐藏文件"></a>显示隐藏文件</h3><p>在 Linux 中以 <code>.</code> 号(dot)开头的目录和文件被理解为隐藏文件。<code>ls</code><br>命令默认不会列出这些文件，除非你指定了 -a 选项。<code>-a</code><br>选项其实是显示所有的文件，包含隐藏的文件和目录。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -a</span><br></pre></td></tr></table></figure>
 
-<h2 id="使用长格式显示更多信息"><a href="#使用长格式显示更多信息" class="headerlink" title="使用长格式显示更多信息"></a>使用长格式显示更多信息</h2><p>长格式能够提供更多的信息，比如文件和目录的大小，最后更新的时间，所有者及其权限。使用<br>-l (小写的字母L) 选项可以输出长格式的信息</p>
+<h3 id="使用长格式显示更多信息"><a href="#使用长格式显示更多信息" class="headerlink" title="使用长格式显示更多信息"></a>使用长格式显示更多信息</h3><p>长格式能够提供更多的信息，比如文件和目录的大小，最后更新的时间，所有者及其权限。使用<br>-l (小写的字母L) 选项可以输出长格式的信息</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@master /]<span class="comment"># ls -l</span></span><br><span class="line">total 28</span><br><span class="line">lrwxrwxrwx.   1 root root    7 Apr 26 22:43 bin -&gt; usr/bin</span><br><span class="line">dr-xr-xr-x.   5 root root 4096 Apr 26 22:59 boot</span><br><span class="line">drwxr-xr-x   19 root root 3280 Apr 27 17:01 dev</span><br><span class="line">drwxr-xr-x. 145 root root 8192 Apr 27 17:01 etc</span><br><span class="line">drwxr-xr-x.   3 root root   17 Apr 26 22:58 home</span><br><span class="line">lrwxrwxrwx.   1 root root    7 Apr 26 22:43 lib -&gt; usr/lib</span><br><span class="line">lrwxrwxrwx.   1 root root    9 Apr 26 22:43 lib64 -&gt; usr/lib64</span><br><span class="line">drwxr-xr-x.   2 root root    6 Apr 10  2018 media</span><br><span class="line">drwxr-xr-x.   2 root root    6 Apr 10  2018 mnt</span><br><span class="line">drwxr-xr-x.   3 root root   16 Apr 26 22:50 opt</span><br><span class="line">dr-xr-xr-x  228 root root    0 Apr 27 17:01 proc</span><br><span class="line">dr-xr-x---.  14 root root 4096 Apr 27 17:49 root</span><br><span class="line">drwxr-xr-x   42 root root 1240 Apr 27 18:18 run</span><br><span class="line">lrwxrwxrwx.   1 root root    8 Apr 26 22:43 sbin -&gt; usr/sbin</span><br><span class="line">drwxr-xr-x.   2 root root    6 Apr 10  2018 srv</span><br><span class="line">dr-xr-xr-x   13 root root    0 Apr 27 18:17 sys</span><br><span class="line">drwxrwxrwt.  32 root root 4096 Apr 27 18:18 tmp</span><br><span class="line">drwxr-xr-x.  13 root root  155 Apr 26 22:43 usr</span><br><span class="line">drwxr-xr-x.  22 root root 4096 Apr 27 01:13 var</span><br></pre></td></tr></table></figure>
 
 <p><strong>第1字段: 文件属性字段</strong></p>
@@ -502,38 +546,34 @@ info cd
 <p><strong>第5字段: 文件所占用的空间(以字节为单位)</strong></p>
 <p><strong>第6字段：文件（目录）最近访问（修改）时间</strong></p>
 <p><strong>第7字段：文件名</strong></p>
-<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>ls 命令的输出默认是以字母序排列的，只是隐藏文件的 .<br>号没有参与排序规则。除了字母序，我们还能以文件的大小或最后修改时间为排序条件.</p>
-<h3 id="以文件的大小排序"><a href="#以文件的大小排序" class="headerlink" title="以文件的大小排序"></a>以文件的大小排序</h3><pre><code>ls -lS
-</code></pre>
-<h3 id="最后修改时间排序"><a href="#最后修改时间排序" class="headerlink" title="最后修改时间排序"></a>最后修改时间排序</h3><pre><code>ls -lt
-</code></pre>
-<h1 id="cd-pwd-切换显示目录"><a href="#cd-pwd-切换显示目录" class="headerlink" title="cd pwd 切换显示目录"></a>cd pwd 切换显示目录</h1><h2 id="pwd显示当前目录"><a href="#pwd显示当前目录" class="headerlink" title="pwd显示当前目录"></a>pwd显示当前目录</h2><pre><code>pwd
-</code></pre>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>ls 命令的输出默认是以字母序排列的，只是隐藏文件的 .<br>号没有参与排序规则。除了字母序，我们还能以文件的大小或最后修改时间为排序条件.</p>
+<h3 id="以文件的大小排序"><a href="#以文件的大小排序" class="headerlink" title="以文件的大小排序"></a>以文件的大小排序</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -lS</span><br></pre></td></tr></table></figure>
+
+<h3 id="最后修改时间排序"><a href="#最后修改时间排序" class="headerlink" title="最后修改时间排序"></a>最后修改时间排序</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -lt</span><br></pre></td></tr></table></figure>
+
+<h2 id="cd-pwd-切换显示目录"><a href="#cd-pwd-切换显示目录" class="headerlink" title="cd pwd 切换显示目录"></a>cd pwd 切换显示目录</h2><h3 id="pwd显示当前目录"><a href="#pwd显示当前目录" class="headerlink" title="pwd显示当前目录"></a>pwd显示当前目录</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>print working directory</p>
 </blockquote>
-<h2 id="cd命令简介"><a href="#cd命令简介" class="headerlink" title="cd命令简介"></a><code>cd</code>命令简介</h2><p>该命令用来切换当前目录。<code>cd</code> 是change directory 的缩写。</p>
-<h2 id="命令语法"><a href="#命令语法" class="headerlink" title="命令语法"></a>命令语法</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> [-L|-P] [<span class="built_in">dir</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="cd命令简介"><a href="#cd命令简介" class="headerlink" title="cd命令简介"></a><code>cd</code>命令简介</h3><p>该命令用来切换当前目录。<code>cd</code> 是change directory 的缩写。</p>
+<h3 id="命令语法"><a href="#命令语法" class="headerlink" title="命令语法"></a>命令语法</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> [-L|-P] [<span class="built_in">dir</span>]</span><br></pre></td></tr></table></figure>
 
-<h2 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h2><pre><code>cd /
-cd /etc
-</code></pre>
-<h2 id="特殊用法"><a href="#特殊用法" class="headerlink" title="特殊用法"></a>特殊用法</h2><h3 id="切换到父目录"><a href="#切换到父目录" class="headerlink" title="切换到父目录"></a>切换到父目录</h3><pre><code>cd ..
-cd ../..
-</code></pre>
+<h3 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /</span><br><span class="line"><span class="built_in">cd</span> /etc</span><br></pre></td></tr></table></figure>
+
+<h3 id="特殊用法"><a href="#特殊用法" class="headerlink" title="特殊用法"></a>特殊用法</h3><h3 id="切换到父目录"><a href="#切换到父目录" class="headerlink" title="切换到父目录"></a>切换到父目录</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> ../..</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>点（<code>.</code>）代表当前目录，两个点（<code>..</code>）代表父目录</p>
 </blockquote>
-<h3 id="切换到home目录"><a href="#切换到home目录" class="headerlink" title="切换到home目录"></a>切换到home目录</h3><pre><code>cd
-或
-cd ~
-</code></pre>
+<h3 id="切换到home目录"><a href="#切换到home目录" class="headerlink" title="切换到home目录"></a>切换到home目录</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span></span><br><span class="line">或</span><br><span class="line"><span class="built_in">cd</span> ~</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><code>~</code>表示home目录</p>
 </blockquote>
-<h3 id="返回之前的目录"><a href="#返回之前的目录" class="headerlink" title="返回之前的目录"></a>返回之前的目录</h3><pre><code>cd -
-</code></pre>
-<h1 id="Linux创建删除目录"><a href="#Linux创建删除目录" class="headerlink" title="Linux创建删除目录"></a>Linux创建删除目录</h1><h2 id="创建目录mkdir"><a href="#创建目录mkdir" class="headerlink" title="创建目录mkdir"></a>创建目录<code>mkdir</code></h2><p>linux <code>mkdir</code><br>命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有<strong>写权限</strong>，并且指定的目录名不能是当前目录中<strong>已有的目录</strong>。</p>
+<h3 id="返回之前的目录"><a href="#返回之前的目录" class="headerlink" title="返回之前的目录"></a>返回之前的目录</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
+
+<h2 id="Linux创建删除目录"><a href="#Linux创建删除目录" class="headerlink" title="Linux创建删除目录"></a>Linux创建删除目录</h2><h3 id="创建目录mkdir"><a href="#创建目录mkdir" class="headerlink" title="创建目录mkdir"></a>创建目录<code>mkdir</code></h3><p>linux <code>mkdir</code><br>命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有<strong>写权限</strong>，并且指定的目录名不能是当前目录中<strong>已有的目录</strong>。</p>
 <h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> [选项] 目录...</span><br></pre></td></tr></table></figure>
 
 <h3 id="命令参数"><a href="#命令参数" class="headerlink" title="命令参数"></a>命令参数</h3><p><code>-m</code>, –mode&#x3D;模式，设定权限模式 (类似 <code>chmod</code>)</p>
@@ -548,7 +588,7 @@ cd ~
 </blockquote>
 <h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rmdir</span> <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="Linux创建文件"><a href="#Linux创建文件" class="headerlink" title="Linux创建文件"></a>Linux创建文件</h1><h2 id="touch"><a href="#touch" class="headerlink" title="touch"></a><code>touch</code></h2><p>linux的<code>touch</code>命令不常用，一般在使用<code>make</code>的时候可能会用到，用来修改文件时间戳，或者新建一个不存在的文件。</p>
+<h1 id="Linux创建文件"><a href="#Linux创建文件" class="headerlink" title="Linux创建文件"></a>Linux创建文件</h1><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a><code>touch</code></h3><p>linux的<code>touch</code>命令不常用，一般在使用<code>make</code>的时候可能会用到，用来修改文件时间戳，或者新建一个不存在的文件。</p>
 <h3 id="命令格式-1"><a href="#命令格式-1" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> [选项]... 文件...</span><br></pre></td></tr></table></figure>
 
 <h3 id="命令参数-1"><a href="#命令参数-1" class="headerlink" title="命令参数"></a>命令参数</h3><p><code>-a</code> 或–time&#x3D;atime或–time&#x3D;access或–time&#x3D;use 只更改存取时间。</p>
@@ -560,16 +600,16 @@ cd ~
 <p><code>-t</code> 使用指定的日期时间，而非现在的时间。</p>
 <h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> test1.log test2.log          <span class="comment"># 创建不存在的文件</span></span><br><span class="line"><span class="built_in">touch</span> -r test1.log test2.log       <span class="comment"># 更新test1.log的时间和test2.log时间戳相同</span></span><br><span class="line"><span class="built_in">touch</span> -t 202211142234.50 test1.log <span class="comment">#设定文件的时间戳</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a><code>vim</code></h2><p>使用vim也可以创建一个文件，详细内容见vim章节</p>
-<h1 id="Linux删除文件和目录"><a href="#Linux删除文件和目录" class="headerlink" title="Linux删除文件和目录"></a>Linux删除文件和目录</h1><h2 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a><code>rm</code>命令</h2><p><code>rm</code>是常用的命令，该命令的功能为删除一个目录中的一个或多个文件或目录，它也可以将某个目录及其下的所有文件及子目录均删除。对于链接文件，只是删除了链接，原有文件均保持不变。</p>
-<h2 id="命令格式-2"><a href="#命令格式-2" class="headerlink" title="命令格式"></a>命令格式</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> [选项] 文件… </span><br></pre></td></tr></table></figure>
+<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a><code>vim</code></h3><p>使用vim也可以创建一个文件，详细内容见vim章节</p>
+<h1 id="Linux删除文件和目录"><a href="#Linux删除文件和目录" class="headerlink" title="Linux删除文件和目录"></a>Linux删除文件和目录</h1><h3 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a><code>rm</code>命令</h3><p><code>rm</code>是常用的命令，该命令的功能为删除一个目录中的一个或多个文件或目录，它也可以将某个目录及其下的所有文件及子目录均删除。对于链接文件，只是删除了链接，原有文件均保持不变。</p>
+<h3 id="命令格式-2"><a href="#命令格式-2" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> [选项] 文件… </span><br></pre></td></tr></table></figure>
 
-<h2 id="命令参数-2"><a href="#命令参数-2" class="headerlink" title="命令参数"></a>命令参数</h2><p><code>-f</code>, –force 忽略不存在的文件，从不给出提示。</p>
+<h3 id="命令参数-2"><a href="#命令参数-2" class="headerlink" title="命令参数"></a>命令参数</h3><p><code>-f</code>, –force 忽略不存在的文件，从不给出提示。</p>
 <p><code>-i</code>, –interactive 进行交互式删除</p>
 <p><code>-r</code>, -R, –recursive<br>指示<code>rm</code>将参数中列出的全部目录和子目录均递归地删除。</p>
-<h2 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> test.txt <span class="comment"># 删除文件，系统会询问</span></span><br><span class="line"><span class="built_in">rm</span> -f test.txt <span class="comment"># 强制删除，不询问</span></span><br><span class="line"><span class="built_in">rm</span> <span class="built_in">test</span>/    <span class="comment"># 删除目录，系统会询问</span></span><br><span class="line"><span class="built_in">rm</span> -f <span class="built_in">test</span>/ <span class="comment"># 删除目录，不询问</span></span><br><span class="line"><span class="built_in">rm</span> -rf <span class="built_in">test</span>/ <span class="comment"># 递归删除目录及下面文件，不询问</span></span><br><span class="line"><span class="built_in">rm</span> -rf <span class="built_in">test</span>* <span class="comment"># 删除以test开头的文件，不询问</span></span><br><span class="line"><span class="built_in">rm</span> -rf *.txt *.<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<h3 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> test.txt <span class="comment"># 删除文件，系统会询问</span></span><br><span class="line"><span class="built_in">rm</span> -f test.txt <span class="comment"># 强制删除，不询问</span></span><br><span class="line"><span class="built_in">rm</span> <span class="built_in">test</span>/    <span class="comment"># 删除目录，系统会询问</span></span><br><span class="line"><span class="built_in">rm</span> -f <span class="built_in">test</span>/ <span class="comment"># 删除目录，不询问</span></span><br><span class="line"><span class="built_in">rm</span> -rf <span class="built_in">test</span>/ <span class="comment"># 递归删除目录及下面文件，不询问</span></span><br><span class="line"><span class="built_in">rm</span> -rf <span class="built_in">test</span>* <span class="comment"># 删除以test开头的文件，不询问</span></span><br><span class="line"><span class="built_in">rm</span> -rf *.txt *.<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="Linux移动文件和目录"><a href="#Linux移动文件和目录" class="headerlink" title="Linux移动文件和目录"></a>Linux移动文件和目录</h1><h2 id="移动文件和目录mv"><a href="#移动文件和目录mv" class="headerlink" title="移动文件和目录mv"></a>移动文件和目录<code>mv</code></h2><p><code>mv</code>命令是move的缩写，可以用来移动文件或者将文件<strong>改名</strong>（move (rename)<br>files），是Linux系统下常用的命令，经常用来<strong>备份</strong>文件或者目录。</p>
+<h1 id="Linux移动文件和目录"><a href="#Linux移动文件和目录" class="headerlink" title="Linux移动文件和目录"></a>Linux移动文件和目录</h1><h3 id="移动文件和目录mv"><a href="#移动文件和目录mv" class="headerlink" title="移动文件和目录mv"></a>移动文件和目录<code>mv</code></h3><p><code>mv</code>命令是move的缩写，可以用来移动文件或者将文件<strong>改名</strong>（move (rename)<br>files），是Linux系统下常用的命令，经常用来<strong>备份</strong>文件或者目录。</p>
 <h3 id="命令格式-3"><a href="#命令格式-3" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> [选项] 源文件或目录 目标文件或目录</span><br></pre></td></tr></table></figure>
 
 <h3 id="命令参数-3"><a href="#命令参数-3" class="headerlink" title="命令参数"></a>命令参数</h3><p><code>-b</code> ：若需覆盖文件，则覆盖前先行备份。</p>
@@ -579,10 +619,10 @@ cd ~
 <p><code>-t</code> ：<br>即指定<code>mv</code>的目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。</p>
 <h3 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> test1.txt test2.txt <span class="comment"># 重命名</span></span><br><span class="line"><span class="built_in">mv</span> test1.txt test2.txt <span class="built_in">test</span>      <span class="comment"># 移动文件</span></span><br><span class="line"><span class="built_in">mv</span> -t <span class="built_in">test</span> test1.txt test2.txt   <span class="comment"># 移动文件</span></span><br><span class="line"><span class="built_in">mv</span> <span class="built_in">test</span>* <span class="built_in">test</span>                    <span class="comment"># 使用通配符</span></span><br><span class="line"><span class="built_in">mv</span> -i test1.txt test2.txt        <span class="comment"># 将文件file1改名为file2，如果file2已经存在，则询问是否覆盖</span></span><br><span class="line"><span class="built_in">mv</span> -f test1.txt test2.txt        <span class="comment"># 将文件file1改名为file2，即使file2存在，也是直接覆盖掉。</span></span><br><span class="line"><span class="built_in">mv</span> test1 test2                   <span class="comment"># 移动目录</span></span><br><span class="line"><span class="built_in">mv</span> * ../                         <span class="comment"># 移动当前文件夹下的所有文件到上一级目录</span></span><br><span class="line"><span class="built_in">mv</span> test3/*.txt test5             <span class="comment"># 把当前目录的一个子目录里的文件移动到另一个子目录里</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="Linux拷贝文件和目录"><a href="#Linux拷贝文件和目录" class="headerlink" title="Linux拷贝文件和目录"></a>Linux拷贝文件和目录</h1><h2 id="cp命令拷贝文件和目录"><a href="#cp命令拷贝文件和目录" class="headerlink" title="cp命令拷贝文件和目录"></a><code>cp</code>命令拷贝文件和目录</h2><p><code>cp</code>命令用来复制文件或者目录，是Linux系统中最常用的命令之一</p>
+<h1 id="Linux拷贝文件和目录"><a href="#Linux拷贝文件和目录" class="headerlink" title="Linux拷贝文件和目录"></a>Linux拷贝文件和目录</h1><h3 id="cp命令拷贝文件和目录"><a href="#cp命令拷贝文件和目录" class="headerlink" title="cp命令拷贝文件和目录"></a><code>cp</code>命令拷贝文件和目录</h3><p><code>cp</code>命令用来复制文件或者目录，是Linux系统中最常用的命令之一</p>
 <h2 id="命令格式-4"><a href="#命令格式-4" class="headerlink" title="命令格式"></a>命令格式</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> [选项]... [-T] 源 目的</span><br><span class="line">或：<span class="built_in">cp</span> [选项]... 源... 目录</span><br><span class="line">或：<span class="built_in">cp</span> [选项]... -t 目录 源...</span><br></pre></td></tr></table></figure>
 
-<h2 id="命令参数-4"><a href="#命令参数-4" class="headerlink" title="命令参数"></a>命令参数</h2><hr>
+<h3 id="命令参数-4"><a href="#命令参数-4" class="headerlink" title="命令参数"></a>命令参数</h3><hr>
 <p>  参数   长参数   描叙</p>
 <hr>
 <p>  -a              等同于-dR</p>
@@ -596,15 +636,15 @@ cd ~
 <p>  -P              源目录或者文件的路劲保留</p>
 <h2 id="r-x2F-R-处理指定目录以及子目录"><a href="#r-x2F-R-处理指定目录以及子目录" class="headerlink" title="  -r&#x2F;R            处理指定目录以及子目录"></a>  -r&#x2F;R            处理指定目录以及子目录</h2><h2 id="实例-5"><a href="#实例-5" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> t1.txt <span class="built_in">test</span>         <span class="comment"># 复制单个文件到目标目录，目标文件存在时，会询问是否覆盖</span></span><br><span class="line"><span class="built_in">cp</span> -r test1 test2      <span class="comment"># 复制目录需要加-r参数</span></span><br><span class="line"><span class="built_in">cp</span> -rf test1/* test2   <span class="comment"># 强制递归复制test1下面的所有内容到test2，不提示</span></span><br><span class="line"><span class="built_in">cp</span> * ../               <span class="comment"># 复制当前目录下面的文件到父母录</span></span><br><span class="line"><span class="built_in">cp</span> -rf * ../           <span class="comment"># 复制文件和目录到父目录</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="Linux显示合并文件"><a href="#Linux显示合并文件" class="headerlink" title="Linux显示合并文件"></a>Linux显示合并文件</h1><h2 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a><code>cat</code>命令</h2><p>cat命令的用途是连接文件或标准输入并打印。这个命令常用来显示文件内容，或者将几个文件连接起来显示，或者从标准输入读取内容并显示，它常与重定向符号配合使用。</p>
-<h2 id="命令格式-5"><a href="#命令格式-5" class="headerlink" title="命令格式"></a>命令格式</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> [选项] [文件]...</span><br></pre></td></tr></table></figure>
+<h1 id="Linux显示合并文件"><a href="#Linux显示合并文件" class="headerlink" title="Linux显示合并文件"></a>Linux显示合并文件</h1><h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a><code>cat</code>命令</h3><p>cat命令的用途是连接文件或标准输入并打印。这个命令常用来显示文件内容，或者将几个文件连接起来显示，或者从标准输入读取内容并显示，它常与重定向符号配合使用。</p>
+<h3 id="命令格式-5"><a href="#命令格式-5" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> [选项] [文件]...</span><br></pre></td></tr></table></figure>
 
-<h2 id="三大功能"><a href="#三大功能" class="headerlink" title="三大功能"></a>三大功能</h2><ol>
+<h3 id="三大功能"><a href="#三大功能" class="headerlink" title="三大功能"></a>三大功能</h3><ol>
 <li>一次显示整个文件:<code>cat filename</code></li>
 <li>从键盘创建一个文件:<code>cat &gt; filename</code><br>只能创建新文件，不能编辑已有文件.</li>
 <li>将几个文件合并为一个文件:<code>cat file1 file2 &gt; file</code></li>
 </ol>
-<h2 id="命令参数-5"><a href="#命令参数-5" class="headerlink" title="命令参数"></a>命令参数</h2><p>-A, –show-all 等价于 -vET</p>
+<h3 id="命令参数-5"><a href="#命令参数-5" class="headerlink" title="命令参数"></a>命令参数</h3><p>-A, –show-all 等价于 -vET</p>
 <p>-b, –number-nonblank 对非空输出行编号</p>
 <p>-e 等价于 -vE</p>
 <p>-E, –show-ends 在每行结束处显示 $</p>
@@ -614,13 +654,11 @@ cd ~
 <p>-T, –show-tabs 将跳格字符显示为 ^I</p>
 <p>-u (被忽略)</p>
 <p>-v, –show-nonprinting 使用 ^ 和 M- 引用，除了 LFD 和 TAB 之外</p>
-<h2 id="实例-6"><a href="#实例-6" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">cat</span> test.txt               <span class="comment"># 显示test.txt文件内容</span></span><br><span class="line"> <span class="built_in">cat</span> test1.txt test2.txt    <span class="comment"># 同时显示这两个文件内容</span></span><br><span class="line"> <span class="built_in">cat</span> &gt; t1.txt               <span class="comment"># 从键盘输入内容到t1.txt ctrl+d 结束</span></span><br><span class="line"> <span class="built_in">cat</span> &gt; test2.txt &lt;&lt; <span class="string">EOF     # 从键盘输入内容到t1.txt使用EOF</span>作为文件结束</span><br><span class="line"> &gt; test1</span><br><span class="line"> &gt; test2</span><br><span class="line"> &gt; EOF</span><br><span class="line"> <span class="built_in">cat</span> &lt;&lt; <span class="string">EOF &gt; test2.txt      # 从键盘输入内容到t1.txt使用EOF</span>作为文件结束（也可以放在前面）</span><br><span class="line"> <span class="built_in">cat</span> t1.txt t2.txt &gt; t3.txt  <span class="comment"># 将t1 t2合并到t3 覆盖</span></span><br><span class="line"> <span class="built_in">cat</span> t1.txt t2.txt &gt;&gt; t3.txt  <span class="comment"># 将t1 t2合并到t3 追加不是覆盖</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 快速编辑一个文件</span></span><br><span class="line"><span class="built_in">cat</span> &gt;&gt; hosts &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">192.168.18.128 node01</span></span><br><span class="line"><span class="string">192.168.18.138 node02</span></span><br><span class="line"><span class="string">192.168.18.148 node03</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+<h3 id="实例-6"><a href="#实例-6" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">cat</span> test.txt               <span class="comment"># 显示test.txt文件内容</span></span><br><span class="line"> <span class="built_in">cat</span> test1.txt test2.txt    <span class="comment"># 同时显示这两个文件内容</span></span><br><span class="line"> <span class="built_in">cat</span> &gt; t1.txt               <span class="comment"># 从键盘输入内容到t1.txt ctrl+d 结束</span></span><br><span class="line"> <span class="built_in">cat</span> &gt; test2.txt &lt;&lt; <span class="string">EOF     # 从键盘输入内容到t1.txt使用EOF</span>作为文件结束</span><br><span class="line"> &gt; test1</span><br><span class="line"> &gt; test2</span><br><span class="line"> &gt; EOF</span><br><span class="line"> <span class="built_in">cat</span> &lt;&lt; <span class="string">EOF &gt; test2.txt      # 从键盘输入内容到t1.txt使用EOF</span>作为文件结束（也可以放在前面）</span><br><span class="line"> <span class="built_in">cat</span> t1.txt t2.txt &gt; t3.txt  <span class="comment"># 将t1 t2合并到t3 覆盖</span></span><br><span class="line"> <span class="built_in">cat</span> t1.txt t2.txt &gt;&gt; t3.txt  <span class="comment"># 将t1 t2合并到t3 追加不是覆盖</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 快速编辑一个文件</span></span><br><span class="line"><span class="built_in">cat</span> &gt;&gt; hosts &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">192.168.18.128 node01</span></span><br><span class="line"><span class="string">192.168.18.138 node02</span></span><br><span class="line"><span class="string">192.168.18.148 node03</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="Linux系统结构"><a href="#Linux系统结构" class="headerlink" title="Linux系统结构"></a>Linux系统结构</h1><p>操作系统是软件的集合，每个软件都是为特定功能而设计的。</p>
 <p>Linux OS具有以下组件：</p>
-<p><img src="https://duoke360.com/storage/thumbnails/_signature/HE4JUV2SLSS5SNTNNV3I4GN3I.png" alt="what-is-linux.png"></p>
 <h2 id="1）内核"><a href="#1）内核" class="headerlink" title="1）内核"></a>1）内核</h2><p>Linux内核是操作系统的核心部分。它在设备和软件之间建立通信。而且，它管理系统资源。它有四个职责：</p>
-<p><img src="https://duoke360.com/storage/thumbnails/_signature/27ICFH3QBHDDLNSG3ED07QAVJ0.png" alt="what-is-linux2.png"></p>
 <ul>
 <li><strong>设备管理：</strong><br>系统上连接了许多设备，例如CPU，存储设备，声卡，显卡等。内核将所有与所有设备相关的数据存储在设备驱动程序中（如果没有该内核，将无法以控制设备）。因此内核知道设备可以做什么以及如何操纵设备以发挥最佳性能。它还管理所有设备之间的通信。内核具有所有设备必须遵循的某些规则。</li>
 <li><strong>内存管理：</strong><br>内核必须管理的另一个功能是内存管理。内核跟踪已使用和未使用的内存，并确保进程不应使用虚拟内存地址来操纵彼此的数据。</li>
@@ -636,15 +674,40 @@ cd ~
 <p>最终工具的一些示例是图形设计工具，办公套件，浏览器，多媒体播放器等。app</p>
 <h1 id="Linux输入输出重定向"><a href="#Linux输入输出重定向" class="headerlink" title="Linux输入输出重定向"></a>Linux输入输出重定向</h1><h2 id="什么重定向"><a href="#什么重定向" class="headerlink" title="什么重定向"></a>什么重定向</h2><p>所谓的重定向，就是重新定义输入和输出的方向，例如：本来我们要将一个命令输出在标准输出（终端显示），但是我们把它重定向到了一个文件里面（写入一个文件里面了）这就是重定向。</p>
 <h2 id="Linux-文件描述符"><a href="#Linux-文件描述符" class="headerlink" title="Linux 文件描述符"></a>Linux 文件描述符</h2><p>文件描述符可以理解为 Linux 系统为文件分配的一个数字，范围是 0-3 。</p>
-<p>  名称           类型                    文件描述符   操作</p>
-<hr>
-<p>  标准输入       standard input          0            &lt;,&lt;&lt;<br>  标准输出       standard output         1            &gt;,&gt;&gt;<br>  标准错误输出   standard error output   2            2&gt;,2&gt;&gt;</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">文件描述符</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">标准输入</td>
+<td align="left">standard input</td>
+<td align="left">0</td>
+<td align="left">&lt;,&lt;&lt;</td>
+</tr>
+<tr>
+<td align="left">标准输出</td>
+<td align="left">standard output</td>
+<td align="left">1</td>
+<td align="left">&gt;,&gt;&gt;</td>
+</tr>
+<tr>
+<td align="left">标准错误输出</td>
+<td align="left">standard error output</td>
+<td align="left">2</td>
+<td align="left">2&gt;,2&gt;&gt;</td>
+</tr>
+</tbody></table>
 <blockquote>
 <p><code>&lt;</code> <code>&gt;</code>覆盖</p>
 <p><code>&gt;&gt;</code> <code>&lt;&lt;</code> 追加</p>
 </blockquote>
 <h2 id="Linux-命令执行过程"><a href="#Linux-命令执行过程" class="headerlink" title="Linux 命令执行过程"></a>Linux 命令执行过程</h2><p>对于一条 Linux 的命令执行的过程如下</p>
-<p><img src="https://duoke360.com/storage/thumbnails/_signature/NN6L9AAD7JM02NQC09CT4ECV0.jpg" alt="输入输出重定向流程图"></p>
+<p>![image-20230715112423047](&#x2F;Users&#x2F;pacozhou&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230715112423047.png)</p>
 <ol>
 <li>用户开始从键盘（键盘在 Linux<br>上属于文件）输入数据，也就是系统从文件中读取数据的时候</li>
 <li>shell 将接受到的数据（标准输入）传递给相应的命令开始执行</li>
@@ -699,46 +762,15 @@ cd ~
 <h2 id="less"><a href="#less" class="headerlink" title="less"></a>less</h2><p><code>less</code> 工具也是对文件或其它输出进行分页显示的工具，功能很强大。<code>less</code><br>的用法比起 <code>more</code> 更加的有弹性。 在 <code>more</code><br>的时候，我们并没有办法向前面翻， 只能往后面看，但若使用了 <code>less</code><br>时，就可以使用 <code>[pageup]</code> <code>[pagedown]</code> 等按<br>键的功能来往前往后翻看文件，更容易用来查看一个文件的内容！除此之外，在<br><code>less</code> 里头可以拥有更多的搜索功能，不止可以向下搜，也可以向上搜。</p>
 <h3 id="命令格式-7"><a href="#命令格式-7" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less [参数] 文件 </span><br></pre></td></tr></table></figure>
 
-<h3 id="命令参数-7"><a href="#命令参数-7" class="headerlink" title="命令参数"></a>命令参数</h3><pre><code>-b &lt;缓冲区大小&gt; 设置缓冲区的大小
--e 当文件显示结束后，自动离开
--f 强迫打开特殊文件，例如外围设备代号、目录和二进制文件
--g 只标志最后搜索的关键词
--i 忽略搜索时的大小写
--m 显示类似more命令的百分比
--N 显示每行的行号
--o &lt;文件名&gt; 将less 输出的内容在指定文件中保存起来
--Q 不使用警告音
--s 显示连续空行为一行
--S 行过长时间将超出部分舍弃
--x &lt;数字&gt; 将“tab”键显示为规定的数字空格
-/ 字符串：向下搜索“字符串”的功能
-? 字符串：向上搜索“字符串”的功能
-n：重复前一个搜索（与 / 或 ? 有关）
-N：反向重复前一个搜索（与 / 或 ? 有关）
-b 向后翻一页
-d 向后翻半页
-h 显示帮助界面
-Q 退出less 命令
-u 向前滚动半页
-y 向前滚动一行
-空格键 滚动一行
-回车键 滚动一页
-[pagedown]： 向下翻动一页
-[pageup]：  向上翻动一页
-</code></pre>
+<h3 id="命令参数-7"><a href="#命令参数-7" class="headerlink" title="命令参数"></a>命令参数</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">-b &lt;缓冲区大小&gt; 设置缓冲区的大小</span><br><span class="line">-e 当文件显示结束后，自动离开</span><br><span class="line">-f 强迫打开特殊文件，例如外围设备代号、目录和二进制文件</span><br><span class="line">-g 只标志最后搜索的关键词</span><br><span class="line">-i 忽略搜索时的大小写</span><br><span class="line">-m 显示类似more命令的百分比</span><br><span class="line">-N 显示每行的行号</span><br><span class="line">-o &lt;文件名&gt; 将less 输出的内容在指定文件中保存起来</span><br><span class="line">-Q 不使用警告音</span><br><span class="line">-s 显示连续空行为一行</span><br><span class="line">-S 行过长时间将超出部分舍弃</span><br><span class="line">-x &lt;数字&gt; 将“tab”键显示为规定的数字空格</span><br><span class="line">/ 字符串：向下搜索“字符串”的功能</span><br><span class="line">? 字符串：向上搜索“字符串”的功能</span><br><span class="line">n：重复前一个搜索（与 / 或 ? 有关）</span><br><span class="line">N：反向重复前一个搜索（与 / 或 ? 有关）</span><br><span class="line">b 向后翻一页</span><br><span class="line">d 向后翻半页</span><br><span class="line">h 显示帮助界面</span><br><span class="line">Q 退出less 命令</span><br><span class="line">u 向前滚动半页</span><br><span class="line">y 向前滚动一行</span><br><span class="line">空格键 滚动一行</span><br><span class="line">回车键 滚动一页</span><br><span class="line">[pagedown]： 向下翻动一页</span><br><span class="line">[pageup]：  向上翻动一页</span><br></pre></td></tr></table></figure>
+
 <h3 id="实例-8"><a href="#实例-8" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">less /etc/passwd    <span class="comment"># 显示结束按q退出</span></span><br><span class="line">less -e /etc/passwd <span class="comment"># 当文件显示结束后，自动离开</span></span><br><span class="line">less -m /etc/passwd <span class="comment"># 显示百分比</span></span><br><span class="line">less /etc/passwd    <span class="comment"># 输入 /root 和 ？root 查找</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="Linux-命令head和tail"><a href="#Linux-命令head和tail" class="headerlink" title="Linux 命令head和tail"></a>Linux 命令head和tail</h1><p><code>head</code> 与 <code>tail</code><br>就像它的名字一样的浅显易懂，它是用来显示开头或结尾某个数量的文字区块，<code>head</code><br>用来显示档案的开头至标准输出中，而 <code>tail</code> 想当然尔就是看档案的结尾。</p>
-<h2 id="head"><a href="#head" class="headerlink" title="head"></a>head</h2><h3 id="命令格式-8"><a href="#命令格式-8" class="headerlink" title="命令格式"></a>命令格式</h3><pre><code>head [参数]... [文件]... 
-</code></pre>
-<h3 id="命令参数-8"><a href="#命令参数-8" class="headerlink" title="命令参数"></a>命令参数</h3><pre><code>-q 隐藏文件名
+<h2 id="head"><a href="#head" class="headerlink" title="head"></a>head</h2><h3 id="命令格式-8"><a href="#命令格式-8" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">head</span> [参数]... [文件]... </span><br></pre></td></tr></table></figure>
 
--v 显示文件名
+<h3 id="命令参数-8"><a href="#命令参数-8" class="headerlink" title="命令参数"></a>命令参数</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-q 隐藏文件名</span><br><span class="line"></span><br><span class="line">-v 显示文件名</span><br><span class="line"></span><br><span class="line">-c&lt;字节&gt; 显示字节数</span><br><span class="line"></span><br><span class="line">-n&lt;行数&gt; 显示的行数</span><br></pre></td></tr></table></figure>
 
--c&lt;字节&gt; 显示字节数
-
--n&lt;行数&gt; 显示的行数
-</code></pre>
 <h3 id="实例-9"><a href="#实例-9" class="headerlink" title="实例"></a>实例</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">head</span> /etc/passwd        <span class="comment"># 默认显示前10行</span></span><br><span class="line"><span class="built_in">head</span> -n 3 /etc/passwd   <span class="comment"># 显示前三行</span></span><br><span class="line"><span class="built_in">head</span> -c 20 /etc/passwd  <span class="comment"># 显示前20个字节</span></span><br><span class="line"><span class="built_in">head</span> -c -20 /etc/passwd <span class="comment"># 显示后20个字节</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h2><h3 id="命令格式-9"><a href="#命令格式-9" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tail</span>[必要参数][选择参数][文件]  </span><br></pre></td></tr></table></figure>
@@ -790,8 +822,8 @@ y 向前滚动一行
 <h2 id="为用户设置密码"><a href="#为用户设置密码" class="headerlink" title="为用户设置密码"></a>为用户设置密码</h2><p>用户管理的一项重要内容是用户口令的管理。</p>
 <p>用户账号刚创建时没有口令，但是被系统锁定，无法使用，必须为其指定口令后才可以使用，即使是指定空口令。</p>
 <p>指定和修改用户口令的Shell命令是<code>passwd</code>。超级用户可以为自己和其他用户指定口令，普通用户只能用它修改自己的口令。命令的格式为：</p>
-<pre><code>passwd 选项 用户名
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd 选项 用户名</span><br></pre></td></tr></table></figure>
+
 <p>可使用的选项：</p>
 <ul>
 <li>-l 锁定口令，即禁用账号。lock</li>
@@ -801,22 +833,17 @@ y 向前滚动一行
 </ul>
 <p>如果默认用户名，则修改当前用户的口令。</p>
 <p><strong>实例</strong></p>
-<pre><code>passwd # 默认修改当前登录用户密码
-passwd tom # 修改tom密码
-passwd -l tom #禁用tom账号
-passwd -u tom #解锁tom账号
-passwd -d tom #tom无口令
-passwd -f tom # 强迫tom下次登录时修改口令。
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">passwd <span class="comment"># 默认修改当前登录用户密码</span></span><br><span class="line">passwd tom <span class="comment"># 修改tom密码</span></span><br><span class="line">passwd -l tom <span class="comment">#禁用tom账号</span></span><br><span class="line">passwd -u tom <span class="comment">#解锁tom账号</span></span><br><span class="line">passwd -d tom <span class="comment">#tom无口令</span></span><br><span class="line">passwd -f tom <span class="comment"># 强迫tom下次登录时修改口令。</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>如果一个用户的账号不再使用，可以从系统中删除。</p>
 <p>删除用户账号就是要将<code>/etc/passwd</code>等系统文件中的该用户记录删除，必要时还删除用户的主目录。</p>
 <p>删除一个已有的用户账号使用<code>userdel</code>命令，其格式如下：</p>
-<pre><code>userdel 选项 用户名
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userdel 选项 用户名</span><br></pre></td></tr></table></figure>
+
 <p>常用的选项是 <code>-r</code>，它的作用是把用户的主目录一起删除。</p>
 <p>例如：</p>
-<pre><code># userdel -r tom
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># userdel -r tom</span></span><br></pre></td></tr></table></figure>
+
 <p>此命令删除用户tom在系统文件中（主要是<code>/etc/passwd</code>, <code>/etc/shadow</code>,<br><code>/etc/group</code>等）的记录，同时删除用户的主目录。</p>
 <h2 id="修改用户"><a href="#修改用户" class="headerlink" title="修改用户"></a>修改用户</h2><p>usermod修改用户基本信息。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod [选项] 登录名</span><br></pre></td></tr></table></figure>
@@ -954,9 +981,30 @@ passwd -f tom # 强迫tom下次登录时修改口令。
 字段4：本组的成员列表；加入这个组的所有用户账户；列表中多个用户通过&quot;,&quot;分隔
 </code></pre>
 <h1 id="Linux权限和角色"><a href="#Linux权限和角色" class="headerlink" title="Linux权限和角色"></a>Linux权限和角色</h1><p>Linux权限是操作系统用来限制对资源访问的机制，权限一般分为读、写、执行。系统中每个文件都拥有特定的权限、所属用户及所属组，通过这样的机制来限制哪些用户或用户组可以对特定文件进行相应的操作。</p>
-<h2 id="Linux三种权限"><a href="#Linux三种权限" class="headerlink" title="Linux三种权限"></a>Linux三种权限</h2><p>  权限        对文件的影响     对目录的影响</p>
-<hr>
-<p>  r（读取）   可读取文件内容   可列出目录内容<br>  w（写入）   可修改文件内容   可在目录中创建删除内容<br>  x（执行）   可作为命令执行   可访问目录内容</p>
+<h2 id="Linux三种权限"><a href="#Linux三种权限" class="headerlink" title="Linux三种权限"></a>Linux三种权限</h2><table>
+<thead>
+<tr>
+<th align="left">权限</th>
+<th align="left">对文件的影响</th>
+<th align="left">对目录的影响</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">r（读取）</td>
+<td align="left">可读取文件内容</td>
+<td align="left">可列出目录内容</td>
+</tr>
+<tr>
+<td align="left">w（写入）</td>
+<td align="left">可修改文件内容</td>
+<td align="left">可在目录中创建删除内容</td>
+</tr>
+<tr>
+<td align="left">x（执行）</td>
+<td align="left">可作为命令执行</td>
+<td align="left">可访问目录内容</td>
+</tr>
+</tbody></table>
 <blockquote>
 <p>目录必须拥有 x 权限，否则无法查看其内容</p>
 </blockquote>
@@ -1068,14 +1116,6 @@ passwd -f tom # 强迫tom下次登录时修改口令。
 <li>与文件主同组人（g） 可读&#x2F;可执行权</li>
 <li>其他人（o） 没有任何权限</li>
 </ul>
-<h1 id="下载安装Linux虚拟机"><a href="#下载安装Linux虚拟机" class="headerlink" title="下载安装Linux虚拟机"></a>下载安装Linux虚拟机</h1><h2 id="什么是虚拟机"><a href="#什么是虚拟机" class="headerlink" title="什么是虚拟机"></a>什么是虚拟机</h2><p>虚拟机（Virtual<br>Machine）指通过软件模拟的具有完整硬件系统功能的、运行在一个完全隔离环境中的完整计算机系统。在实体计算机中能够完成的工作在虚拟机中都能够实现。在计算机中创建虚拟机时，需要将实体机的部分硬盘和内存容量作为虚拟机的硬盘和内存容量。每个虚拟机都有独立的CMOS、硬盘和操作系统，可以像使用实体机一样对虚拟机进行操作。</p>
-<h2 id="虚拟系统"><a href="#虚拟系统" class="headerlink" title="虚拟系统"></a>虚拟系统</h2><ol>
-<li>Parallels Desktop</li>
-<li>Vmware</li>
-<li>VirtualBox</li>
-</ol>
-<h2 id="下载安装VMware"><a href="#下载安装VMware" class="headerlink" title="下载安装VMware"></a>下载安装VMware</h2><p><a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/workstation-pro.html">https://www.vmware.com/cn/products/workstation-pro.html</a></p>
-<h2 id="安装VMware"><a href="#安装VMware" class="headerlink" title="安装VMware"></a>安装VMware</h2><p>安装VMware</p>
 <h1 id="Linux修改所属组chgrp"><a href="#Linux修改所属组chgrp" class="headerlink" title="Linux修改所属组chgrp"></a>Linux修改所属组chgrp</h1><p>在lunix系统里，文件或目录的权限的掌控以拥有者及所诉群组来管理。</p>
 <p>可以使用<code>chgrp</code>指令取变更文件与目录所属群组，这种方式采用群组名称或群组识别码都可以。</p>
 <p><code>chgrp</code>命令就是change<br>group的缩写！要被改变的组名必须要在<code>/etc/group</code>文件内存在才行。</p>
@@ -1182,53 +1222,14 @@ passwd -f tom # 强迫tom下次登录时修改口令。
 </code></pre>
 <h2 id="du"><a href="#du" class="headerlink" title="du"></a>du</h2><p><strong>du</strong> 的英文原义为 <strong>disk<br>usage</strong>，含义为显示磁盘空间的使用情况，用于查看当前目录的总大小。</p>
 <p>例如查看当前目录的大小：</p>
-<pre><code># du -sh
-605M    .
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># du -sh</span></span><br><span class="line">605M    .</span><br></pre></td></tr></table></figure>
+
 <p>显示指定文件所占空间：</p>
-<pre><code># du test.txt 
-300     test.txt
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># du test.txt </span></span><br><span class="line">300     test.txt</span><br></pre></td></tr></table></figure>
+
 <p>方便阅读的格式显示test目录所占空间情况：</p>
-<pre><code>du -h /home/
-0       /home/ghz/.mozilla/extensions
-0       /home/ghz/.mozilla/plugins
-0       /home/ghz/.mozilla
-12K     /home/ghz
-0       /home/tom/.mozilla/extensions
-0       /home/tom/.mozilla/plugins
-0       /home/tom/.mozilla
-4.0K    /home/tom/.cache/abrt
-4.0K    /home/tom/.cache
-0       /home/tom/.config/abrt
-0       /home/tom/.config
-20K     /home/tom
-0       /home/kite/.mozilla/extensions
-0       /home/kite/.mozilla/plugins
-0       /home/kite/.mozilla
-4.0K    /home/kite/.cache/abrt
-4.0K    /home/kite/.cache
-0       /home/kite/.config/abrt
-0       /home/kite/.config
-24K     /home/kite
-0       /home/zs/.mozilla/extensions
-0       /home/zs/.mozilla/plugins
-0       /home/zs/.mozilla
-4.0K    /home/zs/.cache/abrt
-4.0K    /home/zs/.cache
-0       /home/zs/.config/abrt
-0       /home/zs/.config
-28K     /home/zs
-0       /home/ls/.mozilla/extensions
-0       /home/ls/.mozilla/plugins
-0       /home/ls/.mozilla
-4.0K    /home/ls/.cache/abrt
-4.0K    /home/ls/.cache
-0       /home/ls/.config/abrt
-0       /home/ls/.config
-24K     /home/ls
-108K    /home/
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">du</span> -h /home/</span><br><span class="line">0       /home/ghz/.mozilla/extensions</span><br><span class="line">0       /home/ghz/.mozilla/plugins</span><br><span class="line">0       /home/ghz/.mozilla</span><br><span class="line">12K     /home/ghz</span><br><span class="line">0       /home/tom/.mozilla/extensions</span><br><span class="line">0       /home/tom/.mozilla/plugins</span><br><span class="line">0       /home/tom/.mozilla</span><br><span class="line">4.0K    /home/tom/.cache/abrt</span><br><span class="line">4.0K    /home/tom/.cache</span><br><span class="line">0       /home/tom/.config/abrt</span><br><span class="line">0       /home/tom/.config</span><br><span class="line">20K     /home/tom</span><br><span class="line">0       /home/kite/.mozilla/extensions</span><br><span class="line">0       /home/kite/.mozilla/plugins</span><br><span class="line">0       /home/kite/.mozilla</span><br><span class="line">4.0K    /home/kite/.cache/abrt</span><br><span class="line">4.0K    /home/kite/.cache</span><br><span class="line">0       /home/kite/.config/abrt</span><br><span class="line">0       /home/kite/.config</span><br><span class="line">24K     /home/kite</span><br><span class="line">0       /home/zs/.mozilla/extensions</span><br><span class="line">0       /home/zs/.mozilla/plugins</span><br><span class="line">0       /home/zs/.mozilla</span><br><span class="line">4.0K    /home/zs/.cache/abrt</span><br><span class="line">4.0K    /home/zs/.cache</span><br><span class="line">0       /home/zs/.config/abrt</span><br><span class="line">0       /home/zs/.config</span><br><span class="line">28K     /home/zs</span><br><span class="line">0       /home/ls/.mozilla/extensions</span><br><span class="line">0       /home/ls/.mozilla/plugins</span><br><span class="line">0       /home/ls/.mozilla</span><br><span class="line">4.0K    /home/ls/.cache/abrt</span><br><span class="line">4.0K    /home/ls/.cache</span><br><span class="line">0       /home/ls/.config/abrt</span><br><span class="line">0       /home/ls/.config</span><br><span class="line">24K     /home/ls</span><br><span class="line">108K    /home/</span><br></pre></td></tr></table></figure>
+
 <p><code>du</code> 命令相关参数：</p>
 <ul>
 <li><strong>-s</strong>：对每个Names参数只给出占用的数据块总数。</li>
@@ -1271,163 +1272,6 @@ passwd -f tom # 强迫tom下次登录时修改口令。
 <h3 id="实例演示-3"><a href="#实例演示-3" class="headerlink" title="实例演示"></a>实例演示</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip test.zip <span class="comment"># 解压缩，如果test文件夹存在提示</span></span><br></pre></td></tr></table></figure>
 
 <p>演示在windows下面压缩一个zip文件，上传到linux，进行解压缩。</p>
-<h1 id="安装centos7"><a href="#安装centos7" class="headerlink" title="安装centos7"></a>安装centos7</h1><h2 id="下载centos7镜像"><a href="#下载centos7镜像" class="headerlink" title="下载centos7镜像"></a>下载centos7镜像</h2><p>下载地址：<a target="_blank" rel="noopener" href="https://www.centos.org/">https://www.centos.org/</a></p>
-<h2 id="安装centos7-1"><a href="#安装centos7-1" class="headerlink" title="安装centos7"></a>安装centos7</h2><p>安装centos7</p>
-<h1 id="配置centos7"><a href="#配置centos7" class="headerlink" title="配置centos7"></a>配置centos7</h1><h2 id="查看当前ip"><a href="#查看当前ip" class="headerlink" title="查看当前ip"></a>查看当前ip</h2><p><img src="/Users/pacozhou/Library/Application%20Support/typora-user-images/image-20230620212657762.png" alt="image-20230620212657762"></p>
-<p><img src="/Users/pacozhou/Library/Application%20Support/typora-user-images/image-20230620223348927.png" alt="image-20230620223348927"></p>
-<p><img src="/Users/pacozhou/Library/Application%20Support/typora-user-images/image-20230622104813496.png" alt="image-20230622104813496"></p>
-<p>centos：172.16.74.129</p>
-<p>macipv4 ： 192.168.3.26</p>
-<p>ubuntu：10.211.55.7，这个是你的内网ip<br>samba只有在局域网内才可以用，想连到外网，<br>则可以使用ftp，这就需要一个公网ip。</p>
-<p><img src="/Users/pacozhou/Library/Application%20Support/typora-user-images/image-20230704184315625.png" alt="image-20230704184315625"></p>
-<p>PD centos: 127.0.0.1</p>
-<p>PD centos：10.211.55.9 :22</p>
-<p><img src="/Users/pacozhou/Library/Application%20Support/typora-user-images/image-20230622143533818.png" alt="image-20230622143533818"></p>
-<p><img src="/Users/pacozhou/Library/Application%20Support/typora-user-images/image-20230622112659798.png" alt="image-20230622112659798"></p>
-<pre><code>[root@bogon ~]# ifconfig
-ens33: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
-        inet 192.168.179.128  netmask 255.255.255.0  broadcast 192.168.179.255
-        inet6 fe80::b94:350b:df4a:c795  prefixlen 64  scopeid 0x20&lt;link&gt;
-        ether 00:0c:29:a3:bc:d1  txqueuelen 1000  (Ethernet)
-        RX packets 1719  bytes 1445339 (1.3 MiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 938  bytes 67724 (66.1 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
-        inet 127.0.0.1  netmask 255.0.0.0
-        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
-        loop  txqueuelen 1000  (Local Loopback)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-virbr0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
-        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
-        ether 52:54:00:9c:b6:60  txqueuelen 1000  (Ethernet)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-</code></pre>
-<h2 id="查看网络互通情况"><a href="#查看网络互通情况" class="headerlink" title="查看网络互通情况"></a>查看网络互通情况</h2><p>可以通过ping命令，在主机和虚拟机之间相互ping，看是否能ping通</p>
-<pre><code>&gt; ping 192.168.179.128
-</code></pre>
-<blockquote>
-<p>查看windows ip 可以使用<code>ifconfig</code></p>
-</blockquote>
-<h2 id="修改为静态ip"><a href="#修改为静态ip" class="headerlink" title="修改为静态ip"></a>修改为静态ip</h2><blockquote>
-<p>修改为和动态ip为同一个网段，例如：<code>192.168.179.128</code></p>
-</blockquote>
-<pre><code>vim /etc/sysconfig/network-scripts/ifcfg-ens33
-
-# 修改
-bootproto=static(dhcp)
-onboot=yes
-
-# 增加
-IPADDR=192.168.179.128
-NETMASK=255.255.255.0
-GATEWAY=192.168.179.2
-DNS1=8.8.8.8
-</code></pre>
-<h2 id="修改主机名称"><a href="#修改主机名称" class="headerlink" title="修改主机名称"></a>修改主机名称</h2><pre><code>vim /etc/hostname
-systemctl restart network
-</code></pre>
-<h2 id="关闭firewalld和selinux"><a href="#关闭firewalld和selinux" class="headerlink" title="关闭firewalld和selinux"></a>关闭firewalld和selinux</h2><h3 id="关闭firewalld"><a href="#关闭firewalld" class="headerlink" title="关闭firewalld"></a>关闭firewalld</h3><pre><code>systemctl stop firewalld
-systemctl disable firewalld
-</code></pre>
-<h3 id="关闭selinux"><a href="#关闭selinux" class="headerlink" title="关闭selinux"></a>关闭selinux</h3><pre><code>vim /etc/selinux/config
-SELINUX=disabled
-</code></pre>
-<h1 id="虚拟机克隆"><a href="#虚拟机克隆" class="headerlink" title="虚拟机克隆"></a>虚拟机克隆</h1><p>虚拟机-&gt;管理-&gt;克隆</p>
-<blockquote>
-<p>注意：无法为正在运行的虚拟机克隆。</p>
-</blockquote>
-<h1 id="ssh远程登录"><a href="#ssh远程登录" class="headerlink" title="ssh远程登录"></a>ssh远程登录</h1><h2 id="查看ssh服务器"><a href="#查看ssh服务器" class="headerlink" title="查看ssh服务器"></a>查看ssh服务器</h2><blockquote>
-<p>ssh Secure Shell</p>
-</blockquote>
-<pre><code>[root@node1 ~]# systemctl status sshd
-● sshd.service - OpenSSH server daemon
-   Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: enabled)
-   Active: active (running) since Wed 2022-04-27 00:26:52 PDT; 7min ago
-     Docs: man:sshd(8)
-           man:sshd_config(5)
- Main PID: 1037 (sshd)
-    Tasks: 1
-   CGroup: /system.slice/sshd.service
-           └─1037 /usr/sbin/sshd -D
-
-Apr 27 00:26:52 node1 systemd[1]: Starting OpenSSH server daemon...
-Apr 27 00:26:52 node1 sshd[1037]: Server listening on 0.0.0.0 port 22.
-Apr 27 00:26:52 node1 systemd[1]: Started OpenSSH server daemon.
-Apr 27 00:26:52 node1 sshd[1037]: Server listening on :: port 22.
-</code></pre>
-<blockquote>
-<p>如果提示没有找到服务，需要安装</p>
-</blockquote>
-<pre><code>yum install -y openssl openssh-server
-systemctl start sshd &amp; systemctl enable sshd
-</code></pre>
-<h2 id="下载安装MobaXterm"><a href="#下载安装MobaXterm" class="headerlink" title="下载安装MobaXterm"></a>下载安装MobaXterm</h2><pre><code>https://mobaxterm.mobatek.net/
-</code></pre>
-<h2 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h2><p>远程登录</p>
-<h1 id="上传和下载文件"><a href="#上传和下载文件" class="headerlink" title="上传和下载文件"></a>上传和下载文件</h1><h2 id="安装ftp服务器"><a href="#安装ftp服务器" class="headerlink" title="安装ftp服务器"></a>安装ftp服务器</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>yum install vsftpd 
-</code></pre>
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><pre><code>systemctl start vsftpd
-</code></pre>
-<h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><pre><code>systemctl status vsftpd
-</code></pre>
-<h3 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h3><pre><code>systemctl enable vsftpd
-</code></pre>
-<h2 id="使用MobaXterm建立sftp连接，实现文件上传和下载"><a href="#使用MobaXterm建立sftp连接，实现文件上传和下载" class="headerlink" title="使用MobaXterm建立sftp连接，实现文件上传和下载"></a>使用MobaXterm建立sftp连接，实现文件上传和下载</h2><h1 id="vim编辑器"><a href="#vim编辑器" class="headerlink" title="vim编辑器"></a>vim编辑器</h1><h2 id="1、vim基本使用"><a href="#1、vim基本使用" class="headerlink" title="1、vim基本使用"></a>1、vim基本使用</h2><p>在终端键入vim命令和要编辑的文件的名字就可以启动vim编辑器（如在启动vim时未指定文件名，或是这个文件不存在，vim会开辟一段新的缓冲区域来编辑）。<br>vim编辑器有两种操作模式：</p>
-<ul>
-<li>普通模式</li>
-<li>插入模式</li>
-<li>命令模式</li>
-<li>刚启动vim编辑器，默认进入普通模式，在这个模式下，vim编辑器会将按键解释成命令（这也是vim特殊的地方，很多没有使用过vim的人刚开始打开vim时会被这个模式吓倒，毕竟在键盘上按键但一点反应都没有的编辑器实在是少见）。</li>
-<li>在普通模式下键入<code>i</code>可进入插入模式（insert。事实上，键入a或者s也可进入插入模式），在插入模式下，vim会将你在光标位置输入的每个键都插入到缓冲区（也就是直接输入到文本中，并在屏幕上打印出来）。</li>
-<li>要退出插入模式返回普通模式话，就要键入退出键（ESC键，也就是Escape键）。<br>在普通模式下，若是vim能正确识别你的终端类型（正常情况下应该都可以的），就可以直接使用方向键在文本区域移动光标。</li>
-</ul>
-<p>vim也有独有的用来移动光标的命令。</p>
-<pre><code>h：左移一个字符
-j ：下移一个字符
-k：上移一个字符
-l ：右移一个字符
-Ctrl+F（PageDown）：下翻一屏
-Ctrl+B（PageUp）：上翻一屏
-gg：移到缓冲区第一行
-G：移到缓冲区最后一行
-num G：移到缓冲区第num行
-</code></pre>
-<p>vim编辑器在普通模式下可按冒号键<code>：</code>进入命令行模式，可以输入额外的命令来控制vim的行为。</p>
-<pre><code>q：如果未修改缓冲区数据，退出
-q！：取消所有对缓冲区数据的修改并退出
-w filename：将文件保存到另一个文件中
-wq：将缓冲区数据保存到文件中并退出
-</code></pre>
-<h2 id="2、在普通模式下编辑数据"><a href="#2、在普通模式下编辑数据" class="headerlink" title="2、在普通模式下编辑数据"></a>2、在普通模式下编辑数据</h2><pre><code>x：删除当前光标所在位置的字符
-dd：删除当前光标所在行
-dw：删除当前光标所在位置的单词
-d$：删除当前光标所在位置至行尾的内容
-J：删除当前光标所在行行尾的换行符（拼接行）
-u：撤销前一编辑命令
-a：在当前光标后追加数据
-A：在当前光标所在行行尾追加数据
-r char：用char替换当前光标所在位置的单个字符
-R text：用text覆盖当前光标所在位置的数据，直到按下ESC键
-</code></pre>
-<p>有些编辑命令允许使用数字修饰符来指定重复该命令多少次，如：命令2x会删除从光标当前位置开始的两个字符，命令5dd会删除从光标当前所在行开始的5行。<br>另外，vim编辑器在普通模式下通常会把删除键（Delete键）识别成x命令的功能，通常不识别退格键（Backspace键）。</p>
-<h2 id="3、复制和粘贴"><a href="#3、复制和粘贴" class="headerlink" title="3、复制和粘贴"></a>3、复制和粘贴</h2><p>vim编辑器在删除数据时，实际上会将数据保存在单独的一个寄存器中，可以用<code>p</code>命令取回。例如，可以用<code>dd</code>命令删除一行文本，然后把光标移动到缓冲区的某个要放置该文本的地方，然后用<code>p</code>命令，该命令会将文本插入到当前光标所在行之后。<br>vim编辑器中复制命令是<code>y</code>（代表yank），可以在<code>y</code>命令后面使用和<code>d</code>命令相同的第二字符（如：<code>yw</code>代表复制一个单词，<code>y$</code>代表复制到行尾）。在复制文本后，把光标移动到想放置文本的地方，键入<code>p</code>命令，复制的文本就会出现在该位置。<br>复制命令一般在可视模式下使用。可视模式会在移动光标的同时高亮显示文本，键入<code>v</code>键可进入可视模式，如下图所示。</p>
-<p>可先在可视模式下覆盖要复制的文本，然后键入y命令来激活复制命令，之后移动光标到要放置文本的位置，使用p命令将寄存器中的文本粘贴下来。</p>
-<h2 id="4、查找和替换"><a href="#4、查找和替换" class="headerlink" title="4、查找和替换"></a>4、查找和替换</h2><p>vim编辑器在普通模式下，可使用<code>/</code>（斜线键）来查找文本。按下<code>/</code>后，光标会跑到消息行，然后vim会显示出斜线。输入要查找的文本，按下回车键便可完成查找。vim编辑器会采用以下三种回应中的一种：</p>
-<p>如果要查找的文本出现在光标位置之后，则光标会跳到该文本出现的第一个位置。<br>如果要查找的文本未在光标当前位置之后出现，则光标会绕过文件末尾，出现在该文本所在的第一个位置（并用一条消息指明）。<br>输出一条错误消息，说明在文件中没有找到要查找的文本。<br>要继续查找同一个文本，可键入<code>/</code>（斜线键），然后键入回车键。或者键入<code>n</code>命令，表示下一个（next）。<br>vim编辑器在<strong>命令行模式</strong>下可使用替换命令。替换命令的格式是：<code>:s/old/new/</code>。vim编辑器会跳到old第一次出现的地方，并用new来替换。还可用以下命令来替换多处文本：</p>
-<pre><code>:s/old/new/g ：替换一行中的所有old
-:n,ms:/old/new/g ：替换行号n和m之间的所有old
-:%s/old/new/g ：替换整个文件中的所有old
-:%s/old/new/gc ：替换整个文件中的所有old，但在每次出现时提示，询问是否要替换
-</code></pre>
 
         </article>
         <div class="post-tools" id="post-tools">
@@ -1508,10 +1352,10 @@ R text：用text覆盖当前光标所在位置的数据，直到按下ESC键
             </a>
         </div>
         <div class="next-post pull-right">
-            <a href="/posts/69c3279c.html">
+            <a href="/posts/f95eb837.html">
                 <div class="pagination-info">
                     <div class="label">下一篇</div>
-                    <div class="next_info">Git</div>
+                    <div class="next_info">学习笔记｜Gorm框架</div>
                 </div>
             </a>
         </div>
@@ -1531,11 +1375,11 @@ R text：用text覆盖当前光标所在位置的数据，直到按下ESC键
             <div class="author-info__name">
                 RyanChou
             </div>
-            <div class="author-info__description">这里记录关于<b>开发</b>、<b>技术</b>、<b>学习</b>相关的问题。<br/><br/><b>道阻且长 行则将至</b></div>
+            <div class="author-info__description">这里记录关于<b>开发</b>、<b>技术</b>、<b>学习</b>相关的问题。<br/><br/><b>道阻且长 行则将至</b><br><br>博客正在完善...</div>
         </div>
     </div>
     <div class="banner-button-group">
-        <a class="banner-button" href="/">
+        <a class="banner-button" href="/about/">
             <i class="fas fa-circle-chevron-right"></i>
             <span class="banner-button-text">个人主页</span>
         </a>
@@ -1554,7 +1398,7 @@ R text：用text覆盖当前光标所在位置的数据，直到按下ESC键
         <span>文章目录</span>
     </div>
     <div class="toc-content" id="toc-content">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%AE%80%E4%BB%8B"><span class="toc-text">Linux简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">Linux是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88"><span class="toc-text">Linux的发行版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="toc-text">Linux应用领域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">Linux的特点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">Linux目录结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="toc-text">根目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bin-usr-bin"><span class="toc-text">&#x2F;bin:&#x2F;usr&#x2F;bin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#boot"><span class="toc-text">&#x2F;boot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dev"><span class="toc-text">&#x2F;dev</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#etc"><span class="toc-text">&#x2F;etc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#home"><span class="toc-text">&#x2F;home</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lib-usr-lib-usr-local-lib%EF%BC%9A"><span class="toc-text">&#x2F;lib: &#x2F;usr&#x2F;lib: &#x2F;usr&#x2F;local&#x2F;lib：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lost-fount"><span class="toc-text">&#x2F;lost+fount</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mnt-media%EF%BC%9A"><span class="toc-text">&#x2F;mnt:&#x2F;media：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#opt%EF%BC%9A"><span class="toc-text">&#x2F;opt：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proc%EF%BC%9A"><span class="toc-text">&#x2F;proc：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#root%EF%BC%9A"><span class="toc-text">&#x2F;root：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sbin-usr-sbin-usr-local-sbin%EF%BC%9A"><span class="toc-text">&#x2F;sbin: &#x2F;usr&#x2F;sbin: &#x2F;usr&#x2F;local&#x2F;sbin：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tmp%EF%BC%9A"><span class="toc-text">&#x2F;tmp：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#srv%EF%BC%9A"><span class="toc-text">&#x2F;srv：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#usr%EF%BC%9A"><span class="toc-text">&#x2F;usr：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#var%EF%BC%9A"><span class="toc-text">&#x2F;var：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FHS"><span class="toc-text">FHS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8ELinux%E8%8E%B7%E5%BE%97%E5%B8%AE%E5%8A%A9"><span class="toc-text">从Linux获得帮助</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">内部命令与外部命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#help%E5%91%BD%E4%BB%A4"><span class="toc-text">help命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#help%E9%80%89%E9%A1%B9"><span class="toc-text">--help选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#man%E5%91%BD%E4%BB%A4"><span class="toc-text">man命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#info%E5%91%BD%E4%BB%A4"><span class="toc-text">info命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ls-%E5%88%97%E5%87%BA%E7%9B%AE%E6%A0%87%E7%9B%AE%E5%BD%95"><span class="toc-text">ls 列出目标目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ls%E7%AE%80%E4%BB%8B"><span class="toc-text">ls简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ls%E8%AF%AD%E6%B3%95"><span class="toc-text">ls语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6"><span class="toc-text">显示隐藏文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%95%BF%E6%A0%BC%E5%BC%8F%E6%98%BE%E7%A4%BA%E6%9B%B4%E5%A4%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">使用长格式显示更多信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-text">排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E6%96%87%E4%BB%B6%E7%9A%84%E5%A4%A7%E5%B0%8F%E6%8E%92%E5%BA%8F"><span class="toc-text">以文件的大小排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F"><span class="toc-text">最后修改时间排序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cd-pwd-%E5%88%87%E6%8D%A2%E6%98%BE%E7%A4%BA%E7%9B%AE%E5%BD%95"><span class="toc-text">cd pwd 切换显示目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pwd%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95"><span class="toc-text">pwd显示当前目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cd%E5%91%BD%E4%BB%A4%E7%AE%80%E4%BB%8B"><span class="toc-text">cd命令简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%AF%AD%E6%B3%95"><span class="toc-text">命令语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-1"><span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%94%A8%E6%B3%95"><span class="toc-text">特殊用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E7%88%B6%E7%9B%AE%E5%BD%95"><span class="toc-text">切换到父目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0home%E7%9B%AE%E5%BD%95"><span class="toc-text">切换到home目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E4%B9%8B%E5%89%8D%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">返回之前的目录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%88%9B%E5%BB%BA%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux创建删除目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95mkdir"><span class="toc-text">创建目录mkdir</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95rmdir"><span class="toc-text">删除目录rmdir</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-text">Linux创建文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#touch"><span class="toc-text">touch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-1"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux删除文件和目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#rm%E5%91%BD%E4%BB%A4"><span class="toc-text">rm命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-2"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-2"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-3"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux移动文件和目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95mv"><span class="toc-text">移动文件和目录mv</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-3"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-3"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-4"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux拷贝文件和目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cp%E5%91%BD%E4%BB%A4%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">cp命令拷贝文件和目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-4"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-4"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#r-x2F-R-%E5%A4%84%E7%90%86%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95%E4%BB%A5%E5%8F%8A%E5%AD%90%E7%9B%AE%E5%BD%95"><span class="toc-text">  -r&#x2F;R            处理指定目录以及子目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-5"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%98%BE%E7%A4%BA%E5%90%88%E5%B9%B6%E6%96%87%E4%BB%B6"><span class="toc-text">Linux显示合并文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cat%E5%91%BD%E4%BB%A4"><span class="toc-text">cat命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-5"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%A4%A7%E5%8A%9F%E8%83%BD"><span class="toc-text">三大功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-5"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-6"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="toc-text">Linux系统结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%EF%BC%89%E5%86%85%E6%A0%B8"><span class="toc-text">1）内核</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%EF%BC%89%E7%B3%BB%E7%BB%9F%E5%BA%93"><span class="toc-text">2）系统库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%EF%BC%89%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7"><span class="toc-text">3）系统工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%EF%BC%89%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="toc-text">4）开发工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%EF%BC%89%E6%9C%80%E7%BB%88%E7%94%A8%E6%88%B7%E5%B7%A5%E5%85%B7"><span class="toc-text">5）最终用户工具</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">Linux输入输出重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">什么重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-text">Linux 文件描述符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">Linux 命令执行过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E5%A4%9F%E4%BD%BF%E7%94%A8Linux%E9%87%8D%E5%AE%9A%E5%90%91%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">能够使用Linux重定向的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">输出重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">输入重定向</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-more-less%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6"><span class="toc-text">Linux more less查看文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#more"><span class="toc-text">more</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-6"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-6"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-text">常用操作命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-7"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less"><span class="toc-text">less</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-7"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-7"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-8"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E5%91%BD%E4%BB%A4head%E5%92%8Ctail"><span class="toc-text">Linux 命令head和tail</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#head"><span class="toc-text">head</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-8"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-8"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-9"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tail"><span class="toc-text">tail</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-9"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-9"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-10"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">Linux用户和组的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%94%A8%E6%88%B7%E5%88%86%E7%B1%BB"><span class="toc-text">Linux用户分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-text">超级管理员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7"><span class="toc-text">系统用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7"><span class="toc-text">普通用户</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-text">Linux用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="toc-text">添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="toc-text">为用户设置密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="toc-text">删除用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7"><span class="toc-text">修改用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9"><span class="toc-text">常用选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-11"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7su%E5%92%8Csudo"><span class="toc-text">Linux切换用户su和sudo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#su"><span class="toc-text">su</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#su-%E5%92%8C-su-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">su 和 su -的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sudo"><span class="toc-text">sudo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sudoers%E5%86%85%E5%AE%B9"><span class="toc-text">sudoers内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-text">Linux组管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-2"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">增加用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1%EF%BC%9A"><span class="toc-text">实例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2%EF%BC%9A"><span class="toc-text">实例2：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">删除用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%EF%BC%9A"><span class="toc-text">例如：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">修改用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1%EF%BC%9A-1"><span class="toc-text">实例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2%EF%BC%9A-1"><span class="toc-text">实例2：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">切换用户组</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E4%B8%8E%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%9B%B8%E5%85%B3%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">Linux与用户和组相关的配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">与用户相关的配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-etc-passwd"><span class="toc-text">用户的配置文件&#x2F;etc&#x2F;passwd</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#passwd%E4%B8%AD%E6%9C%89%E5%85%B3UID%E7%9A%84%E9%99%90%E5%88%B6%E8%AF%B4%E6%98%8E"><span class="toc-text">passwd中有关UID的限制说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84%E5%BD%B1%E5%AD%90%E5%8F%A3%E4%BB%A4%E6%96%87%E4%BB%B6-etc-shadow"><span class="toc-text">用户的影子口令文件&#x2F;etc&#x2F;shadow</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BB%84%E7%9B%B8%E5%85%B3%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">与用户组相关的配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-x2F-etc-x2F-group"><span class="toc-text">用户组配置文件&#x2F;etc&#x2F;group</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E7%9A%84%E5%BD%B1%E5%AD%90%E6%96%87%E4%BB%B6-etc-gshadow"><span class="toc-text">用户组的影子文件&#x2F;etc&#x2F;gshadow</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%9D%83%E9%99%90%E5%92%8C%E8%A7%92%E8%89%B2"><span class="toc-text">Linux权限和角色</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%89%E7%A7%8D%E6%9D%83%E9%99%90"><span class="toc-text">Linux三种权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%89%E7%A7%8D%E8%A7%92%E8%89%B2"><span class="toc-text">Linux三种角色</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E4%BD%BF%E7%94%A8chmod%E5%91%BD%E4%BB%A4%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="toc-text">Linux使用chmod命令修改权限</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-10"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-10"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E8%8C%83%E5%9B%B4"><span class="toc-text">权限范围</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%BB%A3%E5%8F%B7"><span class="toc-text">权限代号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%B8%8E%E6%95%B0%E5%80%BC"><span class="toc-text">权限与数值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E8%AE%BE%E5%AE%9A%E6%B3%95"><span class="toc-text">文字设定法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-12"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%AE%BE%E5%AE%9A%E6%B3%95"><span class="toc-text">数字设定法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-13"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85Linux%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-text">下载安装Linux虚拟机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-text">什么是虚拟机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F"><span class="toc-text">虚拟系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85VMware"><span class="toc-text">下载安装VMware</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85VMware"><span class="toc-text">安装VMware</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E4%BF%AE%E6%94%B9%E6%89%80%E5%B1%9E%E7%BB%84chgrp"><span class="toc-text">Linux修改所属组chgrp</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-11"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-11"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E7%9B%AE%E5%BD%95%E7%9A%84%E6%8B%A5%E6%9C%89%E8%80%85chown"><span class="toc-text">Linux修改文件或者目录的拥有者chown</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-12"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-12"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA-1"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">Linux磁盘分区简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E5%88%86%E7%B1%BB"><span class="toc-text">磁盘分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%AE%BE%E5%A4%87%E5%9C%A8-Linux-%E4%B8%8B%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-text">磁盘设备在 Linux 下的表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="toc-text">磁盘分区的目的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-text">Linux增加磁盘分区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98"><span class="toc-text">1.虚拟机添加硬盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%86%E5%8C%BA"><span class="toc-text">2.分区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-text">3.格式化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8C%82%E8%BD%BD"><span class="toc-text">4.挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%8D%B8%E8%BD%BD"><span class="toc-text">5.卸载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A3%81%E7%9B%98%E7%8A%B6%E5%86%B5%E6%9F%A5%E8%AF%A2"><span class="toc-text">Linux磁盘状况查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#df%E5%91%BD%E4%BB%A4"><span class="toc-text">df命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#du"><span class="toc-text">du</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A3%81%E7%9B%98%E5%91%BD%E4%BB%A4%E5%AE%9E%E4%BE%8B"><span class="toc-text">Linux磁盘命令实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%9F%E8%AE%A1%E6%9F%90%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AA%E6%95%B0"><span class="toc-text">1. 统计某文件夹下面的文件个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%9F%E8%AE%A1%E6%9F%90%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E9%9D%A2%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%AA%E6%95%B0"><span class="toc-text">2.统计某文件夹下面的目录个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BB%9F%E8%AE%A1%E6%9F%90%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AA%E6%95%B0%EF%BC%8C%E5%8C%85%E5%90%AB%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%9A%84"><span class="toc-text">3.统计某文件夹下面的文件个数，包含子目录中的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BB%9F%E8%AE%A1%E6%9F%90%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E9%9D%A2%E7%9A%84%E7%9B%AE%E5%BD%95%E7%9A%84%E4%B8%AA%E6%95%B0%EF%BC%8C%E5%8C%85%E5%90%AB%E5%AD%90%E7%9B%AE%E5%BD%95"><span class="toc-text">4.统计某文件夹下面的目录的个数，包含子目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-tree-%E5%91%BD%E4%BB%A4"><span class="toc-text">5.tree 命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%BC%A9zip%E5%92%8Cunzip"><span class="toc-text">Linux压缩和解压缩zip和unzip</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#zip%E5%91%BD%E4%BB%A4"><span class="toc-text">zip命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-13"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA-2"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unzip%E5%91%BD%E4%BB%A4"><span class="toc-text">unzip命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-14"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA-3"><span class="toc-text">实例演示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85centos7"><span class="toc-text">安装centos7</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDcentos7%E9%95%9C%E5%83%8F"><span class="toc-text">下载centos7镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85centos7-1"><span class="toc-text">安装centos7</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEcentos7"><span class="toc-text">配置centos7</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8Dip"><span class="toc-text">查看当前ip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E4%BA%92%E9%80%9A%E6%83%85%E5%86%B5"><span class="toc-text">查看网络互通情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BA%E9%9D%99%E6%80%81ip"><span class="toc-text">修改为静态ip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E6%9C%BA%E5%90%8D%E7%A7%B0"><span class="toc-text">修改主机名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%97%ADfirewalld%E5%92%8Cselinux"><span class="toc-text">关闭firewalld和selinux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%97%ADfirewalld"><span class="toc-text">关闭firewalld</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%97%ADselinux"><span class="toc-text">关闭selinux</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%8B%E9%9A%86"><span class="toc-text">虚拟机克隆</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95"><span class="toc-text">ssh远程登录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Bssh%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">查看ssh服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85MobaXterm"><span class="toc-text">下载安装MobaXterm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95"><span class="toc-text">远程登录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6"><span class="toc-text">上传和下载文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ftp%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">安装ftp服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81"><span class="toc-text">查看状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8"><span class="toc-text">设置开机启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8MobaXterm%E5%BB%BA%E7%AB%8Bsftp%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD"><span class="toc-text">使用MobaXterm建立sftp连接，实现文件上传和下载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">vim编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">1、vim基本使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%9C%A8%E6%99%AE%E9%80%9A%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%BC%96%E8%BE%91%E6%95%B0%E6%8D%AE"><span class="toc-text">2、在普通模式下编辑数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%A4%8D%E5%88%B6%E5%92%8C%E7%B2%98%E8%B4%B4"><span class="toc-text">3、复制和粘贴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9B%BF%E6%8D%A2"><span class="toc-text">4、查找和替换</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%AE%80%E4%BB%8B"><span class="toc-text">Linux简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">Linux是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88"><span class="toc-text">Linux的发行版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="toc-text">Linux应用领域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">Linux的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">Linux目录结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="toc-text">根目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bin-usr-bin"><span class="toc-text">&#x2F;bin:&#x2F;usr&#x2F;bin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#boot"><span class="toc-text">&#x2F;boot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dev"><span class="toc-text">&#x2F;dev</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#etc"><span class="toc-text">&#x2F;etc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#home"><span class="toc-text">&#x2F;home</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lib-usr-lib-usr-local-lib%EF%BC%9A"><span class="toc-text">&#x2F;lib: &#x2F;usr&#x2F;lib: &#x2F;usr&#x2F;local&#x2F;lib：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lost-fount"><span class="toc-text">&#x2F;lost+fount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mnt-media%EF%BC%9A"><span class="toc-text">&#x2F;mnt:&#x2F;media：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#opt%EF%BC%9A"><span class="toc-text">&#x2F;opt：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#proc%EF%BC%9A"><span class="toc-text">&#x2F;proc：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#root%EF%BC%9A"><span class="toc-text">&#x2F;root：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sbin-usr-sbin-usr-local-sbin%EF%BC%9A"><span class="toc-text">&#x2F;sbin: &#x2F;usr&#x2F;sbin: &#x2F;usr&#x2F;local&#x2F;sbin：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tmp%EF%BC%9A"><span class="toc-text">&#x2F;tmp：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#srv%EF%BC%9A"><span class="toc-text">&#x2F;srv：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#usr%EF%BC%9A"><span class="toc-text">&#x2F;usr：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var%EF%BC%9A"><span class="toc-text">&#x2F;var：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FHS"><span class="toc-text">FHS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8ELinux%E8%8E%B7%E5%BE%97%E5%B8%AE%E5%8A%A9"><span class="toc-text">从Linux获得帮助</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">内部命令与外部命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#help%E5%91%BD%E4%BB%A4"><span class="toc-text">help命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#help%E9%80%89%E9%A1%B9"><span class="toc-text">--help选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#man%E5%91%BD%E4%BB%A4"><span class="toc-text">man命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#info%E5%91%BD%E4%BB%A4"><span class="toc-text">info命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86"><span class="toc-text">Linux文件和目录管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ls-%E5%88%97%E5%87%BA%E7%9B%AE%E6%A0%87%E7%9B%AE%E5%BD%95"><span class="toc-text">ls 列出目标目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ls%E7%AE%80%E4%BB%8B"><span class="toc-text">ls简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls%E8%AF%AD%E6%B3%95"><span class="toc-text">ls语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6"><span class="toc-text">显示隐藏文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%95%BF%E6%A0%BC%E5%BC%8F%E6%98%BE%E7%A4%BA%E6%9B%B4%E5%A4%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">使用长格式显示更多信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E6%96%87%E4%BB%B6%E7%9A%84%E5%A4%A7%E5%B0%8F%E6%8E%92%E5%BA%8F"><span class="toc-text">以文件的大小排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F"><span class="toc-text">最后修改时间排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cd-pwd-%E5%88%87%E6%8D%A2%E6%98%BE%E7%A4%BA%E7%9B%AE%E5%BD%95"><span class="toc-text">cd pwd 切换显示目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95"><span class="toc-text">pwd显示当前目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd%E5%91%BD%E4%BB%A4%E7%AE%80%E4%BB%8B"><span class="toc-text">cd命令简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%AF%AD%E6%B3%95"><span class="toc-text">命令语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-1"><span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%94%A8%E6%B3%95"><span class="toc-text">特殊用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E7%88%B6%E7%9B%AE%E5%BD%95"><span class="toc-text">切换到父目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0home%E7%9B%AE%E5%BD%95"><span class="toc-text">切换到home目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E4%B9%8B%E5%89%8D%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">返回之前的目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%88%9B%E5%BB%BA%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux创建删除目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95mkdir"><span class="toc-text">创建目录mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95rmdir"><span class="toc-text">删除目录rmdir</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-text">Linux创建文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#touch"><span class="toc-text">touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-1"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux删除文件和目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rm%E5%91%BD%E4%BB%A4"><span class="toc-text">rm命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-2"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-2"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-3"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux移动文件和目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95mv"><span class="toc-text">移动文件和目录mv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-3"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-3"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-4"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux拷贝文件和目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cp%E5%91%BD%E4%BB%A4%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">cp命令拷贝文件和目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-4"><span class="toc-text">命令格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-4"><span class="toc-text">命令参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#r-x2F-R-%E5%A4%84%E7%90%86%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95%E4%BB%A5%E5%8F%8A%E5%AD%90%E7%9B%AE%E5%BD%95"><span class="toc-text">  -r&#x2F;R            处理指定目录以及子目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-5"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%98%BE%E7%A4%BA%E5%90%88%E5%B9%B6%E6%96%87%E4%BB%B6"><span class="toc-text">Linux显示合并文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cat%E5%91%BD%E4%BB%A4"><span class="toc-text">cat命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-5"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%A4%A7%E5%8A%9F%E8%83%BD"><span class="toc-text">三大功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-5"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-6"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="toc-text">Linux系统结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%EF%BC%89%E5%86%85%E6%A0%B8"><span class="toc-text">1）内核</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%EF%BC%89%E7%B3%BB%E7%BB%9F%E5%BA%93"><span class="toc-text">2）系统库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%EF%BC%89%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7"><span class="toc-text">3）系统工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%EF%BC%89%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="toc-text">4）开发工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%EF%BC%89%E6%9C%80%E7%BB%88%E7%94%A8%E6%88%B7%E5%B7%A5%E5%85%B7"><span class="toc-text">5）最终用户工具</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">Linux输入输出重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">什么重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-text">Linux 文件描述符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">Linux 命令执行过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E5%A4%9F%E4%BD%BF%E7%94%A8Linux%E9%87%8D%E5%AE%9A%E5%90%91%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">能够使用Linux重定向的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">输出重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">输入重定向</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-more-less%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6"><span class="toc-text">Linux more less查看文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#more"><span class="toc-text">more</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-6"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-6"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-text">常用操作命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-7"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less"><span class="toc-text">less</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-7"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-7"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-8"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E5%91%BD%E4%BB%A4head%E5%92%8Ctail"><span class="toc-text">Linux 命令head和tail</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#head"><span class="toc-text">head</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-8"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-8"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-9"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tail"><span class="toc-text">tail</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-9"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-9"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-10"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">Linux用户和组的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%94%A8%E6%88%B7%E5%88%86%E7%B1%BB"><span class="toc-text">Linux用户分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-text">超级管理员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7"><span class="toc-text">系统用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7"><span class="toc-text">普通用户</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-text">Linux用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="toc-text">添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="toc-text">为用户设置密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="toc-text">删除用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7"><span class="toc-text">修改用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9"><span class="toc-text">常用选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-11"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7su%E5%92%8Csudo"><span class="toc-text">Linux切换用户su和sudo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#su"><span class="toc-text">su</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#su-%E5%92%8C-su-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">su 和 su -的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sudo"><span class="toc-text">sudo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sudoers%E5%86%85%E5%AE%B9"><span class="toc-text">sudoers内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-text">Linux组管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-2"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">增加用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1%EF%BC%9A"><span class="toc-text">实例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2%EF%BC%9A"><span class="toc-text">实例2：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">删除用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%EF%BC%9A"><span class="toc-text">例如：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">修改用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B1%EF%BC%9A-1"><span class="toc-text">实例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2%EF%BC%9A-1"><span class="toc-text">实例2：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">切换用户组</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E4%B8%8E%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%9B%B8%E5%85%B3%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">Linux与用户和组相关的配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">与用户相关的配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-etc-passwd"><span class="toc-text">用户的配置文件&#x2F;etc&#x2F;passwd</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#passwd%E4%B8%AD%E6%9C%89%E5%85%B3UID%E7%9A%84%E9%99%90%E5%88%B6%E8%AF%B4%E6%98%8E"><span class="toc-text">passwd中有关UID的限制说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84%E5%BD%B1%E5%AD%90%E5%8F%A3%E4%BB%A4%E6%96%87%E4%BB%B6-etc-shadow"><span class="toc-text">用户的影子口令文件&#x2F;etc&#x2F;shadow</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BB%84%E7%9B%B8%E5%85%B3%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">与用户组相关的配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-x2F-etc-x2F-group"><span class="toc-text">用户组配置文件&#x2F;etc&#x2F;group</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E7%9A%84%E5%BD%B1%E5%AD%90%E6%96%87%E4%BB%B6-etc-gshadow"><span class="toc-text">用户组的影子文件&#x2F;etc&#x2F;gshadow</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%9D%83%E9%99%90%E5%92%8C%E8%A7%92%E8%89%B2"><span class="toc-text">Linux权限和角色</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%89%E7%A7%8D%E6%9D%83%E9%99%90"><span class="toc-text">Linux三种权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%89%E7%A7%8D%E8%A7%92%E8%89%B2"><span class="toc-text">Linux三种角色</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E4%BD%BF%E7%94%A8chmod%E5%91%BD%E4%BB%A4%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="toc-text">Linux使用chmod命令修改权限</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-10"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-10"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E8%8C%83%E5%9B%B4"><span class="toc-text">权限范围</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%BB%A3%E5%8F%B7"><span class="toc-text">权限代号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%B8%8E%E6%95%B0%E5%80%BC"><span class="toc-text">权限与数值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E8%AE%BE%E5%AE%9A%E6%B3%95"><span class="toc-text">文字设定法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-12"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%AE%BE%E5%AE%9A%E6%B3%95"><span class="toc-text">数字设定法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-13"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E4%BF%AE%E6%94%B9%E6%89%80%E5%B1%9E%E7%BB%84chgrp"><span class="toc-text">Linux修改所属组chgrp</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-11"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-11"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E7%9B%AE%E5%BD%95%E7%9A%84%E6%8B%A5%E6%9C%89%E8%80%85chown"><span class="toc-text">Linux修改文件或者目录的拥有者chown</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-12"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0-12"><span class="toc-text">命令参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA-1"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">Linux磁盘分区简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E5%88%86%E7%B1%BB"><span class="toc-text">磁盘分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%AE%BE%E5%A4%87%E5%9C%A8-Linux-%E4%B8%8B%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-text">磁盘设备在 Linux 下的表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="toc-text">磁盘分区的目的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-text">Linux增加磁盘分区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98"><span class="toc-text">1.虚拟机添加硬盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%86%E5%8C%BA"><span class="toc-text">2.分区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-text">3.格式化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8C%82%E8%BD%BD"><span class="toc-text">4.挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%8D%B8%E8%BD%BD"><span class="toc-text">5.卸载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A3%81%E7%9B%98%E7%8A%B6%E5%86%B5%E6%9F%A5%E8%AF%A2"><span class="toc-text">Linux磁盘状况查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#df%E5%91%BD%E4%BB%A4"><span class="toc-text">df命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#du"><span class="toc-text">du</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A3%81%E7%9B%98%E5%91%BD%E4%BB%A4%E5%AE%9E%E4%BE%8B"><span class="toc-text">Linux磁盘命令实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%9F%E8%AE%A1%E6%9F%90%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AA%E6%95%B0"><span class="toc-text">1. 统计某文件夹下面的文件个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%9F%E8%AE%A1%E6%9F%90%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E9%9D%A2%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%AA%E6%95%B0"><span class="toc-text">2.统计某文件夹下面的目录个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BB%9F%E8%AE%A1%E6%9F%90%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AA%E6%95%B0%EF%BC%8C%E5%8C%85%E5%90%AB%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%9A%84"><span class="toc-text">3.统计某文件夹下面的文件个数，包含子目录中的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BB%9F%E8%AE%A1%E6%9F%90%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E9%9D%A2%E7%9A%84%E7%9B%AE%E5%BD%95%E7%9A%84%E4%B8%AA%E6%95%B0%EF%BC%8C%E5%8C%85%E5%90%AB%E5%AD%90%E7%9B%AE%E5%BD%95"><span class="toc-text">4.统计某文件夹下面的目录的个数，包含子目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-tree-%E5%91%BD%E4%BB%A4"><span class="toc-text">5.tree 命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%BC%A9zip%E5%92%8Cunzip"><span class="toc-text">Linux压缩和解压缩zip和unzip</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#zip%E5%91%BD%E4%BB%A4"><span class="toc-text">zip命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-13"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA-2"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unzip%E5%91%BD%E4%BB%A4"><span class="toc-text">unzip命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-14"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%BC%94%E7%A4%BA-3"><span class="toc-text">实例演示</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
             
@@ -1567,6 +1411,21 @@ R text：用text覆盖当前光标所在位置的数据，直到按下ESC键
     </div>
     <div class="aside-list">
         
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/posts/0.html" title="无标题">
+                    <img
+                        alt="无标题"
+                        src="/img/hello.jpg">
+                </a>
+                <div class="content">
+                    
+                    <a class="title" href="/posts/0.html" title="无标题">
+                        无标题
+                    </a>
+                </div>
+            </div>
+                
         
             <div class="aside-list-item">
                 <a class="thumbnail" href="/posts/b24dd347.html" title="我的第一篇博客文章">
@@ -1623,21 +1482,6 @@ R text：用text覆盖当前光标所在位置的数据，直到按下ESC键
                     
                     <a class="title" href="/posts/10ebb886.html" title="学习笔记｜Linux">
                         学习笔记｜Linux
-                    </a>
-                </div>
-            </div>
-                
-        
-            <div class="aside-list-item">
-                <a class="thumbnail" href="/posts/69c3279c.html" title="Git">
-                    <img
-                        alt="Git"
-                        src="/img/hello.jpg">
-                </a>
-                <div class="content">
-                    
-                    <a class="title" href="/posts/69c3279c.html" title="Git">
-                        Git
                     </a>
                 </div>
             </div>
@@ -1758,4 +1602,4 @@ R text：用text覆盖当前光标所在位置的数据，直到按下ESC键
     
     </body>
 </html>
-<script>const posts=["posts/b24dd347.html","posts/4a17b156.html","posts/817da579.html","posts/10ebb886.html","posts/69c3279c.html","posts/b1efffe8.html","posts/eae62c98.html","posts/3e97faf3.html"];function toRandomPost(){ window.pjax ? pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]) : window.open('/'+posts[Math.floor(Math.random()*posts.length)], "_self"); };</script>
+<script>const posts=["posts/0.html","posts/b24dd347.html","posts/4a17b156.html","posts/817da579.html","posts/10ebb886.html","posts/f95eb837.html","posts/69c3279c.html","posts/b1efffe8.html","posts/eae62c98.html","posts/3e97faf3.html"];function toRandomPost(){ window.pjax ? pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]) : window.open('/'+posts[Math.floor(Math.random()*posts.length)], "_self"); };</script>
