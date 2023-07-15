@@ -20,6 +20,15 @@
   </url>
   
   <url>
+    <loc>https://ryanchou612.github.io/posts/10ebb886.html</loc>
+    
+    <lastmod>2023-07-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ryanchou612.github.io/posts/f95eb837.html</loc>
     
     <lastmod>2023-07-15</lastmod>
@@ -30,15 +39,6 @@
   
   <url>
     <loc>https://ryanchou612.github.io/posts/69c3279c.html</loc>
-    
-    <lastmod>2023-07-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ryanchou612.github.io/posts/10ebb886.html</loc>
     
     <lastmod>2023-07-15</lastmod>
     
@@ -108,14 +108,14 @@
   </url>
   
   <url>
-    <loc>https://ryanchou612.github.io/tags/Git/</loc>
+    <loc>https://ryanchou612.github.io/tags/Gin/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ryanchou612.github.io/tags/Gin/</loc>
+    <loc>https://ryanchou612.github.io/tags/Git/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -129,14 +129,14 @@
   </url>
   
   <url>
-    <loc>https://ryanchou612.github.io/tags/Gorm/</loc>
+    <loc>https://ryanchou612.github.io/tags/Linux/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ryanchou612.github.io/tags/Linux/</loc>
+    <loc>https://ryanchou612.github.io/tags/Gorm/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
